@@ -1,0 +1,47 @@
+<app-navbar></app-navbar>
+<form class="form-group" (submit)="register(myForm)" #myForm="ngForm">
+  <h1>register</h1>
+
+  <label>Email</label>
+  <input type="text" class="form-control" required [(ngModel)]="email" name="email">
+  <div [hidden]=hideLogin>Email already used</div>
+
+  <label>Username</label>
+  <input type="text" class="form-control" required [(ngModel)]="username" name="username" #trackUser="ngModel">
+  <label>Password</label>
+  <input type="password" class="form-control" required [(ngModel)]="password" name="password">
+
+  <label for="sex">sex</label>
+  <select name="sex" id="sex" class="form-control" [(ngModel)]="sex" required>
+    <option value="m">Male</option>
+    <option value="f">female</option>
+    <option value="o">Other</option>
+  </select>
+
+  <label for="pref1">Male</label><br>
+  <input type="checkbox" class="form-control" id="pref1" name="pref1" value="Male" [(ngModel)]="checkboxFlag1">
+  <label for="pref2">Female</label><br>
+  <input type="checkbox" class="form-control" id="pref2" name="pref2" value="Female" [(ngModel)]="checkboxFlag2">
+  <label for="pref3">Other</label><br><br>
+  <input type="checkbox" id="pref3" class="form-control" name="pref3" value="Other" [(ngModel)]="checkboxFlag3">
+
+
+
+
+
+  <label>Date of Birth</label>
+  <input type="date" name="date" class="form-control" [(ngModel)]="birthday" required>
+
+  <label>Area</label>
+  <select name="area" name="area" class="form-control" id="area" [(ngModel)]="area" required>
+    <option value="limburg">limburg</option>
+    <option value="Vlaams-brabant">vlaams brabant</option>
+
+  </select>
+
+
+  <input type="submit" value="Date Me Baby!">
+  <p [hidden]=hide>Form is not valid</p>
+  <!-- [disabled]="trackUser.invalid" -->
+</form>
+<app-footer></app-footer>

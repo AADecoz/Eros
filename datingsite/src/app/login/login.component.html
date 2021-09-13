@@ -1,0 +1,21 @@
+
+<div class="backgroundHome">
+  <app-navbar></app-navbar>
+  <div class="container">
+    <div class="row ">
+      <form class="form-group col-sm-12 col-md-6 offset-md-6" id="loginform" (submit)="checkLogin()">
+
+
+        <input type="text" class="form-control " id="userSign" placeholder="Email" required [(ngModel)]="userSign"
+          name="userSign">
+        <p class="" [hidden]=hide>Wrong username</p>
+        <input type="password" placeholder="pasword" class="form-control " id="passSing" required [(ngModel)]="passSign"
+          name="passSign">
+        <p class="" [hidden]=hide2>Wrong password</p>
+        <input class="" type="submit" id="submitButton" value="submit">
+      </form>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>
+

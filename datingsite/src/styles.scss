@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+.backgroundHome{
+   background:url("assets/backgroundMobile.jpg") no-repeat fixed;
+   background-size:cover;
+    height:100vh;
+    margin:0px;
+    padding:0px;
+ 
+}
+
+
+@media only screen and (min-width: 768px) {
+.backgroundHome{
+    background:url("assets/backgroundDesktop.jpg") no-repeat fixed;
+    background-size:cover;
+    
+   
+}
+  
+}
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

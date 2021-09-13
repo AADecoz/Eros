@@ -1,0 +1,8 @@
+<form #f="ngForm">
+  <input type="file" (change)="onFileChanged($event)">
+  <button (click)="upload()">Upload Image</button>
+  <img [src]=source [hidden]=hidePreview>
+  <p [hidden]=extensionCheck>{{errortekst}}</p>
+</form>
+
+<app-footer></app-footer>

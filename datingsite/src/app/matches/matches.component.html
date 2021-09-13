@@ -1,0 +1,12 @@
+<app-navbar></app-navbar>
+
+<h5 class="container">Welkom, {{username}}</h5>
+
+<h2> matches</h2>
+<div class="container-fluid" *ngFor="let item of matchesArray ">
+  <h5>naam:{{item["Username"]}}</h5>
+  <p>Age:{{item["Age"] | dateAge}}</p>
+  <p>area:{{item["Area"]}}</p>
+</div>
+<p *ngIf=noMatch>Geen matches</p>
+<app-footer></app-footer>
