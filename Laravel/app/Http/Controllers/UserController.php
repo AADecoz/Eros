@@ -48,7 +48,10 @@ class UserController extends Controller
     {
        $user = User::create($request->all());
 
+
        return response()->json($user, 201);
+
+       
     }
 
     /**
@@ -95,4 +98,5 @@ class UserController extends Controller
     {
         //
     }
+
 }
