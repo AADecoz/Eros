@@ -13,12 +13,18 @@ class CreateMatchingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('matchings', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('UserId')->constrained('users', 'id')->cascadeOnUpdate()->cascadeOnDelete();
-            $table->foreignId('MatchId')->constrained('users', 'id')->cascadeOnDelete()->cascadeOnUpdate();
-            $table->boolean('matched');
-            $table->timestamps();
+        if (!Schema::hasTable('matchings')) {
+            Schema::create('matchings', function (Blueprint $table) {
+                $table->id();
+                $table->boolean('matched');
+                $table->timestamps();
+                $table->engine = 'InnoDB';
+            });
+        }
+
+        Schema::table('matchings', function (Blueprint $table){
+            $table->foreignId('UserId')->constrained('users', 'UserId')->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreignId('MatchId')->constrained('users', 'UserId')->cascadeOnDelete()->cascadeOnUpdate();
         });
     }
 
