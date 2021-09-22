@@ -22,9 +22,20 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(array $data)
     {
-        //
+        return User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+            'birthday' => $data['birthday'],
+            'sex'  => $data['sex'],
+            'preference' => $data['preference'],
+            'area' => $data['area'],
+            'intro' => $data['intro'],
+            'minAge' => $data['minAge'],
+            'maxAge' => $data['maxAge'],
+        ]);
     }
 
     /**
