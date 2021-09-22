@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -14,7 +15,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $huh;
+        
         return User::all();
     }
 
@@ -23,7 +24,7 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(array $data)
+    public function create(Request $data)
     {
         return User::create([
             'name' => $data['name'],
@@ -48,8 +49,10 @@ class UserController extends Controller
     public function store(Request $request)
     {
        $user = User::create($request->all());
-
-       return response()->json($user, 201);
+        ddd($request);
+       return response()->json([
+           "message"=>"created",201
+       ]);
     }
 
     /**
@@ -95,5 +98,25 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function test(Request $data){
+        User::create([
+            'name' => $data->name,
+            'email' => $data->email,
+            'password' => Hash::make($data->password),
+            'birthday' => $data->birthday,
+            'sex'  => $data->sex,
+            'preference' => $data->preference,
+            'area' => $data->area,
+            'intro' => $data->intro,
+            'minAge' => $data->minAge,
+            'maxAge' => $data->maxAge,
+        ]);
+
+
+        return response()->json([
+            "message"=>$data->name,
+        ]);
     }
 }
