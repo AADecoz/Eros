@@ -7,14 +7,14 @@ import { Observable} from "rxjs";
 })
 export class UserService {
 user = "";
-path="angularWWW/groepwerk";
+path="";
 postUrl="http://localhost:8000/api/register";
-loginUrl="http://localhost/"+this.path+"/datingsite/src/apis/loginAPI.php";
-feedUrl="http://localhost/"+this.path+"/datingsite/src/apis/feedAPI.php";
-matchUrl="http://localhost/"+this.path+"/datingsite/src/apis/matchAPI.php";
-likeUrl="http://localhost/"+this.path+"/datingsite/src/apis/likeAPI.php";
-saveUrl="http://localhost/"+this.path+"/datingsite/src/apis/save.php";
-updateUrl="http://localhost/"+this.path+"/datingsite/src/apis/updateAPI.php";
+loginUrl="http://localhost:8000/api/login";
+feedUrl="http://localhost/apis/feedAPI.php";
+matchUrl="http://localhost/apis/matchAPI.php";
+likeUrl="http://localhost/apis/likeAPI.php";
+saveUrl="http://localhost/apis/save.php";
+updateUrl="http://localhost/apis/updateAPI.php";
   header = {
     'Content-Type': 'application/json',
     'Accept': 'application/json',

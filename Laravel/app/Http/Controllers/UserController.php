@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use http\Message;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
@@ -105,7 +106,7 @@ class UserController extends Controller
         User::create([
             'name' => $data->name,
             'email' => $data->email,
-            'password' => Hash::make($data->password),
+            'password' => $data->password,
             'birthday' => $data->birthday,
             'sex'  => $data->sex,
             'preference' => $data->preference,
@@ -116,5 +117,20 @@ class UserController extends Controller
         ]);
 
         return response()->json(['message' => 'Lekker werk pik!'], 201);
+    }
+
+    public function login(request $data){
+       $login = DB::table('users')
+            ->where('email', '=', $data->email)
+            ->get();
+
+        if(empty($login)){
+            return response()->json(['user' => Null, 'status_message'=>'user not found'], 200);
+
+        } else{
+            return response()->json(['user' => $login, 'status_message'=>'user found'], 200);
+
+        }
+
     }
 }

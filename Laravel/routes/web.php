@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 Route::resource('users', \App\Http\Controllers\UserController::class);
 
 Route::post('/api/register', '\App\Http\Controllers\UserController@register')->name('/api/register');
+Route::post('/api/login', '\App\Http\Controllers\UserController@login')->name('/api/login');
 
 
 Route::get('/', function () {
