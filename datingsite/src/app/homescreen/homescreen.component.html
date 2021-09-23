@@ -4,10 +4,10 @@
 <h2>potential matches</h2>
 
 <div class="container-fluid">
-  <h5 *ngIf=matches>naam={{feedArray[0]["Username"]}}</h5>
-  <p *ngIf=matches>Age={{feedArray[0]["Age"] | dateAge}}</p>
-  <p *ngIf=matches>Area={{feedArray[0]["Area"]}}</p>
-  <p *ngIf=matches>Gender={{feedArray[0]["Sex"] | gendername}}</p>
+  <h5 *ngIf=matches>naam={{feedArray[0].name}}</h5>
+  <p *ngIf=matches>Age={{feedArray[0].birthday | dateAge}}</p>
+  <p *ngIf=matches>Area={{feedArray[0].area}}</p>
+  <p *ngIf=matches>Gender={{feedArray[0].sex | gendername}}</p>
   <img *ngIf=matches [src]=sourceMatch (error)="defaultimg()">
   <p [hidden]=noMatches>No potential matches found</p>
   <button *ngIf=matches (click)="like(1,0)">Like</button>

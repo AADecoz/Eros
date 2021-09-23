@@ -12,10 +12,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::resource('users', \App\Http\Controllers\UserController::class);
 
 Route::post('/api/register', '\App\Http\Controllers\UserController@register')->name('/api/register');
 Route::post('/api/login', '\App\Http\Controllers\UserController@login')->name('/api/login');
+Route::post('/api/feed', '\App\Http\Controllers\FeedController@feed')->name('/api/feed');
 
 
 Route::get('/', function () {
