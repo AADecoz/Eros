@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use http\Message;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
@@ -52,7 +53,7 @@ class UserController extends Controller
 
        return response()->json($user, 201);
 
-       
+
     }
 
     /**
@@ -100,4 +101,20 @@ class UserController extends Controller
         //
     }
 
+    public function register(request $data){
+        User::create([
+            'name' => $data->name,
+            'email' => $data->email,
+            'password' => Hash::make($data->password),
+            'birthday' => $data->birthday,
+            'sex'  => $data->sex,
+            'preference' => $data->preference,
+            'area' => $data->area,
+            'intro' => $data->intro,
+            'minAge' => $data->minAge,
+            'maxAge' => $data->maxAge,
+        ]);
+
+        return response()->json(['message' => 'Lekker werk pik!']);
+    }
 }
