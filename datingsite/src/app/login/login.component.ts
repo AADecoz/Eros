@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
      if(data.status_message=="Wrong password"){
           this.hide2=false;
        } else{
-        
+        console.log(data);
         sessionStorage.setItem('userid',data.user.UserId);
         sessionStorage.setItem('username',data.user.name);
         sessionStorage.setItem('preference',data.user.preference);
