@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService} from "../user.service";
 
-
-
-
 @Component({
   selector: 'app-homescreen',
   templateUrl: './homescreen.component.html',
@@ -35,22 +32,21 @@ export class HomescreenComponent implements OnInit {
 
 
  laadFeed(){ 
-   
-  this.UserService.feedf({"userid":this.userid,"sex":this.sex,"preference":this.preference,"minAge":this.minAge,"maxAge":this.maxAge}).subscribe((data)=> { 
+  this.UserService.feedf({"userid":this.userid,"sex":this.sex,"preference":this.preference,"minAge":this.minAge,"maxAge":this.maxAge}).subscribe((data)=> {
     if(data.status_message=="user not found"){
       this.matches=false;
       this.noMatches=false;
-    }else{
-       this.feedArray=data.user; 
-      this.sourceMatch="assets/userprofiles/"+this.feedArray[0]["UserID"]+".jpg";
-      console.log("hier",this.feedArray)
+    }else{ 
+      this.feedArray=data.user; 
+      console.log(this.feedArray);
+      this.sourceMatch="assets/userprofiles/"+this.feedArray[0].UserId+".jpg";
     }
  })
 }
 
 laadFeedLocal(){
   this.feedArray.shift();
-  this.sourceMatch="assets/userprofiles/"+this.feedArray[0]["UserID"]+".jpg";
+  this.sourceMatch="assets/userprofiles/"+this.feedArray[0].UserId+".jpg";
   if(this.feedArray.length==0){
     this.feedArray=[{}];
     this.matches=false;
@@ -61,7 +57,7 @@ laadFeedLocal(){
 }
 
 like(likedOrNot:number,index:number){
- let matchID=this.feedArray[index]["UserID"];
+ let matchID=this.feedArray[index].UserId;
  let userID=sessionStorage.getItem('userid');
     this.UserService.likef({"userid":userID,"matchid":matchID,"matched":likedOrNot}).subscribe(()=> {
    this.laadFeedLocal();
