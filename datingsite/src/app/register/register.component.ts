@@ -60,6 +60,7 @@ export class RegisterComponent implements OnInit {
         email: this.email,
         password: this.password,
       }).subscribe((data) => {
+        console.log(data)
         if (data.status_message == 'user not found') {
           this.UserService.registerf({
             email: this.email,

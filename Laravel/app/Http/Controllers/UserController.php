@@ -120,7 +120,7 @@ class UserController extends Controller
     }
 
     public function login(request $data){
-       $login = DB::table('users')
+        $login = DB::table('users')
             ->where('email', '=', $data->email)
             ->get();
 
