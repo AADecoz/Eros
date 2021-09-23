@@ -106,7 +106,7 @@ class UserController extends Controller
         User::create([
             'name' => $data->name,
             'email' => $data->email,
-            'password' => $data->password,
+            'password' => Hash::make($data->password),
             'birthday' => $data->birthday,
             'sex'  => $data->sex,
             'preference' => $data->preference,
@@ -133,4 +133,20 @@ class UserController extends Controller
         }
 
     }
+
+    public function passwordVerification(request $data){
+        $login = DB::table('users')
+            ->where('email',"=",$data->email)
+            ->first();
+
+            if(!Hash::check($data->password,$login->password) ){
+                return response()->json([ 'status_message'=>'Wrong password'], 200);
+    
+            } else{
+                return response()->json([ 'status_message'=>'Password correct'], 200);
+    
+            }
+    }
+
+
 }

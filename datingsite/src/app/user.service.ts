@@ -15,6 +15,7 @@ matchUrl="http://localhost/apis/matchAPI.php";
 likeUrl="http://localhost/apis/likeAPI.php";
 saveUrl="http://localhost/apis/save.php";
 updateUrl="http://localhost/apis/updateAPI.php";
+verifyUrl ="http://localhost:8000/api/verify"
   header = {
     'Content-Type': 'application/json',
     'Accept': 'application/json',
@@ -25,6 +26,11 @@ constructor(private http:HttpClient) { }
   registerf(data:object):Observable<any>{
     return this.http.post(this.postUrl,data,{headers: new HttpHeaders(this.header) ,responseType: 'json'});
   }
+
+  verifyf(data:object):Observable<any>{
+    return this.http.post(this.verifyUrl,data,{headers: new HttpHeaders(this.header),responseType:'json'})
+  }
+
   signinf(data:object):Observable<any>{
     return this.http.post(this.loginUrl,data,{responseType:'json'});
   }

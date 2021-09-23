@@ -16,6 +16,7 @@ Route::resource('users', \App\Http\Controllers\UserController::class);
 
 Route::post('/api/register', '\App\Http\Controllers\UserController@register')->name('/api/register');
 Route::post('/api/login', '\App\Http\Controllers\UserController@login')->name('/api/login');
+Route::post('/api/verify', '\App\Http\Controllers\UserController@passwordVerification')->name('/api/verif');
 
 
 Route::get('/', function () {

@@ -135,7 +135,7 @@ class UserSeeder extends Seeder
             User::create([
                 'name' => $faker->name,
                 'email' => $faker->email,
-                'password' => $password,
+                'password' => hash::make('cupido'),
                 'birthday' => $datum,
                 'sex' => $sexOptions[array_rand($sexOptions,1)],
                 'preference' => $preferenceOptions[array_rand($preferenceOptions,1)],
