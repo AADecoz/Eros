@@ -115,6 +115,6 @@ class UserController extends Controller
             'maxAge' => $data->maxAge,
         ]);
 
-        return response()->json(['message' => 'Lekker werk pik!']);
+        return response()->json(['message' => 'Lekker werk pik!'], 201);
     }
 }

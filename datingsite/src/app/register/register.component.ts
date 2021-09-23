@@ -63,12 +63,15 @@ export class RegisterComponent implements OnInit {
         if (data.status_message == 'user not found') {
           this.UserService.registerf({
             email: this.email,
-            username: this.username,
+            name: this.username,
             password: this.password,
             preference: this.preference,
             sex: this.sex,
             birthday: this.birthday,
             area: this.area,
+            intro: '',
+            minAge: this.birthday,
+            maxAge: this.birthday,
           }).subscribe();
           this.router.navigate(['Login']);
         } else {
