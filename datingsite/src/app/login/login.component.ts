@@ -33,6 +33,8 @@ export class LoginComponent implements OnInit {
       console.log(data)
      if(data.status_message=="Wrong password"){
           this.hide2=false;
+       }else if(data.status_message="Email not found"){
+         this.hide=false;
        } else{
         console.log(data);
         sessionStorage.setItem('userid',data.user.UserId);
