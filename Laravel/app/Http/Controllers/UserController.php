@@ -122,7 +122,7 @@ class UserController extends Controller
     public function login(request $data){
         $login = DB::table('users')
             ->where('email', '=', $data->email)
-            ->get();
+            ->first();
 
         if(empty($login)){
             return response()->json(['user' => Null, 'status_message'=>'user not found'], 200);

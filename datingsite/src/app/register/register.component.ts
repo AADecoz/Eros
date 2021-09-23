@@ -70,7 +70,7 @@ export class RegisterComponent implements OnInit {
             sex: this.sex,
             birthday: this.birthday,
             area: this.area,
-            intro: '',
+            intro: 'hello world',
             minAge: this.birthday,
             maxAge: this.birthday,
           }).subscribe();
