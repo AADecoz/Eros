@@ -24,9 +24,14 @@ export class RegisterComponent implements OnInit {
   hideLogin = true;
   constructor(private UserService: UserService, private router: Router) {}
 
+  currentDate : Date =new Date();
+
+
   ngOnInit(): void {
 
+    document.body.className = "backgroundHome";
   }
+
 
   register(form: NgForm) {
     switch (true) {
