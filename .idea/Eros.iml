@@ -119,6 +119,11 @@
       <excludeFolder url="file://$MODULE_DIR$/Laravel/vendor/graham-campbell/result-type" />
       <excludeFolder url="file://$MODULE_DIR$/Laravel/vendor/sebastian/resource-operations" />
       <excludeFolder url="file://$MODULE_DIR$/Laravel/vendor/sebastian/recursion-context" />
+      <excludeFolder url="file://$MODULE_DIR$/Laravel/vendor/doctrine/dbal" />
+      <excludeFolder url="file://$MODULE_DIR$/Laravel/vendor/doctrine/event-manager" />
+      <excludeFolder url="file://$MODULE_DIR$/Laravel/vendor/doctrine/deprecations" />
+      <excludeFolder url="file://$MODULE_DIR$/Laravel/vendor/doctrine/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/Laravel/vendor/reliese/laravel" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -48,15 +48,30 @@ class UserController extends Controller
             if(!empty($login)){
                 if(!Hash::check($data->password,$login->password) ){
                     return response()->json([ 'status_message'=>'Wrong password'], 200);
-        
+
                 } else{
-                    
+
                     return response()->json(['user'=>$login, 'status_message'=>'Password correct'], 200);
-        
+
                 }
         }else{
             return response()->json([ 'status_message'=>'Email not found'], 200);
         }
+    }
+
+    public function update(request $request){
+        User::where('UserId', '=',$request->userid)->update([
+            'name' => $request->username,
+//            'email' => $request->email,
+            'birthday' => $request->age,
+            'sex'  => $request->sex,
+            'preference' => $request->preference,
+            'area' => $request->area,
+            'intro' => $request->intro,
+            'minAge' => $request->minage,
+            'maxAge' => $request->maxage,
+        ]);
+
     }
 
 

@@ -3,14 +3,15 @@
 
 <h2>potential matches</h2>
 
-<div class="container-fluid">
-  <h5 *ngIf=matches>naam={{feedArray[0].name}}</h5>
-  <p *ngIf=matches>Age={{feedArray[0].birthday | dateAge}}</p>
-  <p *ngIf=matches>Area={{feedArray[0].area}}</p>
-  <p *ngIf=matches>Gender={{feedArray[0].sex | gendername}}</p>
-  <img *ngIf=matches [src]=sourceMatch (error)="defaultimg()">
-  <p [hidden]=noMatches>No potential matches found</p>
-  <button *ngIf=matches (click)="like(1)">Like</button>
-  <button *ngIf=matches (click)="like(0)">dislike</button>
+<div *ngIf="matches" class="container-fluid">
+  <h5 >naam={{feedArray[0].name}}</h5>
+  <p >Age={{feedArray[0].birthday | dateAge}}</p>
+  <p >Area={{feedArray[0].area}}</p>
+  <p >Gender={{feedArray[0].sex | gendername}}</p>
+  <img  [src]=sourceMatch (error)="defaultimg()">
+  <button  (click)="like(1)">Like</button>
+  <button  (click)="like(0)">dislike</button>
 
 </div>
+
+<p [hidden]=matches>No potential matches found</p>

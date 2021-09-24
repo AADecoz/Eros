@@ -16,29 +16,27 @@ export class HomescreenComponent implements OnInit {
   age:any;
   feedArray:any=[{}];
   test="test";
-  noMatches=true;
   matches=true;
   ageMatch:any;
   sourceMatch:any;
-  
+
   constructor(private UserService:UserService) { }
 
   ngOnInit(): void {
    this.laadFeed();
-   
+
    document.body.className = "test";
-  
+
   }
 
 
- laadFeed(){ 
+ laadFeed(){
   this.UserService.feedf({"userid":this.userid,"sex":this.sex,"preference":this.preference,"minAge":this.minAge,"maxAge":this.maxAge}).subscribe((data)=> {
     if(data.status_message=="user not found"){
       this.matches=false;
-      this.noMatches=false;
-    }else{ 
-      this.feedArray=data.user; 
-      
+    }else{
+      this.feedArray=data.user;
+
   console.log(data);
       console.log(this.feedArray);
       this.sourceMatch="assets/userprofiles/"+this.feedArray[0].UserId+".jpg";
@@ -48,14 +46,12 @@ export class HomescreenComponent implements OnInit {
 
 laadFeedLocal(){
   this.feedArray.shift();
-  this.sourceMatch="assets/userprofiles/"+this.feedArray[0].UserId+".jpg";
   if(this.feedArray.length==0){
     this.feedArray=[{}];
     this.matches=false;
-    this.noMatches=false;
-  }
+  } else {this.sourceMatch="assets/userprofiles/"+this.feedArray[0].UserId+".jpg";}
 
-  
+
 }
 
 like(likedOrNot:number){
@@ -67,15 +63,15 @@ like(likedOrNot:number){
     })
 }
 
-  
+
  defaultimg(){
   this.sourceMatch="assets/default.png"
-  
- 
+
+
  }
 
 
- 
+
 }
 
 

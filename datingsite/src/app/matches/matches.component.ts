@@ -23,15 +23,16 @@ export class MatchesComponent implements OnInit {
      }else{
        this.noMatch=false;
      }
-     
-     
+
+
   }
-  
+
 loadMatches(){
-  this.UserService.matchesf({"userid":sessionStorage.getItem('userid')}).subscribe((data)=> {
+  this.UserService.matchesf({"userid":sessionStorage.getItem('userid')}).subscribe((data)=>
+  { console.log(data)
     this.matchesArray=data.user;
-   
-    
+
+
 
   })
 }
