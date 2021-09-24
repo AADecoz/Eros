@@ -13,7 +13,7 @@ loginUrl="http://localhost:8000/api/login";
 feedUrl="http://localhost:8000/api/feed";
 matchUrl="http://localhost/apis/matchAPI.php";
 likeUrl="http://localhost/apis/likeAPI.php";
-saveUrl="http://localhost/apis/save.php";
+saveUrl="http://localhost:8000/api/upload";
 updateUrl="http://localhost/apis/updateAPI.php";
 verifyUrl ="http://localhost:8000/api/verify"
   header = {
@@ -44,7 +44,7 @@ constructor(private http:HttpClient) { }
     return this.http.post(this.likeUrl,data,{responseType:'json'});
   }
   savef(data:object):Observable<any>{
-    return this.http.post(this.saveUrl,data,{responseType:'json'})
+    return this.http.post(this.saveUrl,data,{headers: new HttpHeaders(this.header),responseType:'json'})
   }
   updatef(data:object):Observable<any>{
     return this.http.post(this.updateUrl,data,{responseType: 'json'});

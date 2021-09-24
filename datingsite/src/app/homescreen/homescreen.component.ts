@@ -58,6 +58,7 @@ laadFeedLocal(){
 
 like(likedOrNot:number,index:number){
  let matchID=this.feedArray[index].UserId;
+ console.log(matchID)
  let userID=sessionStorage.getItem('userid');
     this.UserService.likef({"userid":userID,"matchid":matchID,"matched":likedOrNot}).subscribe(()=> {
    this.laadFeedLocal();
