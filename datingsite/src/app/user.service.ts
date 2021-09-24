@@ -14,7 +14,7 @@ feedUrl="http://localhost:8000/api/feed";
 matchUrl="http://localhost:8000/api/match";
 likeUrl="http://localhost:8000/api/like";
 saveUrl="http://localhost/apis/save.php";
-updateUrl="http://localhost/apis/updateAPI.php";
+updateUrl="http://localhost:8000/api/update";
 verifyUrl ="http://localhost:8000/api/verify"
   header = {
     'Content-Type': 'application/json',

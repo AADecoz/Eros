@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::post('/api/match', '\App\Http\Controllers\MatchController@showMatches')->name('/api/match');
+Route::post('/api/update', '\App\Http\Controllers\UserController@update')->name('/api/update');
 Route::post('/api/register', '\App\Http\Controllers\UserController@register')->name('/api/register');
 Route::post('/api/like', '\App\Http\Controllers\MatchController@logLike')->name('/api/like');
 Route::post('/api/login', '\App\Http\Controllers\UserController@login')->name('/api/login');
