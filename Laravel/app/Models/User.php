@@ -1,51 +1,72 @@
 <?php
 
+/**
+ * Created by Reliese Model.
+ */
+
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
+use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Model;
 
-class User extends Authenticatable
+/**
+ * Class User
+ * 
+ * @property int $UserId
+ * @property string $name
+ * @property string $email
+ * @property Carbon|null $email_verified_at
+ * @property string $password
+ * @property Carbon $birthday
+ * @property string $sex
+ * @property string $preference
+ * @property string $area
+ * @property string $intro
+ * @property Carbon $minAge
+ * @property Carbon $maxAge
+ * @property string|null $remember_token
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * 
+ * @property Collection|Matching[] $matchings
+ *
+ * @package App\Models
+ */
+class User extends Model
 {
-    use HasApiTokens, HasFactory, Notifiable;
+	protected $table = 'users';
+	protected $primaryKey = 'UserId';
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var string[]
-     */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-        'birthday',
-        'sex',
-        'preference',
-        'area',
-        'intro',
-        'minAge',
-        'maxAge',
-    ];
+	protected $dates = [
+		'email_verified_at',
+		'birthday',
+		'minAge',
+		'maxAge'
+	];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
+	protected $hidden = [
+		'password',
+		'remember_token'
+	];
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+	protected $fillable = [
+		'name',
+		'email',
+		'email_verified_at',
+		'password',
+		'birthday',
+		'sex',
+		'preference',
+		'area',
+		'intro',
+		'minAge',
+		'maxAge',
+		'remember_token'
+	];
+
+	public function matchings()
+	{
+		return $this->hasMany(Matching::class, 'UserId');
+	}
 }

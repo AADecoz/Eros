@@ -29,22 +29,21 @@ export class LoginComponent implements OnInit {
   checkLogin(){
     this.hide=true;
     this.hide2=true;
-    this.UserService.signinf({"email":this.userSign,"password":this.passSign}).subscribe((data)=> {
-      console.log(data.user)
-      if(data.status_message=="user not found"){
-        this.hide=false;
-      } else if(data.user.password!=this.passSign){
+    this.UserService.verifyf({"email":this.userSign,"password":this.passSign}).subscribe((data)=> {
+      console.log(data.status_message)
+     if(data.status_message=="Wrong password"){
           this.hide2=false;
+       }else if(data.status_message=="Email not found"){
+         this.hide=false;
        } else{
-         console.log(data.user)
         sessionStorage.setItem('userid',data.user.UserId);
         sessionStorage.setItem('username',data.user.name);
         sessionStorage.setItem('preference',data.user.preference);
         sessionStorage.setItem('sex',data.user.sex);
         sessionStorage.setItem('age',data.user.birthday);
         sessionStorage.setItem('area',data.user.area);
-        sessionStorage.setItem('minAge',data.user.minage);
-        sessionStorage.setItem('maxAge',data.user.maxage);
+        sessionStorage.setItem('minAge',data.user.minAge);
+        sessionStorage.setItem('maxAge',data.user.maxAge);
         sessionStorage.setItem('intro',data.user.intro);
         this.Router.navigate([""]);
       }
