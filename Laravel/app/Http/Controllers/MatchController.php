@@ -18,4 +18,16 @@ class MatchController extends Controller
 
         return $data;
     }
+
+    public function showMatches(request $data){
+        $match = DB::table('matchings as m1')
+            ->join('matchings as m2', 'm1.MatchId', '=', 'm2.UserId')
+            ->join('users', 'm2.UserId', '=', 'users.UserId' )
+            ->where('m1.UserId', '=', 'm2.MatchId')
+            ->where('m1.matched', '=', '1')
+            ->where('m2.matched', '=', '1')
+            ->where('m1.UserId', '=', $data->userid)
+            ->get();
+        return response()->json(['user' => $match, 'status_message' => 'match found'], 200);
+    }
 }

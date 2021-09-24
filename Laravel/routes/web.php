@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::post('/api/match', '\App\Http\Controllers\MatchController@showMatches')->name('/api/match');
 Route::post('/api/register', '\App\Http\Controllers\UserController@register')->name('/api/register');
 Route::post('/api/like', '\App\Http\Controllers\MatchController@logLike')->name('/api/like');
 Route::post('/api/login', '\App\Http\Controllers\UserController@login')->name('/api/login');
