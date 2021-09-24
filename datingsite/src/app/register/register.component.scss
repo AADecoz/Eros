@@ -1,0 +1,40 @@
+
+input{
+  margin: 0 0 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+  line-height: 38px;
+}
+
+#submitme{
+  margin: 10px 0 0;
+}
+#loginform{
+  margin-top: 20%;
+
+}
+
+label, select{
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+#submitme{
+  border-radius: 10px;
+  width:100%;
+  border:none;
+  color:white;
+  background-color: #e5446d;
+  height:38px;
+
+}
+
+@media (min-width: 900px) {
+  *{left: 275px;}
+}
+
+@media (min-width: 990px) {
+  *{
+    left: 300px;
+  }
+}
