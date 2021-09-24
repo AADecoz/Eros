@@ -33,6 +33,7 @@ export class PreferencesComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(sessionStorage.getItem('userid'));
+    console.log(sessionStorage.getItem('minAge'));
     if (this.preference?.includes('m') == true) {
       this.checkboxFlag1 = true;
     }
@@ -42,10 +43,10 @@ export class PreferencesComponent implements OnInit {
     if (this.preference?.includes('o') == true) {
       this.checkboxFlag3 = true;
     }
-console.log(this.intro)
   if(this.intro=="null"){
     this.intro="";
   } 
+  
   this.minage=this.transformDate(this.min);
   this.maxage=this.transformDate(this.max);
 
