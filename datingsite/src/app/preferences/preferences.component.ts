@@ -32,7 +32,7 @@ export class PreferencesComponent implements OnInit {
   constructor(private UserService: UserService, private router: Router) {}
 
   ngOnInit(): void {
-    console.log(sessionStorage.getItem('maxAge'));
+    console.log(sessionStorage.getItem('userid'));
     if (this.preference?.includes('m') == true) {
       this.checkboxFlag1 = true;
     }
@@ -125,10 +125,8 @@ console.log(this.intro)
     }
   }
 
-   
  defaultimg(){
   this.source="assets/default.png"
   
- 
  }
 }
