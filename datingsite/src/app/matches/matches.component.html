@@ -4,9 +4,9 @@
 
 <h2> matches</h2>
 <div class="container-fluid" *ngFor="let item of matchesArray ">
-  <h5>naam:{{item["Username"]}}</h5>
-  <p>Age:{{item["Age"] | dateAge}}</p>
-  <p>area:{{item["Area"]}}</p>
+  <h5>naam:{{item["name"]}}</h5>
+  <p>Age:{{item["birthday"] | dateAge}}</p>
+  <p>area:{{item["area"]}}</p>
 </div>
 <p *ngIf=noMatch>Geen matches</p>
 <app-footer></app-footer>

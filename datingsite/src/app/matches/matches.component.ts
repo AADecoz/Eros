@@ -18,6 +18,7 @@ export class MatchesComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadMatches();
+   
      if(this.matchesArray.length==0){
        this.noMatch=true;
      }else{
@@ -29,9 +30,9 @@ export class MatchesComponent implements OnInit {
 
 loadMatches(){
   this.UserService.matchesf({"userid":sessionStorage.getItem('userid')}).subscribe((data)=>
-  { console.log(data)
+  { 
     this.matchesArray=data.user;
-
+    console.log(this.matchesArray)
 
 
   })
