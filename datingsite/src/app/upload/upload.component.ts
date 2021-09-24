@@ -47,8 +47,9 @@ export class UploadComponent implements OnInit {
      var id:any=sessionStorage.getItem("userid");
      uploadData.append('myFile',this.selectedFile, id+".jpg");
      console.log(uploadData.get('myFile'));
-     this.UserService.savef(uploadData).subscribe(event =>  {
-       console.log(event)
+     let test = uploadData.get('myFile');
+     this.UserService.savef({"img":test}).subscribe(event =>  {
+       console.log("huh?"+event.status_message)
      });
    this.errortekst="Image uploaded";
        this.extensionCheck=false;

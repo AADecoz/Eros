@@ -49,4 +49,5 @@ constructor(private http:HttpClient) { }
   updatef(data:object):Observable<any>{
     return this.http.post(this.updateUrl,data,{responseType: 'json'});
   }
+  
 }

@@ -61,7 +61,7 @@ class UserController extends Controller
 
     function upload(Request $data){
 
-        return response()->json([ 'huh'=>$data->file(),'status_message'=>'Email not found'], 200);
+        return response()->json([ 'huh'=>$data,'status_message'=>'Email not found'], 200);
 
     }
 
