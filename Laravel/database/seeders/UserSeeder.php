@@ -65,7 +65,7 @@ class UserSeeder extends Seeder
                 'sex' => 'm',
                 'preference' => 'f',
                 'area' => 'Olympus',
-                'intro' => "Do you want to see something hot F0 9F 98 8F ? Cast away by mother and thrown down mount Olympus by Zeus. I have gotten my revenge on my mother by capturing her after being exiled. After my failed relationships, I am now searching for beauty and passion that goes with my arts. Make an offering to me and I will make you magnificent jewellery. Don't worry I won't put it in a box",
+                'intro' => "Do you want to see something hot ? Cast away by mother and thrown down mount Olympus by Zeus. I have gotten my revenge on my mother by capturing her after being exiled. After my failed relationships, I am now searching for beauty and passion that goes with my arts. Make an offering to me and I will make you magnificent jewellery. Don't worry I won't put it in a box",
                 'minAge' =>"2000-01-01" ,
                 'maxAge' =>"1950-01-01" ,
             ]);
