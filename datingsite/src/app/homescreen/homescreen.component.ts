@@ -38,6 +38,8 @@ export class HomescreenComponent implements OnInit {
       this.noMatches=false;
     }else{ 
       this.feedArray=data.user; 
+      
+  console.log(data);
       console.log(this.feedArray);
       this.sourceMatch="assets/userprofiles/"+this.feedArray[0].UserId+".jpg";
     }
@@ -56,14 +58,14 @@ laadFeedLocal(){
   
 }
 
-like(likedOrNot:number,index:number){
- let matchID=this.feedArray[index].UserId;
+like(likedOrNot:number){
+ let matchID=this.feedArray[0].UserId;
  let userID=sessionStorage.getItem('userid');
-    this.UserService.likef({"userid":userID,"matchid":matchID,"matched":likedOrNot}).subscribe(()=> {
-   this.laadFeedLocal();
-
-})
- }
+    this.UserService.likef({"userid":userID,"matchid":matchID,"matched":likedOrNot}).subscribe((data)=> {
+      console.log(data);
+      this.laadFeedLocal();
+    })
+}
 
   
  defaultimg(){

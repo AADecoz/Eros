@@ -11,8 +11,8 @@ path="";
 postUrl="http://localhost:8000/api/register";
 loginUrl="http://localhost:8000/api/login";
 feedUrl="http://localhost:8000/api/feed";
-matchUrl="http://localhost/apis/matchAPI.php";
-likeUrl="http://localhost/apis/likeAPI.php";
+matchUrl="http://localhost:8000/api/match";
+likeUrl="http://localhost:8000/api/like";
 saveUrl="http://localhost/apis/save.php";
 updateUrl="http://localhost/apis/updateAPI.php";
 verifyUrl ="http://localhost:8000/api/verify"
@@ -41,7 +41,7 @@ constructor(private http:HttpClient) { }
     return this.http.post(this.matchUrl,data,{responseType:'json'});
   }
   likef(data:object):Observable<any>{
-    return this.http.post(this.likeUrl,data,{responseType:'json'});
+    return this.http.post(this.likeUrl,data,{headers: new HttpHeaders(this.header) ,responseType: 'json'});
   }
   savef(data:object):Observable<any>{
     return this.http.post(this.saveUrl,data,{responseType:'json'})

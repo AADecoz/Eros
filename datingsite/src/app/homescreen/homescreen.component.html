@@ -10,7 +10,7 @@
   <p *ngIf=matches>Gender={{feedArray[0].sex | gendername}}</p>
   <img *ngIf=matches [src]=sourceMatch (error)="defaultimg()">
   <p [hidden]=noMatches>No potential matches found</p>
-  <button *ngIf=matches (click)="like(1,0)">Like</button>
-  <button *ngIf=matches (click)="like(0,0)">dislike</button>
+  <button *ngIf=matches (click)="like(1)">Like</button>
+  <button *ngIf=matches (click)="like(0)">dislike</button>
 
 </div>
