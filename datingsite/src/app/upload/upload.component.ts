@@ -46,13 +46,13 @@ export class UploadComponent implements OnInit {
      if(this.selectedFile.size<2800000){const uploadData= new FormData();
      var id:any=localStorage.getItem("userid");
      uploadData.append('myFile',this.selectedFile, id+".jpg");
-    //  uploadData.append('_method','PATCH')
-     this.UserService.savef(uploadData).subscribe(event =>  {
-       console.log(event)
+     this.UserService.savef(uploadData).subscribe(event => {
+       
      });
    this.errortekst="Image uploaded";
        this.extensionCheck=false;
        this.hidePreview=true;
+      
    }else{
      this.extensionCheck=false;
      this.errortekst="Uploaded file is too big";
