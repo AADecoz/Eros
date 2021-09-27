@@ -1,4 +1,4 @@
-<nav class="w-100">
+
   <nav [ngStyle]="{'background-color':color}" id="navbar"
     class="navbar navbar-expand-md navbar-light w-100 d-flex justify-content-end p-0"> <a id="logo"
       class="navbar-brand ml-4   " href="#"><img [src]="sourceLogo"></a>
@@ -19,7 +19,7 @@
           <a id="matchLink" class="nav-link test" routerLink="/Matches" *ngIf="loggedIn">Matches</a>
         </li>
         <li class="nav-item  w-100 none ">
-          <a id="matchLink" class="nav-link test" routerLink="/preferences" *ngIf="loggedIn">profile</a>
+          <a id="matchLink" class="nav-link test" routerLink="/profile" *ngIf="loggedIn">Profile</a>
         </li>
         <div id="loginRegCon" class=" d-flex flex-column flex-md-row w-100">
           <li id="loginContainer" class="nav-item p-0 w-100 " *ngIf="loggedOut">

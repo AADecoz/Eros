@@ -6,12 +6,14 @@ import { MatchesComponent } from './matches/matches.component';
 import { RegisterComponent} from "./register/register.component";
 import { UserGuard } from './user.guard';
 import { PreferencesComponent } from './preferences/preferences.component';
+import { ProfileComponent} from "./profile/profile.component";
 
 const routes: Routes = [
   {path: "", component: HomescreenComponent,canActivate:[UserGuard] },
   {path: "Login", component: LoginComponent},
   {path:"Register", component: RegisterComponent},
   {path:"Matches",component: MatchesComponent, canActivate:[UserGuard]},
+  {path:"profile",component: ProfileComponent, canActivate:[UserGuard]},
   {path:"preferences",component: PreferencesComponent,canActivate:[UserGuard]}
 ];
 
