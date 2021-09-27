@@ -9,22 +9,22 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./preferences.component.scss'],
 })
 export class PreferencesComponent implements OnInit {
-  userid = sessionStorage.getItem('userid');
-  username:any = sessionStorage.getItem('username');
-  password = sessionStorage.getItem('password');
-  sex:any = sessionStorage.getItem('sex');
-  preference:any = sessionStorage.getItem('preference');
-  age:any = sessionStorage.getItem('age');
-  area:any = sessionStorage.getItem('area');
+  userid = localStorage.getItem('userid');
+  username:any = localStorage.getItem('username');
+  password = localStorage.getItem('password');
+  sex:any = localStorage.getItem('sex');
+  preference:any = localStorage.getItem('preference');
+  age:any = localStorage.getItem('age');
+  area:any = localStorage.getItem('area');
   minage:any = "";
   maxage:any = "";
-  min:any=sessionStorage.getItem('minAge');
-  max:any=sessionStorage.getItem('maxAge');
-  intro:any= sessionStorage.getItem('intro');
+  min:any=localStorage.getItem('minAge');
+  max:any=localStorage.getItem('maxAge');
+  intro:any= localStorage.getItem('intro');
   checkboxFlag1 = false;
   checkboxFlag2 = false;
   checkboxFlag3 = false;
-  source="assets/userprofiles/"+ sessionStorage.getItem('userid')+".jpg";
+  source="assets/userprofiles/"+ localStorage.getItem('userid')+".jpg";
 
   hide = true;
   hideLogin = true;
@@ -32,8 +32,8 @@ export class PreferencesComponent implements OnInit {
   constructor(private UserService: UserService, private router: Router) {}
 
   ngOnInit(): void {
-    console.log(sessionStorage.getItem('userid'));
-    console.log(sessionStorage.getItem('minAge'));
+    console.log(localStorage.getItem('userid'));
+    console.log(localStorage.getItem('minAge'));
     if (this.preference?.includes('m') == true) {
       this.checkboxFlag1 = true;
     }
@@ -113,14 +113,14 @@ export class PreferencesComponent implements OnInit {
         area: this.area,
         intro: this.intro,
       }).subscribe();
-      sessionStorage.setItem('username',this.username);
-      sessionStorage.setItem('preference',this.preference);
-      sessionStorage.setItem('sex',this.sex);
-      sessionStorage.setItem('age',this.age);
-      sessionStorage.setItem('area',this.area);
-      sessionStorage.setItem('minAge',minAgeString);
-      sessionStorage.setItem('maxAge',maxAgeString);
-      sessionStorage.setItem('intro',this.intro);
+      localStorage.setItem('username',this.username);
+      localStorage.setItem('preference',this.preference);
+      localStorage.setItem('sex',this.sex);
+      localStorage.setItem('age',this.age);
+      localStorage.setItem('area',this.area);
+      localStorage.setItem('minAge',minAgeString);
+      localStorage.setItem('maxAge',maxAgeString);
+      localStorage.setItem('intro',this.intro);
       
 
     }

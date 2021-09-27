@@ -9,32 +9,23 @@ import { UserService } from '../user.service';
 })
 export class MatchesComponent implements OnInit {
 
-  matchesArray=[];
-  username = sessionStorage.getItem('username');
+  matchesArray:Array<any>=['test'];
+  username:string|null = localStorage.getItem('username');
   matchAge:any;
   matchGender:any;
   noMatch:any;
+
   constructor(private UserService:UserService) { }
 
   ngOnInit(): void {
-    this.loadMatches();
-   
-     if(this.matchesArray.length==0){
-       this.noMatch=true;
-     }else{
-       this.noMatch=false;
-     }
-
-
+    this.UserService.matchesf({"userid":localStorage.getItem('userid')}).subscribe((data)=>{ 
+      this.matchesArray=data.user;
+    
+      if(this.matchesArray==null){
+        this.noMatch=true;
+      }else{
+        this.noMatch=false;
+      }
+    })
   }
-
-loadMatches(){
-  this.UserService.matchesf({"userid":sessionStorage.getItem('userid')}).subscribe((data)=>
-  { 
-    this.matchesArray=data.user;
-    console.log(this.matchesArray)
-
-
-  })
-}
 }

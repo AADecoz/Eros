@@ -44,7 +44,7 @@ export class UploadComponent implements OnInit {
   upload(){
     if(this.selectedFile!=undefined&&this.selectedFile!="wrong type"){
      if(this.selectedFile.size<2800000){const uploadData= new FormData();
-     var id:any=sessionStorage.getItem("userid");
+     var id:any=localStorage.getItem("userid");
      uploadData.append('myFile',this.selectedFile, id+".jpg");
      this.UserService.savef(uploadData).subscribe(event => {
        

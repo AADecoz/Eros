@@ -9,7 +9,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent implements OnInit {
-  username = sessionStorage.getItem('username');
+  username = localStorage.getItem('username');
   password = '';
   preference = 'man';
   sex = 'Man';

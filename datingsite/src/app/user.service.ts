@@ -15,12 +15,12 @@ matchUrl="http://localhost:8000/api/match";
 likeUrl="http://localhost:8000/api/like";
 saveUrl="http://localhost/apis/save.php";
 updateUrl="http://localhost:8000/api/update";
-verifyUrl ="http://localhost:8000/api/verify"
-  header = {
-    'Content-Type': 'application/json',
-    'Accept': 'application/json',
-    'Access-Control-Allow-Headers': 'Content-Type'
-  }
+verifyUrl ="http://localhost:8000/api/verify";
+header = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json',
+  'Access-Control-Allow-Headers': 'Content-Type'
+}
 
 constructor(private http:HttpClient) { }
   registerf(data:object):Observable<any>{

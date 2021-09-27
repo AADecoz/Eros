@@ -7,12 +7,12 @@ import { UserService} from "../user.service";
   styleUrls: ['./homescreen.component.scss']
 })
 export class HomescreenComponent implements OnInit {
-  username = sessionStorage.getItem('username');
-  userid = sessionStorage.getItem('userid');
-  sex =sessionStorage.getItem('sex');
-  preference=sessionStorage.getItem('preference');
-  minAge=sessionStorage.getItem('minAge');
-  maxAge=sessionStorage.getItem('maxAge');
+  username = localStorage.getItem('username');
+  userid = localStorage.getItem('userid');
+  sex =localStorage.getItem('sex');
+  preference=localStorage.getItem('preference');
+  minAge=localStorage.getItem('minAge');
+  maxAge=localStorage.getItem('maxAge');
   age:any;
   feedArray:any=[{}];
   test="test";
@@ -37,7 +37,7 @@ export class HomescreenComponent implements OnInit {
     }else{
       this.feedArray=data.user;
 
-  console.log(data);
+  console.log(data.user);
       console.log(this.feedArray);
       this.sourceMatch="assets/userprofiles/"+this.feedArray[0].UserId+".jpg";
     }
@@ -56,7 +56,7 @@ laadFeedLocal(){
 
 like(likedOrNot:number){
  let matchID=this.feedArray[0].UserId;
- let userID=sessionStorage.getItem('userid');
+ let userID=localStorage.getItem('userid');
     this.UserService.likef({"userid":userID,"matchid":matchID,"matched":likedOrNot}).subscribe((data)=> {
       console.log(data);
       this.laadFeedLocal();

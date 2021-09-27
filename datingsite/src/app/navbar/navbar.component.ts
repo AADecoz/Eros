@@ -29,8 +29,8 @@ export class NavbarComponent implements OnInit {
       this.sourceLogo="assets/logoDark.png"
     }
     
-    console.log(sessionStorage.getItem("username"));
-    if(sessionStorage.getItem("username")!=null){
+    console.log(localStorage.getItem("username"));
+    if(localStorage.getItem("username")!=null){
       this.loggedIn=true;
       this.loggedOut=false;
     }else{
@@ -40,7 +40,7 @@ export class NavbarComponent implements OnInit {
   }
 
   logout(){
-    sessionStorage.clear(); 
+    localStorage.clear(); 
    }
    openNav(){
     this.isNavbarCollapsed = !this.isNavbarCollapsed

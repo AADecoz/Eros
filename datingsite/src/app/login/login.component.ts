@@ -36,15 +36,15 @@ export class LoginComponent implements OnInit {
        }else if(data.status_message=="Email not found"){
          this.hide=false;
        } else{
-        sessionStorage.setItem('userid',data.user.UserId);
-        sessionStorage.setItem('username',data.user.name);
-        sessionStorage.setItem('preference',data.user.preference);
-        sessionStorage.setItem('sex',data.user.sex);
-        sessionStorage.setItem('age',data.user.birthday);
-        sessionStorage.setItem('area',data.user.area);
-        sessionStorage.setItem('minAge',data.user.minAge);
-        sessionStorage.setItem('maxAge',data.user.maxAge);
-        sessionStorage.setItem('intro',data.user.intro);
+        localStorage.setItem('userid',data.user.UserId);
+        localStorage.setItem('username',data.user.name);
+        localStorage.setItem('preference',data.user.preference);
+        localStorage.setItem('sex',data.user.sex);
+        localStorage.setItem('age',data.user.birthday);
+        localStorage.setItem('area',data.user.area);
+        localStorage.setItem('minAge',data.user.minAge);
+        localStorage.setItem('maxAge',data.user.maxAge);
+        localStorage.setItem('intro',data.user.intro);
         this.Router.navigate([""]);
       }
 })
