@@ -52,6 +52,7 @@ export class UploadComponent implements OnInit {
    this.errortekst="Image uploaded";
        this.extensionCheck=false;
        this.hidePreview=true;
+      
    }else{
      this.extensionCheck=false;
      this.errortekst="Uploaded file is too big";

@@ -19,7 +19,7 @@ Route::post('/api/like', '\App\Http\Controllers\MatchController@logLike')->name(
 Route::post('/api/login', '\App\Http\Controllers\UserController@login')->name('/api/login');
 Route::post('/api/feed', '\App\Http\Controllers\FeedController@feed')->name('/api/feed');
 Route::post('/api/verify', '\App\Http\Controllers\UserController@passwordVerification')->name('/api/verif');
-
+Route::post('/api/upload', '\App\Http\Controllers\UserController@upload')->name('/api/upload');
 
 Route::get('/', function () {
     return view('welcome');

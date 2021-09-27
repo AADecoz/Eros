@@ -73,6 +73,13 @@ class UserController extends Controller
         ]);
 
     }
+    function upload(Request $data){
+       $file = $data->myFile;
+       $localpath="C:/wamp64/www/";
+        $file->move($localpath.'/Eros/eros/datingsite/src/assets/userprofiles/', $file->getClientOriginalName());
+       
+
+    }
 
 
 }
