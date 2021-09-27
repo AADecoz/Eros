@@ -1,17 +1,38 @@
-<app-navbar></app-navbar>
-<h5 class="container">Welkom, {{username}}</h5>
+<div class="container">
+  <div class="row">
+    <app-navbar class="col-12"></app-navbar>
+    <section class="main col-12">
 
-<h2>potential matches</h2>
+      <h2>potential matches</h2>
 
-<div *ngIf="matches" class="container-fluid">
-  <h5 >naam={{feedArray[0].name}}</h5>
-  <p >Age={{feedArray[0].birthday | dateAge}}</p>
-  <p >Area={{feedArray[0].area}}</p>
-  <p >Gender={{feedArray[0].sex | gendername}}</p>
-  <img  [src]=sourceMatch (error)="defaultimg()">
-  <button  (click)="like(1)">Like</button>
-  <button  (click)="like(0)">dislike</button>
+      <div *ngIf="matches">
+        <div class="row">
+          <div class="col-3">
+            <img [src]="sourceMatch" (error)="defaultimg()" class="img-fluid" />
+          </div>
+          <div class="col-9">
+            
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="d-flex justify-content-between">
+              <div class="info">
+                <h5>{{ feedArray[0].name }}, {{ feedArray[0].birthday | dateAge }}</h5>
+                <p>{{ feedArray[0].area }}</p>
+              </div>
+              <div class="like">
+                <button (click)="like(1)">Like</button>
+                <button (click)="like(0)">dislike</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div [hidden]="matches">
+        <p>No potential matches found</p>
+      </div>
 
+    </section>
+  </div>
 </div>
-
-<p [hidden]=matches>No potential matches found</p>
