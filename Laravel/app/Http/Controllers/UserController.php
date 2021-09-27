@@ -71,7 +71,8 @@ class UserController extends Controller
             'minAge' => $request->minage,
             'maxAge' => $request->maxage,
         ]);
-        
+
+    }
     function upload(Request $data){
        $file = $data->myFile;
        $localpath="C:/wamp64/www/";
