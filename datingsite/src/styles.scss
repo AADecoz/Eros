@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 
-.backgroundHome{
+body{
    background:url("assets/backgroundMobile.jpg") no-repeat fixed;
    background-size:cover;
     height:100vh;
@@ -12,11 +12,14 @@
 
 
 @media only screen and (min-width: 768px) {
-.backgroundHome{
+body{
     background:url("assets/backgroundDesktop.jpg") no-repeat fixed;
     background-size:cover;
-    
-   
+    & .main{
+        background: #fff;
+        border-radius: 30px;
+        padding: 30px
+    }
 }
   
 }
