@@ -13,7 +13,7 @@ loginUrl="http://localhost:8000/api/login";
 feedUrl="http://localhost:8000/api/feed";
 matchUrl="http://localhost:8000/api/match";
 likeUrl="http://localhost:8000/api/like";
-saveUrl="http://localhost/apis/save.php";
+saveUrl="http://localhost:8000/api/upload";
 updateUrl="http://localhost:8000/api/update";
 verifyUrl ="http://localhost:8000/api/verify";
 header = {
@@ -44,9 +44,13 @@ constructor(private http:HttpClient) { }
     return this.http.post(this.likeUrl,data,{headers: new HttpHeaders(this.header) ,responseType: 'json'});
   }
   savef(data:object):Observable<any>{
-    return this.http.post(this.saveUrl,data,{responseType:'json'})
+    return this.http.post(this.saveUrl,data,{headers: new HttpHeaders({
+    'enctype': 'multipart/form-data'})});
   }
+  
+  // {headers:{ 'Content-Type':'file'},responseType:'json'});
   updatef(data:object):Observable<any>{
-    return this.http.post(this.updateUrl,data,{responseType: 'json'});
+    return this.http.post(this.updateUrl,data,{responseType: 'json',});
   }
+  
 }
