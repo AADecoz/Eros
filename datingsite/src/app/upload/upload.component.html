@@ -1,5 +1,5 @@
-<form #f="ngForm">
-  <input type="file" (change)="onFileChanged($event)">
+<form #f="ngForm" enctype="multipart/form-data">
+  <input enctype="multipart/form-data" type="file" (change)="onFileChanged($event)">
   <button (click)="upload()">Upload Image</button>
   <img [src]=source [hidden]=hidePreview>
   <p [hidden]=extensionCheck>{{errortekst}}</p>

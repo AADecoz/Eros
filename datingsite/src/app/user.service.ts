@@ -44,10 +44,13 @@ constructor(private http:HttpClient) { }
     return this.http.post(this.likeUrl,data,{responseType:'json'});
   }
   savef(data:object):Observable<any>{
-    return this.http.post(this.saveUrl,data,{headers: new HttpHeaders(this.header),responseType:'json'})
+    return this.http.post(this.saveUrl,data,{headers: new HttpHeaders({
+    'enctype': 'multipart/form-data'})});
   }
+  
+  // {headers:{ 'Content-Type':'file'},responseType:'json'});
   updatef(data:object):Observable<any>{
-    return this.http.post(this.updateUrl,data,{responseType: 'json'});
+    return this.http.post(this.updateUrl,data,{responseType: 'json',});
   }
   
 }

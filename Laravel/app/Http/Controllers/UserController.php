@@ -60,8 +60,10 @@ class UserController extends Controller
     }
 
     function upload(Request $data){
-
-        return response()->json([ 'huh'=>$data,'status_message'=>'Email not found'], 200);
+       $file = $data->myFile;
+       $localpath="C:/wamp64/www/";
+        $file->move($localpath.'/Eros/eros/datingsite/src/assets/userprofiles/', $file->getClientOriginalName());
+       
 
     }
 
