@@ -71,6 +71,12 @@ class UserController extends Controller
             'minAge' => $request->minage,
             'maxAge' => $request->maxage,
         ]);
+        
+    function upload(Request $data){
+       $file = $data->myFile;
+       $localpath="C:/wamp64/www/";
+        $file->move($localpath.'/Eros/eros/datingsite/src/assets/userprofiles/', $file->getClientOriginalName());
+       
 
     }
 
