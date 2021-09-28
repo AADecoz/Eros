@@ -12,7 +12,8 @@ const routes: Routes = [
   {path: "Login", component: LoginComponent},
   {path:"Register", component: RegisterComponent},
   {path:"Matches",component: MatchesComponent, canActivate:[UserGuard]},
-  {path:"preferences",component: PreferencesComponent,canActivate:[UserGuard]}
+  {path:"preferences",component: PreferencesComponent,canActivate:[UserGuard]},
+  {path: "**",redirectTo:'',pathMatch: 'full',canActivate:[UserGuard]},
 ];
 
 @NgModule({
