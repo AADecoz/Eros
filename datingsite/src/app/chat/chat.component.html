@@ -1,0 +1,18 @@
+
+<p>{{ message.data }}</p>
+
+
+<div class="container-fluid" *ngFor="let item of messages " [ngClass]=" (item.from==name)?'test':'test2' ">
+   <p >naam:{{item.from}}</p>
+   <p>to: {{ item.to }}</p>
+   <p>body: {{ item.body }}</p>
+ 
+ </div>
+
+ <form class="form-group " id="loginform" (submit)="sendChat()">
+
+      <input type="text" class="form-control " id="inputChat" placeholder="Chat" required [(ngModel)]="inputChat"
+        name="inputChat">
+        <input class="" type="submit" id="submitButton" value="submit">
+</form>
+<button (click)="newMessage()"></button>

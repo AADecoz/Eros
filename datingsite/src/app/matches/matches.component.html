@@ -3,10 +3,13 @@
 <h5 class="container-fluid">Welkom, {{username}}</h5>
 
 <h2> matches</h2>
-<div class="container-fluid" *ngFor="let item of matchesArray ">
+<div class="container-fluid" *ngFor="let item of matchesArray " (click)="newData(item['UserId'])">
   <h5>naam:{{item["name"]}}</h5>
   <p>Age:{{item["birthday"] | dateAge}}</p>
-  <p>area:{{item["area"]}}</p>
+  <p>area:{{item["area"]}}</p> 
 </div>
 <p *ngIf=noMatch>Geen matches</p>
+
+
+<app-chat></app-chat>
 <app-footer></app-footer>

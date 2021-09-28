@@ -17,6 +17,7 @@ import { DateAgePipe } from './date-age.pipe';
 import { GendernamePipe } from './gendername.pipe';
 import { PreferencesComponent } from './preferences/preferences.component';
 import { UploadComponent } from './upload/upload.component';
+import { ChatComponent } from './chat/chat.component';
 
 
 
@@ -32,7 +33,8 @@ import { UploadComponent } from './upload/upload.component';
     DateAgePipe,
     GendernamePipe,
     PreferencesComponent,
-    UploadComponent
+    UploadComponent,
+    ChatComponent
 
   ],
   imports: [

@@ -27,7 +27,7 @@ class CreateUsersTable extends Migration
             $table->date('minAge');
             $table->date('maxAge');
             $table->rememberToken();
-            $table->timestamps();
+            $table->timestamps();  
             $table->engine = 'InnoDB';
         });
     }
