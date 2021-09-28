@@ -1,11 +1,7 @@
-*{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  font-style: myriad;
-  font-weight: 500;
+.nabvar{
+  width: 100%;
 }
+
 #logo{
   margin-left:1rem;
   margin-right: auto;
@@ -94,7 +90,7 @@ ul{
   }
 
   #homeLink{
-    // color:white;
+    color:white;
   }
 }
 

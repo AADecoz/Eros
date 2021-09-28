@@ -8,8 +8,8 @@ use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
-class UserController extends Controller
-{
+class UserController extends Controller{
+
     public function register(request $data){
         User::create([
             'name' => $data->name,
@@ -23,7 +23,6 @@ class UserController extends Controller
             'minAge' => $data->minAge,
             'maxAge' => $data->maxAge,
         ]);
-
         return response()->json(['message' => 'user created'], 201);
     }
 
@@ -31,13 +30,10 @@ class UserController extends Controller
         $login = DB::table('users')
             ->where('email', '=', $data->email)
             ->first();
-
         if(empty($login)){
             return response()->json(['user' => Null, 'status_message'=>'user not found'], 200);
-
         } else{
             return response()->json(['user' => $login, 'status_message'=>'user found'], 200);
-
         }
     }
 
@@ -45,16 +41,13 @@ class UserController extends Controller
         $login = DB::table('users')
             ->where('email',"=",$data->email)
             ->first();
-            if(!empty($login)){
-                if(!Hash::check($data->password,$login->password) ){
-                    return response()->json([ 'status_message'=>'Wrong password'], 200);
-
-                } else{
-
-                    return response()->json(['user'=>$login, 'status_message'=>'Password correct'], 200);
-
-                }
-        }else{
+        if(!empty($login)){
+            if(!Hash::check($data->password,$login->password) ){
+                return response()->json([ 'status_message'=>'Wrong password'], 200);
+            } else {
+                return response()->json(['user'=>$login, 'status_message'=>'Password correct'], 200);
+            }
+        } else {
             return response()->json([ 'status_message'=>'Email not found'], 200);
         }
     }
@@ -62,7 +55,6 @@ class UserController extends Controller
     public function update(request $request){
         User::where('UserId', '=',$request->userid)->update([
             'name' => $request->username,
-//            'email' => $request->email,
             'birthday' => $request->age,
             'sex'  => $request->sex,
             'preference' => $request->preference,
@@ -71,16 +63,12 @@ class UserController extends Controller
             'minAge' => $request->minage,
             'maxAge' => $request->maxage,
         ]);
-
     }
+
     function upload(Request $data){
-       $file = $data->myFile;
-       $localpath="C:/wamp64/www/";
+        $file = $data->myFile;
+        $localpath="C:/wamp64/www/";
         $file->move($localpath.'/Eros/eros/datingsite/src/assets/userprofiles/', $file->getClientOriginalName());
-       
-
     }
-
-
 }
 
