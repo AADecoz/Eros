@@ -3,14 +3,16 @@
 <h5 class="container-fluid">Welkom, {{username}}</h5>
 
 <h2> matches</h2>
-<div class="container-fluid" *ngFor="let item of matchesArray " (click)="newData(item['UserId'])">
-  <h5>naam:{{item["name"]}}</h5>
-  <p>Age:{{item["birthday"] | dateAge}}</p>
-  <p>area:{{item["area"]}}</p> 
-  <button (click)="deleteMatch(item['UserId'])">X</button>
+<div *ngIf="loaded">
+  <div  class="container-fluid" *ngFor="let item of matchesArray " (click)="newData(item['UserId'])">
+    <h5>naam:{{item["name"]}}</h5>
+    <p>Age:{{item["birthday"] | dateAge}}</p>
+    <p>area:{{item["area"]}}</p> 
+    <button (click)="deleteMatch(item['UserId'])">X</button>
+  </div>
 </div>
 <p *ngIf=noMatch>Geen matches</p>
+<div *ngIf="loaded==false" class="loader"></div>
 
-
-<app-chat></app-chat>
+<app-chat *ngIf="loaded"></app-chat>
 <app-footer></app-footer>

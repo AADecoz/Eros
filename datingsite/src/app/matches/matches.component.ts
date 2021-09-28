@@ -15,6 +15,7 @@ export class MatchesComponent implements OnInit {
   matchAge:any;
   matchGender:any;
   noMatch:any;
+  loaded:boolean=false;
 
   message!:object;
   subscription!: Subscription;
@@ -31,6 +32,7 @@ export class MatchesComponent implements OnInit {
         this.noMatch=false;
         this.UserService.changeData({"id":this.matchesArray[0].id})
       }
+      this.loaded=true;
      
     })
     this.subscription = this.UserService.currentMessage.subscribe(message => this.message = message)
