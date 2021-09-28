@@ -1,39 +1,107 @@
+<section class="navigation container-fluid">
+  <div class="row">
+    <div class="col-12">
+<nav
+  [ngStyle]="{ 'background-color': color }"
+  id="navbar"
+  class="
+    navbar navbar-expand-md navbar-light
+    w-100
+    d-flex
+    justify-content-between
+  "
+>
+  <a id="logo" class="navbar-brand" href="#"><img [src]="sourceLogo" /></a>
+  <button
+    class="mt-3 mb-3 navbar-toggler navbar-toggler-right"
+    type="button"
+    (click)="openNav()"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-  <nav [ngStyle]="{'background-color':color}" id="navbar"
-    class="navbar navbar-expand-md navbar-light w-100 d-flex justify-content-end p-0"> <a id="logo"
-      class="navbar-brand ml-4   " href="#"><img [src]="sourceLogo"></a>
-    <button class="mr-4 mt-3 mb-3 navbar-toggler navbar-toggler-right" type="button" (click)="openNav()"
-      data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-      aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-
-    <div [ngbCollapse]="isNavbarCollapsed" class="navbar-collapse" id="navbarSupportedContent">
-
-      <ul class="navbar-nav mr-auto w-100 d-flex justify-content-center flex-column flex-md-row  ">
-        <li class="nav-item  w-100 "> <a id="homeLink" class="nav-link " routerLink="">Home
-          </a>
+  <div
+    [ngbCollapse]="isNavbarCollapsed"
+    class="navbar-collapse"
+    id="navbarSupportedContent"
+  >
+    <ul
+      class="
+        navbar-nav
+        w-100
+        mr-auto
+        d-flex
+        justify-content-between
+        flex-column flex-md-row
+      "
+    >
+      <div class="menu">
+        <li class="navbar-collapse-list-menu-item">
+          <a
+            class="navbar-collapse-list-menu-item-link"
+            routerLink=""
+            >Home</a
+          >
         </li>
-        <li class="nav-item  w-100 none ">
-          <a id="matchLink" class="nav-link test" routerLink="/Matches" *ngIf="loggedIn">Matches</a>
+        <li class="navbar-collapse-list-menu-item none">
+          <a
+            class="navbar-collapse-list-menu-item-link"
+            routerLink="/Matches"
+            *ngIf="loggedIn"
+            >Matches</a
+          >
         </li>
-        <li class="nav-item  w-100 none ">
-          <a id="matchLink" class="nav-link test" routerLink="/preferences" *ngIf="loggedIn">profile</a>
+        <li class="navbar-collapse-list-menu-item w-100 none">
+          <a
+            class="navbar-collapse-list-menu-item-link"
+            routerLink="/preferences"
+            *ngIf="loggedIn"
+            >profile</a
+          >
         </li>
-        <div id="loginRegCon" class=" d-flex flex-column flex-md-row w-100">
-          <li id="loginContainer" class="nav-item p-0 w-100 " *ngIf="loggedOut">
-            <a class="nav-link w-100 " routerLink="/Login" id="loginLink">Log in</a>
-          </li>
-
-          <li class="nav-item  " *ngIf="loggedOut" id="registerContainer">
-            <a id="registerLink" class="nav-link text-white w-100" routerLink="/Register">Register</a>
-          </li>
-        </div>
-        <li class="nav-item " id="logoutContainer" *ngIf="loggedIn">
-          <a id="logoutLink" class="nav-link " routerLink="/Login" (click)="logout()">Log out</a>
+      </div>
+      <div
+        class="actions d-flex flex-column flex-md-row justify-content-end w-100"
+      >
+        <li
+          class="navbar-collapse-list-actions-item button--white"
+          *ngIf="loggedOut"
+        >
+          <a
+            class="navbar-collapse-list-menu-item-link w-100"
+            routerLink="/Login"
+            >Log in</a
+          >
         </li>
 
-      </ul>
-
-    </div>
+        <li
+          class="navbar-collapse-list-actions-item button--red"
+          *ngIf="loggedOut"
+        >
+          <a class="navbar-collapse-list-menu-item-link" routerLink="/Register"
+            >Register</a
+          >
+        </li>
+        <li 
+          class="navbar-collapse-list-actions-item button--red"
+          *ngIf="loggedIn"
+        >
+          <a
+            class="navbar-collapse-list-menu-item-link"
+            routerLink="/Login"
+            (click)="logout()"
+            >Log out</a
+          >
+        </li>
+      </div>
+    </ul>
+  </div>
+</nav>
+</div>
+</div>
+</section>

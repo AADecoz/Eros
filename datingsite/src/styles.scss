@@ -1,12 +1,63 @@
 /* You can add global styles to this file, and also import other style files */
+:root{
+    --pri: #e5446d;
+    --sec: #64abc1;
+    --bg: #fff;
+    --body: #595959;
+}
 
 
+
+/* base */@at-root
 body{
    background:url("assets/backgroundMobile.jpg") no-repeat fixed;
    background-size:cover;
     height:100vh;
     margin:0px;
     padding:0px;
+    & .main{
+        background: #fff;
+        border-radius: 30px;
+        padding: 30px;
+    }
+}
+
+.container-fluid{
+    max-width: 1170px;
+}
+
+.button--white, .button--red{
+    background: var(--bg);
+    line-height: 40px;
+    height: 40px;
+    border-radius: 40px;
+    &:hover{
+        background: var(--pri);
+    }
+    
+    & a{
+        padding: 8px 35px;
+        color: var(--pri);
+        &:hover{
+            color: var(--bg);
+            text-decoration: none;
+        }
+    }
+}
+
+.button--red{
+    background: var(--pri);
+        &:hover{
+            background: var(--bg);
+        }
+
+    & a{
+        color: var(--bg);
+        &:hover{
+            color: var(--pri);
+            text-decoration: none;
+        }
+    } 
 }
 
 .like, .dislike{
@@ -21,15 +72,14 @@ body{
 }
 
 @media only screen and (min-width: 768px) {
-body{
-    background:url("assets/backgroundDesktop.jpg") no-repeat fixed;
-    background-size:cover;
-    & .main{
-        background: #fff;
-        border-radius: 30px;
-        padding: 30px
+
+    body{
+        background:url("assets/backgroundDesktop.jpg") no-repeat fixed;
+        background-size:cover;
     }
-}
+    .button--white, .button--red{
+        margin: 0 0 0 20px;
+    }
   
 }
 
