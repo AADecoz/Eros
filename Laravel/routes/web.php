@@ -22,6 +22,7 @@ Route::post('/api/verify', '\App\Http\Controllers\UserController@passwordVerific
 Route::post('/api/upload', '\App\Http\Controllers\UserController@upload')->name('/api/upload');
 Route::post('/api/showChat', '\App\Http\Controllers\chatController@showChat')->name('/api/showChat');
 Route::post('/api/sendChat', '\App\Http\Controllers\chatController@sendChat')->name('/api/send');
+Route::post('/api/deleteMatch', '\App\Http\Controllers\matchController@deleteMatch')->name('/api/deleteMatch');
 
 Route::get('/', function () {
     return view('welcome');

@@ -23,12 +23,13 @@ export class MatchesComponent implements OnInit {
   ngOnInit(): void {
     this.UserService.matchesf({"userid":localStorage.getItem('userid')}).subscribe((data)=>{ 
       this.matchesArray=data.user;
-      this.UserService.changeData({"id":this.matchesArray[0].id})
-      console.log(this.matchesArray[0].id)
+      
+      console.log("matcharray=" + this.matchesArray)
       if(this.matchesArray==null){
         this.noMatch=true;
       }else{
         this.noMatch=false;
+        this.UserService.changeData({"id":this.matchesArray[0].id})
       }
      
     })
@@ -37,8 +38,15 @@ export class MatchesComponent implements OnInit {
   }
     
      newData(id:any) {
-    
      this.UserService.changeData({"id":id})
-     console.log(this.message); 
   }
+
+  deleteMatch(id:string){
+    this.UserService.deleteMatchf({"userid":localStorage.getItem('userid'),"matchid":id}).subscribe(()=>{ 
+      this.ngOnInit();
+    });
+    
+  }
+
+ 
 }

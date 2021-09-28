@@ -7,6 +7,7 @@
   <h5>naam:{{item["name"]}}</h5>
   <p>Age:{{item["birthday"] | dateAge}}</p>
   <p>area:{{item["area"]}}</p> 
+  <button (click)="deleteMatch(item['UserId'])">X</button>
 </div>
 <p *ngIf=noMatch>Geen matches</p>
 

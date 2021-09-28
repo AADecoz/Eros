@@ -20,6 +20,7 @@ updateUrl="http://localhost:8000/api/update";
 verifyUrl ="http://localhost:8000/api/verify";
 showChatUrl="http://localhost:8000/api/showChat";
 sendChatUrl="http://localhost:8000/api/sendChat";
+deleteMatchUrl="http://localhost:8000/api/deleteMatch"
 header = {
   'Content-Type': 'application/json',
   'Accept': 'application/json',
@@ -62,6 +63,10 @@ constructor(private http:HttpClient) { }
 
   sendChatf(data:object):Observable<any>{
     return this.http.post(this.sendChatUrl,data,{responseType:'json'});
+  }
+
+  deleteMatchf(data:object):Observable<any>{
+    return this.http.post(this.deleteMatchUrl,data,{responseType:'json'});
   }
 
   private messageSource = new BehaviorSubject<object>({"id":"test" });
