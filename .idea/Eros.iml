@@ -70,7 +70,7 @@
       <excludeFolder url="file://$MODULE_DIR$/Laravel/vendor/symfony/polyfill-intl-idn" />
       <excludeFolder url="file://$MODULE_DIR$/Laravel/vendor/psr/http-client" />
       <excludeFolder url="file://$MODULE_DIR$/Laravel/vendor/symfony/polyfill-php73" />
-      <excludeFolder url="file://$MODULE_DIR$/Laravel/vendor/psr/container" />
+      <excludeFolder url="file://$MODULE_DIR$/Laravel/vendor/psr/container-fluid" />
       <excludeFolder url="file://$MODULE_DIR$/Laravel/vendor/symfony/event-dispatcher-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/Laravel/vendor/psr/http-factory" />
       <excludeFolder url="file://$MODULE_DIR$/Laravel/vendor/symfony/error-handler" />

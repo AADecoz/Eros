@@ -6,6 +6,9 @@
     --body: #595959;
 }
 
+
+
+/* base */@at-root
 body{
    background:url("assets/backgroundMobile.jpg") no-repeat fixed;
    background-size:cover;
@@ -19,20 +22,21 @@ body{
     }
 }
 
-/* base */@at-root
+.container-fluid{
+    max-width: 1170px;
+}
 
 .button--white, .button--red{
     background: var(--bg);
     line-height: 40px;
     height: 40px;
     border-radius: 40px;
-    margin: 0 0 0 20px;
     &:hover{
         background: var(--pri);
     }
     
     & a{
-        padding: 0 35px;
+        padding: 8px 35px;
         color: var(--pri);
         &:hover{
             color: var(--bg);
@@ -43,10 +47,16 @@ body{
 
 .button--red{
     background: var(--pri);
+        &:hover{
+            background: var(--bg);
+        }
 
     & a{
-        padding: 0 35px;
         color: var(--bg);
+        &:hover{
+            color: var(--pri);
+            text-decoration: none;
+        }
     } 
 }
 
@@ -66,6 +76,9 @@ body{
     body{
         background:url("assets/backgroundDesktop.jpg") no-repeat fixed;
         background-size:cover;
+    }
+    .button--white, .button--red{
+        margin: 0 0 0 20px;
     }
   
 }

@@ -1,0 +1,51 @@
+
+.navigation .col-12{
+  padding: 0;
+}
+
+.navbar{
+  width: 100%;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: 500;
+
+  & .menu, .actions{
+    display: block;
+    justify-content: start;
+    align-items: center;
+    list-style: none;
+    width: 100%;
+  }
+
+  & .menu li{
+    width: 100%;
+    
+    & a{
+      color: var(--pri);
+      width: 100%;
+      display: inline-block;
+      text-align: center;
+      &:hover{
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .navbar .menu{
+    display: flex;
+
+    
+    & li{
+      width: auto;
+      padding: 0 35px;
+      
+      & a{
+        color: var(--bg);
+        width: auto;
+
+  }
+}
+  }}
+
