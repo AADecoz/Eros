@@ -24,7 +24,7 @@ export class ChatComponent implements OnInit {
      
   setInterval(() => {
     this.newMessage(); 
-  }, 5000);
+  }, 2500);
   }
 
   newMessage() {

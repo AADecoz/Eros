@@ -22,6 +22,7 @@ class chatController extends Controller
         ->where('to_id',$idConv)
         ->orWhere('to_id',$id)
         ->where('from_id',$idConv)
+        ->orderBy('chats.created_at','asc')
         ->get();
         
         if(count($messages)==0){
