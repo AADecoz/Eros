@@ -19,6 +19,7 @@ export class HomescreenComponent implements OnInit {
   matches=true;
   ageMatch:any;
   sourceMatch:any;
+  loading:boolean=false;
 
   constructor(private UserService:UserService) { }
 
@@ -36,11 +37,9 @@ export class HomescreenComponent implements OnInit {
       this.matches=false;
     }else{
       this.feedArray=data.user;
-
-  console.log(data.user);
-      console.log(this.feedArray);
       this.sourceMatch="assets/userprofiles/"+this.feedArray[0].UserId+".jpg";
     }
+    this.loading=true;
  })
 }
 

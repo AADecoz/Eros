@@ -904,7 +904,7 @@
                 "nesbot/carbon": "^2.31",
                 "opis/closure": "^3.6",
                 "php": "^7.3|^8.0",
-                "psr/container": "^1.0",
+                "psr/container-fluid": "^1.0",
                 "psr/simple-cache": "^1.0",
                 "ramsey/uuid": "^4.0",
                 "swiftmailer/swiftmailer": "^6.0",
@@ -925,7 +925,7 @@
                 "tightenco/collect": "<5.5.33"
             },
             "provide": {
-                "psr/container-implementation": "1.0"
+                "psr/container-fluid-implementation": "1.0"
             },
             "replace": {
                 "illuminate/auth": "self.version",
@@ -935,7 +935,7 @@
                 "illuminate/collections": "self.version",
                 "illuminate/config": "self.version",
                 "illuminate/console": "self.version",
-                "illuminate/container": "self.version",
+                "illuminate/container-fluid": "self.version",
                 "illuminate/contracts": "self.version",
                 "illuminate/cookie": "self.version",
                 "illuminate/database": "self.version",
@@ -2048,16 +2048,16 @@
             "time": "2021-08-28T21:27:29+00:00"
         },
         {
-            "name": "psr/container",
+            "name": "psr/container-fluid",
             "version": "1.1.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/php-fig/container.git",
+                "url": "https://github.com/php-fig/container-fluid.git",
                 "reference": "8622567409010282b7aeebe4bb841fe98b58dcaf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/container/zipball/8622567409010282b7aeebe4bb841fe98b58dcaf",
+                "url": "https://api.github.com/repos/php-fig/container-fluid/zipball/8622567409010282b7aeebe4bb841fe98b58dcaf",
                 "reference": "8622567409010282b7aeebe4bb841fe98b58dcaf",
                 "shasum": ""
             },
@@ -2067,7 +2067,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Psr\\Container\\": "src/"
+                    "Psr\\container-fluid\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -2080,18 +2080,18 @@
                     "homepage": "https://www.php-fig.org/"
                 }
             ],
-            "description": "Common Container Interface (PHP FIG PSR-11)",
-            "homepage": "https://github.com/php-fig/container",
+            "description": "Common container-fluid Interface (PHP FIG PSR-11)",
+            "homepage": "https://github.com/php-fig/container-fluid",
             "keywords": [
                 "PSR-11",
-                "container",
-                "container-interface",
-                "container-interop",
+                "container-fluid",
+                "container-fluid-interface",
+                "container-fluid-interop",
                 "psr"
             ],
             "support": {
-                "issues": "https://github.com/php-fig/container/issues",
-                "source": "https://github.com/php-fig/container/tree/1.1.1"
+                "issues": "https://github.com/php-fig/container-fluid/issues",
+                "source": "https://github.com/php-fig/container-fluid/tree/1.1.1"
             },
             "time": "2021-03-05T17:36:06+00:00"
         },
@@ -4624,7 +4624,7 @@
             },
             "require": {
                 "php": ">=7.2.5",
-                "psr/container": "^1.1"
+                "psr/container-fluid": "^1.1"
             },
             "suggest": {
                 "symfony/service-implementation": ""
@@ -5995,7 +5995,7 @@
             },
             "require": {
                 "php": "^7.1 || ^8.0",
-                "psr/container": "^1.0 || ^2.0",
+                "psr/container-fluid": "^1.0 || ^2.0",
                 "symfony/deprecation-contracts": "^2.2"
             },
             "conflict": {

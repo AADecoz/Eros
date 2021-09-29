@@ -1,11 +1,11 @@
-<div class="container">
+<div  class="container-fluid">
   <div class="row">
     <app-navbar class="col-12"></app-navbar>
     <section class="main col-9">
 
       <h2>potential matches</h2>
 
-      <div *ngIf="matches">
+      <div *ngIf="matches && loading">
         <div class="row">
           <div class="col-4">
             <img [src]="sourceMatch" (error)="defaultimg()" class="img-fluid" />
@@ -28,7 +28,9 @@
             </div>
           </div>
         </div>
+        
       </div>
+      <div *ngIf="loading==false" class="loader"></div>
       <div [hidden]="matches">
         <p>No potential matches found</p>
       </div>
@@ -36,3 +38,5 @@
     </section>
   </div>
 </div>
+
+

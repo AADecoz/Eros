@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Matching;
 use Illuminate\Support\Facades\DB;
 use http\Message;
+use App\Models\chat;
 
 class MatchController extends Controller
 {
@@ -35,5 +36,16 @@ class MatchController extends Controller
               return response()->json(['user' => $match, 'status_message' =>"Matches found"], 200);
         } 
       
+    }
+
+    public function deleteMatch(request $data){
+        Matching::where('UserId',$data->userid)->where('MatchId',$data->matchid)->Update([
+            'UserId'=>$data->userid,
+            'MatchId'=>$data->matchid,
+            'matched'=>0
+        ]);
+
+        Chat::where('from_id',$data->userid)->where('to_id',$data->matchid)->orWhere('from_id',$data->matchid)->where('to_id',$data->userid)->delete();
+
     }
 }
