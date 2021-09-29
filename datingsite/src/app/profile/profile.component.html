@@ -2,9 +2,30 @@
 
 
 
-<div class="main container-fluid">
-  <img class="w-100" src="" alt="">
-  <h5 class="font-weight-bolder">{{username}}, {{age}}</h5>
+<div class="main container-fluid w-75">
+    <div class="d-lg-inline-flex flex-nowrap w-100">
+      <img class="w-100" src="/assets/default.png" alt="">
+      <div class="d-md-inline-flex row-cols-3 flex-wrap justify-content-around m-1">
+        <img class="w-100" src="/assets/default.png" alt="">
+        <img class="w-100" src="/assets/default.png" alt="">
+        <img class="w-100" src="/assets/default.png" alt="">
+        <img class="w-100" src="/assets/default.png" alt="">
+        <img class="w-100" src="/assets/default.png" alt="">
+        <img class="w-100" src="/assets/default.png" alt="">
+      </div>
+    </div>
+  <div class="d-flex">
+    <h5 class="font-weight-bolder align-content-start">{{username}}, {{age}}</h5>
+      <div class="d-inline-flex flex-column w-50 align-items-end">
+        <h5 class="font-weight-bold">About</h5>
+          <p>
+            {{intro}} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad architecto, assumenda eius explicabo facilis
+            fugiat incidunt, minus natus, nostrum optio qui repellendus voluptatibus. Amet asperiores dolorum fugiat magnam.
+            Consequuntur, pariatur?
+          </p>
+      </div>
+  </div>
+
 </div>
 
 <app-footer></app-footer>
