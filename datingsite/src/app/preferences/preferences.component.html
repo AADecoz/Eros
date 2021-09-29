@@ -1,3 +1,4 @@
+
 <section class="main container-fluid">
   <form class="form-group container-fluid" (submit)="update(myForm)" #myForm="ngForm">
 
@@ -35,7 +36,6 @@
 
     <label>Intro</label>
     <input type="text" class="form-control" required [(ngModel)]="intro" name="intro">
-
 
     <p>Profile pic</p>
     <img [src]=source (error)="defaultimg()">

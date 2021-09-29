@@ -1,40 +1,57 @@
 <div  class="container-fluid">
   <div class="row">
     <app-navbar class="col-12"></app-navbar>
-    <section class="main col-9">
-
-      <h2>potential matches</h2>
-
-      <div *ngIf="matches && loading">
-        <div class="row">
-          <div class="col-4">
-            <img [src]="sourceMatch" (error)="defaultimg()" class="img-fluid" />
-          </div>
-          <div class="col-8">
-            
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-12">
-            <div class="d-flex justify-content-between">
-              <div class="info">
-                <h5>{{ feedArray[0].name }}, {{ feedArray[0].birthday | dateAge }}</h5>
-                <p>{{ feedArray[0].area }}</p>
+    <section class="col-12 col-lg-9">
+      <div class="main">
+        <h2>Potential matches</h2>
+        <div *ngIf="matches && loading">
+          <div class="row">
+            <div class="col-6">
+              <img [src]="sourceMatch" (error)="defaultimg()" class="img-fluid" />
+            </div>
+            <div class="col-6 flex-column justify-content-between d-flex">
+              <div class="gallery row">
+                <div class="col-4"><img [src]="sourceMatch" (error)="defaultimg()" class="img-fluid" /></div>
+                <div class="col-4">
+              <img [src]="sourceMatch" (error)="defaultimg()" class="img-fluid" /></div>
+                <div class="col-4">
+              <img [src]="sourceMatch" (error)="defaultimg()" class="img-fluid" /></div>
+                <div class="col-4">
+              <img [src]="sourceMatch" (error)="defaultimg()" class="img-fluid" /></div>
+                <div class="col-4">
+              <img [src]="sourceMatch" (error)="defaultimg()" class="img-fluid" /></div>
+                <div class="col-4">
+              <img [src]="sourceMatch" (error)="defaultimg()" class="img-fluid" /></div>
               </div>
-              <div class="likeicons">
-                <button class="like" (click)="like(1)"></button>
-                <button class="dislike" (click)="like(0)"></button>
+              <div class="intro row">
+                <h5>About</h5>
+                <p>{{ feedArray[0].intro }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="d-flex justify-content-between">
+                <div class="info">
+                  <h5>{{ feedArray[0].name }}, {{ feedArray[0].birthday | dateAge }}</h5>
+                  <p>{{ feedArray[0].area }}</p>
+                </div>
+                <div class="likeicons">
+                  <button class="like" (click)="like(1)"></button>
+                  <button class="dislike" (click)="like(0)"></button>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        
+        <div *ngIf="loading==false" class="loader"></div>
+        <div [hidden]="matches">
+          <p>No potential matches found</p>
+        </div>
       </div>
-      <div *ngIf="loading==false" class="loader"></div>
-      <div [hidden]="matches">
-        <p>No potential matches found</p>
-      </div>
-
+    </section>
+    <section class="prime col-12 col-lg-3">
+    <app-preferences></app-preferences>
     </section>
   </div>
 </div>

@@ -3,40 +3,72 @@
     --pri: #e5446d;
     --sec: #64abc1;
     --bg: #fff;
-    --body: #595959;
+    --head: #595959;
+    --body: #8a8a8a;
 }
 
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
 
 
 /* base */@at-root
-body{
-   background:url("assets/backgroundMobile.jpg") no-repeat fixed;
-   background-size:cover;
-    height:100vh;
-    margin:0px;
-    padding:0px;
-    & .main{
-        background: #fff;
-        border-radius: 30px;
-        padding: 30px;
-    }
+
+*{
+    font-family: 'Myriad', 'Myriad Pro', sans-serif;
+    color: var(--body);
+    font-size: 10px;
+    line-height: 15px;
 }
 
-.container-fluid{
-    max-width: 1170px;
-}
+body{
+    background:url("assets/backgroundMobile.jpg") no-repeat fixed;
+    background-size:cover;
+     height:100vh;
+     margin:0px;
+     padding:0px;
+     & .main{
+         background: #fff;
+         border-radius: 30px;
+         padding: 30px;
+     }
+ }
+ 
+ .container-fluid{
+     max-width: 1170px;
+ }
+ 
+ h1, h2,h3,h4,h5,h6{
+     color: var(--head);
+     font-size: 3em;
+ }
+ h5{
+     font-size: 1.6em;
+ }
+ p{
+    font-size: 1.4em;
+ }
 
 .button--white, .button--red{
     background: var(--bg);
-    line-height: 40px;
     height: 40px;
+    border: 0;
     border-radius: 40px;
     &:hover{
         background: var(--pri);
     }
+
+    &.last{
+        margin: 0 0 0 20px;
+    }
     
     & a{
-        padding: 8px 35px;
+        font-size: 1.6em;
+        line-height: 40px;
+        padding: 12px 35px;
         color: var(--pri);
         &:hover{
             color: var(--bg);
@@ -63,12 +95,28 @@ body{
 .like, .dislike{
     border: 0;
     padding:0;
-    background: #fff url(/assets/img/button_like.png);
+    background:url(/assets/img/button_like.png);
     width: 36px;
     height: 36px;
 }
 .dislike{
-    background: #fff url(/assets/img/button_dislike.png);
+    background: url(/assets/img/button_dislike.png);
+
+    &--small{
+        background: url(/assets/img/button_dislike.png);
+        background-size: 100%;
+        width: 15px;
+        height: 15px;
+        border: 0;
+    }
+}
+.icon-area{
+    background: url(/assets/img/button_area.png) no-repeat;
+    display: inline-block;
+    width: 10px;
+    height: 15px;
+    margin: 0 5px 0 0;
+
 }
 
 @media only screen and (min-width: 768px) {
@@ -76,15 +124,6 @@ body{
     body{
         background:url("assets/backgroundDesktop.jpg") no-repeat fixed;
         background-size:cover;
-    }
-    .button--white, .button--red{
-        margin: 0 0 0 20px;
-    }
-  
+    }  
 }
 
-/* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';
-
-/* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';

@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./matches.component.scss']
 })
 export class MatchesComponent implements OnInit {
-
+  userid:any = localStorage.getItem('userid');
   matchesArray:Array<any>=['test'];
   username:string|null = localStorage.getItem('username');
   matchAge:any;
@@ -24,23 +24,22 @@ export class MatchesComponent implements OnInit {
   ngOnInit(): void {
     this.UserService.matchesf({"userid":localStorage.getItem('userid')}).subscribe((data)=>{ 
       this.matchesArray=data.user;
-      
-      console.log("matcharray=" + this.matchesArray)
       if(this.matchesArray==null){
         this.noMatch=true;
       }else{
         this.noMatch=false;
-        this.UserService.changeData({"id":this.matchesArray[0].id})
+        this.UserService.changeData({"id":this.matchesArray[0].id,"name":this.matchesArray[0].name})
       }
       this.loaded=true;
      
-    })
+    });
+
     this.subscription = this.UserService.currentMessage.subscribe(message => this.message = message)
     
   }
     
-     newData(id:any) {
-     this.UserService.changeData({"id":id})
+     newData(id:any,name:any) {
+     this.UserService.changeData({"id":id,"name":name})
   }
 
   deleteMatch(id:string){
@@ -49,6 +48,9 @@ export class MatchesComponent implements OnInit {
     });
     
   }
+
+
+  
 
  
 }

@@ -18,7 +18,8 @@ import { GendernamePipe } from './gendername.pipe';
 import { PreferencesComponent } from './preferences/preferences.component';
 import { UploadComponent } from './upload/upload.component';
 import { ProfileComponent } from './profile/profile.component';
-import {ChatComponent} from "./chat/chat.component";
+import { ChatComponent } from './chat/chat.component';
+import { VerifyComponent } from './verify/verify.component';
 
 
 
@@ -38,6 +39,8 @@ import {ChatComponent} from "./chat/chat.component";
     ProfileComponent,
     ChatComponent,
     UploadComponent
+    ChatComponent,
+    VerifyComponent
 
   ],
   imports: [

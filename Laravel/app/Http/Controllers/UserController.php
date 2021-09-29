@@ -5,34 +5,46 @@ namespace App\Http\Controllers;
 use http\Message;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Notifications\verifyNotification;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Support\Facades\Notification;
 class UserController extends Controller{
 
     public function register(request $data){
-        User::create([
+        $randkey=rand(1000000000,100000000000);
+        $minAge=date('Y-m-d',strtotime($data->birthday.' + 20 year'));
+        $maxAge=date('Y-m-d',strtotime($data->birthday.' - 20 year'));
+       $test= User::create([
             'name' => $data->name,
             'email' => $data->email,
             'password' => Hash::make($data->password),
             'birthday' => $data->birthday,
+            'verifyKey'=>$randkey,
             'sex'  => $data->sex,
             'preference' => $data->preference,
             'area' => $data->area,
             'intro' => $data->intro,
-            'minAge' => $data->minAge,
-            'maxAge' => $data->maxAge,
+            'minAge' => $minAge,
+            'maxAge' => $maxAge,
+            
         ]);
+
+        
+
+        $test->notify(new verifyNotification($randkey));        
         return response()->json(['message' => 'user created'], 201);
     }
 
     public function login(request $data){
         $login = DB::table('users')
             ->where('email', '=', $data->email)
-            ->first();
+            ->first(['UserId','name','email','birthday','sex','preference','area','intro','minAge','maxAge']);
         if(empty($login)){
             return response()->json(['user' => Null, 'status_message'=>'user not found'], 200);
         } else{
+            
             return response()->json(['user' => $login, 'status_message'=>'user found'], 200);
         }
     }
@@ -45,7 +57,7 @@ class UserController extends Controller{
             if(!Hash::check($data->password,$login->password) ){
                 return response()->json([ 'status_message'=>'Wrong password'], 200);
             } else {
-                return response()->json(['user'=>$login, 'status_message'=>'Password correct'], 200);
+                return response()->json(['user'=>$login,'status_message'=>'Password correct'], 200);
             }
         } else {
             return response()->json([ 'status_message'=>'Email not found'], 200);
@@ -69,8 +81,14 @@ class UserController extends Controller{
        $file = $data->myFile;
        $localpath="C:/wamp64/www/Eros/";
         $file->move($localpath.'eros/datingsite/src/assets/userprofiles/', $file->getClientOriginalName());
-       
+    }
 
+    function deleteProfile(Request $data){
+        DB::table('users')->where('UserId',$data->userid)->delete();
+    }
+
+    function verifyEmail(Request $data){
+        DB::table('users')->where('verifyKey',$data->key)->update(['email_verified_at'=>date("Y-m-d H:i:s")]);
     }
 }
 

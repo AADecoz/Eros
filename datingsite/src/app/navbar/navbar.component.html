@@ -39,6 +39,46 @@
         justify-content-between
         flex-column flex-md-row
       "
+    >
+      <div class="menu">
+        <li class="navbar-collapse-list-menu-item">
+          <a
+            class="navbar-collapse-list-menu-item-link"
+            routerLink=""
+            >Home</a
+          >
+        </li>
+        <li class="navbar-collapse-list-menu-item none ">
+          <a
+            class="navbar-collapse-list-menu-item-link"
+            routerLink="/Matches"
+            *ngIf="loggedIn"
+            >Matches<span class=" rounded bg-danger small px-1 ml-1" *ngIf="matchCount > 0">{{ matchCount }}</span> </a
+          >
+          
+          
+         
+        </li>
+        <li class="navbar-collapse-list-menu-item w-100 none">
+          <a
+            class="navbar-collapse-list-menu-item-link"
+            routerLink="/preferences"
+            *ngIf="loggedIn"
+            >profile</a
+          >
+        </li>
+      </div>
+      <div
+        class="actions d-flex flex-column flex-md-row justify-content-end w-100"
+      >
+        <li
+          class="navbar-collapse-list-actions-item button--white"
+          *ngIf="loggedOut"
+        >
+          <a
+            class="navbar-collapse-list-menu-item-link w-100"
+            routerLink="/Login"
+            >Log in</a
           >
             <div class="menu">
               <li class="navbar-collapse-list-menu-item">
@@ -87,29 +127,26 @@
                 >
               </li>
 
-              <li
-                class="navbar-collapse-list-actions-item button--red"
-                *ngIf="loggedOut"
-              >
-                <a class="navbar-collapse-list-menu-item-link" routerLink="/Register"
-                >Register</a
-                >
-              </li>
-              <li
-                class="navbar-collapse-list-actions-item button--red"
-                *ngIf="loggedIn"
-              >
-                <a
-                  class="navbar-collapse-list-menu-item-link"
-                  routerLink="/Login"
-                  (click)="logout()"
-                >Log out</a
-                >
-              </li>
-            </div>
-          </ul>
-        </div>
-      </nav>
-    </div>
+        <li
+          class="navbar-collapse-list-actions-item button--red last"
+          *ngIf="loggedOut"
+        >
+          <a class="navbar-collapse-list-menu-item-link" routerLink="/Register"
+            >Register</a
+          >
+        </li>
+        <li 
+          class="navbar-collapse-list-actions-item button--red "
+          *ngIf="loggedIn"
+        >
+          <a
+            class="navbar-collapse-list-menu-item-link"
+            routerLink="/Login"
+            (click)="logout()"
+            >Log out</a
+          >
+        </li>
+      </div>
+    </ul>
   </div>
 </section>

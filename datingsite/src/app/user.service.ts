@@ -20,12 +20,17 @@ updateUrl="http://localhost:8000/api/update";
 verifyUrl ="http://localhost:8000/api/verify";
 showChatUrl="http://localhost:8000/api/showChat";
 sendChatUrl="http://localhost:8000/api/sendChat";
-deleteMatchUrl="http://localhost:8000/api/deleteMatch"
+deleteMatchUrl="http://localhost:8000/api/deleteMatch";
+alertUrl="http://localhost:8000/api/alert";
+deleteProfileUrl="http://localhost:8000/api/deleteProfile";
+verifyEmailUrl="http://localhost:8000/api/verifyEmail"
 header = {
   'Content-Type': 'application/json',
   'Accept': 'application/json',
   'Access-Control-Allow-Headers': 'Content-Type'
 }
+
+
 
 constructor(private http:HttpClient) { }
   registerf(data:object):Observable<any>{
@@ -69,12 +74,26 @@ constructor(private http:HttpClient) { }
     return this.http.post(this.deleteMatchUrl,data,{responseType:'json'});
   }
 
-  private messageSource = new BehaviorSubject<object>({"id":"test" });
+  alertf(data:object):Observable<any>{
+    return this.http.post(this.alertUrl,data,{responseType:'json'});
+  }
+  
+  deleteProfilef(data:object):Observable<any>{
+    return this.http.post(this.deleteProfileUrl,data,{responseType:'json'});
+  }
+
+  verifyEmailf(data:object):Observable<any>{
+    return this.http.post(this.verifyEmailUrl,data,{responseType:'json'});
+  }
+
+
+  private messageSource = new BehaviorSubject<object>({"id":"test","name":"placeholder" });
   currentMessage = this.messageSource.asObservable();
 
-
-
+  
   changeData(message: object) {
     this.messageSource.next(message)
   }
+
+ 
 }

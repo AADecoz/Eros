@@ -24,6 +24,7 @@ export class PreferencesComponent implements OnInit {
   checkboxFlag1 = false;
   checkboxFlag2 = false;
   checkboxFlag3 = false;
+  uploaded = false;
   source="assets/userprofiles/"+ localStorage.getItem('userid')+".jpg";
 
   hide = true;
@@ -35,8 +36,7 @@ export class PreferencesComponent implements OnInit {
   constructor(private UserService: UserService, private router: Router) {}
 
   ngOnInit(): void {
-    console.log(localStorage.getItem('userid'));
-    console.log(localStorage.getItem('minAge'));
+
     if (this.preference?.includes('m') == true) {
       this.checkboxFlag1 = true;
     }
@@ -94,6 +94,7 @@ export class PreferencesComponent implements OnInit {
     }
 
     if (form.status == 'VALID' && this.preference != 'no entry' && isNaN(this.minage)==false && isNaN(this.maxage)==false) {
+      this.uploaded=true;
 
 
 
@@ -102,8 +103,6 @@ export class PreferencesComponent implements OnInit {
       let minAgeString=minAgeYear+"-01-01";
       let maxAgeYear:any = year-this.maxage;
       let maxAgeString=maxAgeYear+"-01-01";
-
-    console.log(this.age);
       this.UserService.updatef({
         userid: this.userid,
         username: this.username,
@@ -127,18 +126,18 @@ export class PreferencesComponent implements OnInit {
 
 
     }
+
+    
   }
 
  defaultimg(){
   this.source="assets/default.png"
 
  }
- // refresh(){
- //   this.router.navigate(['http://localhost:4200/profile'])
- //     .then(() => {
- //       window.location.reload();
- //     });
- // }
 
-
+ deleteProfile(){
+  this.UserService.deleteProfilef({"userid":localStorage.getItem('userid')}).subscribe();
+  localStorage.clear();
+  this.router.navigate(['Login']);
+ }
 }
