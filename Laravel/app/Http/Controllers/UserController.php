@@ -57,7 +57,7 @@ class UserController extends Controller{
             if(!Hash::check($data->password,$login->password) ){
                 return response()->json([ 'status_message'=>'Wrong password'], 200);
             } else {
-                return response()->json(['status_message'=>'Password correct'], 200);
+                return response()->json(['user'=>$login,'status_message'=>'Password correct'], 200);
             }
         } else {
             return response()->json([ 'status_message'=>'Email not found'], 200);
