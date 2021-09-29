@@ -38,7 +38,6 @@ export class NavbarComponent implements OnInit {
       this.loggedOut=true;
     }
     this.UserService.alertf({"userid":localStorage.getItem('userid')}).subscribe((data)=>{ 
-      console.log(data)
       if(data.status_message=="Users found"){
         this.matchCount=data.unchecked
      }

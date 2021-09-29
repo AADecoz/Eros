@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->enum('sex', ['m', 'f', 'o']);
             $table->string('preference');
             $table->string('area');
+            $table->string('verifyKey');
             $table->string('intro','500');
             $table->date('minAge');
             $table->date('maxAge');
