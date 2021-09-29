@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./matches.component.scss']
 })
 export class MatchesComponent implements OnInit {
-
+  userid:any = localStorage.getItem('userid');
   matchesArray:Array<any>=['test'];
   username:string|null = localStorage.getItem('username');
   matchAge:any;
@@ -24,6 +24,8 @@ export class MatchesComponent implements OnInit {
   ngOnInit(): void {
     this.UserService.matchesf({"userid":localStorage.getItem('userid')}).subscribe((data)=>{ 
       this.matchesArray=data.user;
+
+      console.log(data.user);
       
       if(this.matchesArray==null){
         this.noMatch=true;
