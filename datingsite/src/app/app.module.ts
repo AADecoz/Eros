@@ -18,6 +18,7 @@ import { GendernamePipe } from './gendername.pipe';
 import { PreferencesComponent } from './preferences/preferences.component';
 import { UploadComponent } from './upload/upload.component';
 import { ProfileComponent } from './profile/profile.component';
+import {ChatComponent} from "./chat/chat.component";
 
 
 
@@ -34,7 +35,9 @@ import { ProfileComponent } from './profile/profile.component';
     GendernamePipe,
     PreferencesComponent,
     UploadComponent,
-    ProfileComponent
+    ProfileComponent,
+    ChatComponent,
+    UploadComponent
 
   ],
   imports: [
@@ -44,7 +47,7 @@ import { ProfileComponent } from './profile/profile.component';
     HttpClientModule,
     RouterModule,
     NgbModule
-   
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,46 +1,47 @@
-<app-navbar></app-navbar>
-<form class="form-group container-fluid" (submit)="update(myForm)" #myForm="ngForm">
+<section class="main container-fluid">
+  <form class="form-group container-fluid" (submit)="update(myForm)" #myForm="ngForm">
 
-  <label>Username</label>
-  <input type="text" class="form-control" required [(ngModel)]="username" name="username">
+    <label>Username</label>
+    <input type="text" class="form-control" required [(ngModel)]="username" name="username">
 
-  <label>sex</label>
-  <select name="sex" id="sex" class="form-control" [(ngModel)]="sex">
-    <option value="m">Male</option>
-    <option value="f">female</option>
-    <option value="o">Other</option>
-  </select>
+    <label>sex</label>
+    <select name="sex" id="sex" class="form-control" [(ngModel)]="sex">
+      <option value="m">Male</option>
+      <option value="f">female</option>
+      <option value="o">Other</option>
+    </select>
 
-  <label for="pref1">Male</label><br>
-  <input type="checkbox" class="form-control" id="pref1" name="pref1" value="Male" [(ngModel)]="checkboxFlag1">
-  <label for="pref2">Female</label><br>
-  <input type="checkbox" class="form-control" id="pref2" name="pref2" value="Female" [(ngModel)]="checkboxFlag2">
-  <label for="pref3">Other</label><br><br>
-  <input type="checkbox" id="pref3" class="form-control" name="pref3" value="Other" [(ngModel)]="checkboxFlag3">
+    <label for="pref1">Male</label><br>
+    <input type="checkbox" class="form-control" id="pref1" name="pref1" value="Male" [(ngModel)]="checkboxFlag1">
+    <label for="pref2">Female</label><br>
+    <input type="checkbox" class="form-control" id="pref2" name="pref2" value="Female" [(ngModel)]="checkboxFlag2">
+    <label for="pref3">Other</label><br><br>
+    <input type="checkbox" id="pref3" class="form-control" name="pref3" value="Other" [(ngModel)]="checkboxFlag3">
 
-  <label>Date of Birth</label>
-  <input type="date" name="date" class="form-control" [(ngModel)]="age">
+    <label>Date of Birth</label>
+    <input type="date" name="date" class="form-control" [(ngModel)]="age">
 
-  <label>Area</label>
-  <select name="area" name="area" class="form-control" id="area" [(ngModel)]="area">
-    <option value="Limburg">Limburg</option>
-    <option value="Vlaams-Brabant">Vlaams-Brabant</option>
-  </select>
+    <label>Area</label>
+    <select name="area" class="form-control" id="area" [(ngModel)]="area">
+      <option value="Limburg">Limburg</option>
+      <option value="Vlaams-Brabant">Vlaams-Brabant</option>
+    </select>
 
-  <label>Min age</label>
-  <input type="input" class="form-control" required [(ngModel)]="minage" name="minage">
+    <label>Min age</label>
+    <input type="input" class="form-control" required [(ngModel)]="minage" name="minage">
 
-  <label>Max age</label>
-  <input type="input" class="form-control" required [(ngModel)]="maxage" name="maxage">
+    <label>Max age</label>
+    <input type="input" class="form-control" required [(ngModel)]="maxage" name="maxage">
 
-  <label>Intro</label>
-  <input type="text" class="form-control" required [(ngModel)]="intro" name="intro">
+    <label>Intro</label>
+    <input type="text" class="form-control" required [(ngModel)]="intro" name="intro">
 
 
-  <p>Profile pic</p>
-  <img [src]=source (error)="defaultimg()">
-  <app-upload></app-upload>
-  <input type="submit" value="upDate Me Baby!">
-</form>
+    <p>Profile pic</p>
+    <img [src]=source (error)="defaultimg()">
+    <app-upload></app-upload>
+    <input type="submit" href="javascript:void(0);" (click)="refresh();" value="upDate Me Baby!">
 
-<app-footer></app-footer>
+  </form>
+</section>
+
