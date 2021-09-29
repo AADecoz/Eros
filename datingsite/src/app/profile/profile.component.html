@@ -3,10 +3,11 @@
 <main class="row">
 <section class="main container-fluid">
   <div class="row d-lg-inline-flex flex-nowrap w-100">
-    <div class="col-12 col-md-4">
+    <div class="col-12 col-md-6">
       <img class="w-100" src="/assets/userprofiles/{{userid}}.jpg" alt="">
+      <app-upload></app-upload>
     </div>
-    <div class="col-md-8 col-12 row flex-wrap justify-content-around m-1">
+    <div class="col-md-6 col-12 row flex-wrap justify-content-around m-1">
       <div class="row gallery">
         <div class="col-4">
           <img class="img-fluid" src="/assets/userprofiles/{{userid}}.jpg" alt="">
@@ -37,7 +38,7 @@
     </div>
   </div>
   <div class="col-4">
-    <h5 class="font-weight-bolder align-content-start">{{username}}, {{age}}</h5>
+    <h5 class="font-weight-bolder align-content-start p-2">{{username}}, {{age}}</h5>
     <h6>{{area}}</h6>
   </div>
 
