@@ -24,6 +24,7 @@ export class PreferencesComponent implements OnInit {
   checkboxFlag1 = false;
   checkboxFlag2 = false;
   checkboxFlag3 = false;
+  uploaded = false;
   source="assets/userprofiles/"+ localStorage.getItem('userid')+".jpg";
 
   hide = true;
@@ -90,6 +91,7 @@ export class PreferencesComponent implements OnInit {
     }
     
     if (form.status == 'VALID' && this.preference != 'no entry' && isNaN(this.minage)==false && isNaN(this.maxage)==false) {
+      this.uploaded=true;
       
 
       
@@ -121,6 +123,8 @@ export class PreferencesComponent implements OnInit {
       
 
     }
+
+    
   }
 
  defaultimg(){

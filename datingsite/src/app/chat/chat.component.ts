@@ -37,8 +37,6 @@ export class ChatComponent implements OnInit {
     
   }
 
-
-
   sendChat(){
     this.data.sendChatf({"userid":localStorage.getItem('userid'),"matchid":this.message.id,"body":this.inputChat}).subscribe((dataApi)=>
     {

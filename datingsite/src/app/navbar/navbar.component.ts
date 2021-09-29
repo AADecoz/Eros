@@ -37,14 +37,18 @@ export class NavbarComponent implements OnInit {
       this.loggedIn=false;
       this.loggedOut=true;
     }
-    this.UserService.alertf({"userid":localStorage.getItem('userid')}).subscribe((data)=>{ 
-      if(data.status_message=="Users found"){
-        this.matchCount=data.unchecked
-     }
-      }
-  );
+    
+    setInterval(() => {
+      this.UserService.alertf({"userid":localStorage.getItem('userid')}).subscribe((data)=>{ 
+        if(data.status_message=="Users found"){
+          this.matchCount=data.unchecked
+       }
+        }
+    );
+    }, 2500);
+    }
 
-}
+
   logout(){
     localStorage.clear(); 
    }

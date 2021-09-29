@@ -31,7 +31,7 @@ class MatchController extends Controller
             ->get();
 
         DB::table('users')->where('UserId',$data->userid)->Update([
-            'matchesChecked'=>date("Y-m-d h:i:s")]);
+            'matchesChecked'=>date("Y-m-d H:i:s")]);
             
         
 
