@@ -26,6 +26,7 @@ class CreateUsersTable extends Migration
             $table->string('intro','500');
             $table->date('minAge');
             $table->date('maxAge');
+            $table->timestamp('matchesChecked')->default(date("Y-m-d h:i:s"));
             $table->rememberToken();
             $table->timestamps();  
             $table->engine = 'InnoDB';

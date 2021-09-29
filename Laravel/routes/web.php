@@ -23,6 +23,8 @@ Route::post('/api/upload', '\App\Http\Controllers\UserController@upload')->name(
 Route::post('/api/showChat', '\App\Http\Controllers\chatController@showChat')->name('/api/showChat');
 Route::post('/api/sendChat', '\App\Http\Controllers\chatController@sendChat')->name('/api/send');
 Route::post('/api/deleteMatch', '\App\Http\Controllers\matchController@deleteMatch')->name('/api/deleteMatch');
+Route::post('/api/alert', '\App\Http\Controllers\MatchController@alert')->name('/api/alert');
+
 
 Route::get('/', function () {
     return view('welcome');

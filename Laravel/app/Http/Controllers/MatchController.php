@@ -30,6 +30,11 @@ class MatchController extends Controller
             ->where('m1.UserId', '=', $data->userid)
             ->get();
 
+        DB::table('users')->where('UserId',$data->userid)->Update([
+            'matchesChecked'=>date("Y-m-d h:i:s")]);
+            
+        
+
         if(count($match)==0){
             return response()->json(['user' => null, 'status_message' =>"No matches"], 200);
         }   else{
@@ -47,5 +52,34 @@ class MatchController extends Controller
 
         Chat::where('from_id',$data->userid)->where('to_id',$data->matchid)->orWhere('from_id',$data->matchid)->where('to_id',$data->userid)->delete();
 
+    }
+
+    public function alert(request $data){
+        $matches = DB::table('matchings as m1')
+        ->select('m1.created_at as time1','m2.created_at as time2')
+        ->join('matchings as m2', 'm1.UserId', '=', 'm2.MatchId')
+        ->join('users', 'm2.UserId', '=', 'users.UserId' )
+        ->whereRaw("`m2`.`UserId` = `m1`.`MatchId`")
+        ->where('m1.matched', '=', '1')
+        ->where('m2.matched', '=', '1')
+        ->where('m1.UserId', '=', $data->userid)
+        ->get();
+
+
+        $checked= DB::table('users')->select('matchesChecked')->where('UserId',$data->userid)->get();
+
+        $count=0;
+
+        foreach($matches as $match){
+            if($checked[0]->matchesChecked<$match->time1 || $checked[0]->matchesChecked<$match->time2){
+               $count++;
+            }
+        }
+
+        if(count($matches)==0){
+            return response()->json(['user' => null, 'status_message' =>"No matches"], 200);
+        }   else{
+              return response()->json(['unchecked' => $count, 'status_message' =>"Users found"], 200);
+        } 
     }
 }

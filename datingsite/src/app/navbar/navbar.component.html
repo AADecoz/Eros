@@ -48,13 +48,16 @@
             >Home</a
           >
         </li>
-        <li class="navbar-collapse-list-menu-item none">
+        <li class="navbar-collapse-list-menu-item none ">
           <a
             class="navbar-collapse-list-menu-item-link"
             routerLink="/Matches"
             *ngIf="loggedIn"
-            >Matches</a
+            >Matches<span class=" rounded bg-danger small px-1 ml-1" *ngIf="matchCount > 0">{{ matchCount }}</span> </a
           >
+          
+          
+         
         </li>
         <li class="navbar-collapse-list-menu-item w-100 none">
           <a

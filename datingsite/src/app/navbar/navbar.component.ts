@@ -1,6 +1,6 @@
 import { HostListener } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
-
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-navbar',
@@ -13,9 +13,10 @@ export class NavbarComponent implements OnInit {
   isNavbarCollapsed=true;
   color="transparent";
   sourceLogo="assets/logoDark.png";
+  matchCount!:number;
   public innerWidth: any;
 
-  constructor() { }
+  constructor(private UserService:UserService) { }
 
   ngOnInit(): void {
     this.innerWidth = window.innerWidth;
@@ -29,7 +30,6 @@ export class NavbarComponent implements OnInit {
       this.sourceLogo="assets/logoDark.png"
     }
     
-    console.log(localStorage.getItem("username"));
     if(localStorage.getItem("username")!=null){
       this.loggedIn=true;
       this.loggedOut=false;
@@ -37,8 +37,15 @@ export class NavbarComponent implements OnInit {
       this.loggedIn=false;
       this.loggedOut=true;
     }
-  }
+    this.UserService.alertf({"userid":localStorage.getItem('userid')}).subscribe((data)=>{ 
+      console.log(data)
+      if(data.status_message=="Users found"){
+        this.matchCount=data.unchecked
+     }
+      }
+  );
 
+}
   logout(){
     localStorage.clear(); 
    }

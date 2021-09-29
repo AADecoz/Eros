@@ -21,11 +21,14 @@ verifyUrl ="http://localhost:8000/api/verify";
 showChatUrl="http://localhost:8000/api/showChat";
 sendChatUrl="http://localhost:8000/api/sendChat";
 deleteMatchUrl="http://localhost:8000/api/deleteMatch"
+alertUrl="http://localhost:8000/api/alert"
 header = {
   'Content-Type': 'application/json',
   'Accept': 'application/json',
   'Access-Control-Allow-Headers': 'Content-Type'
 }
+
+
 
 constructor(private http:HttpClient) { }
   registerf(data:object):Observable<any>{
@@ -69,12 +72,18 @@ constructor(private http:HttpClient) { }
     return this.http.post(this.deleteMatchUrl,data,{responseType:'json'});
   }
 
+  alertf(data:object):Observable<any>{
+    return this.http.post(this.alertUrl,data,{responseType:'json'});
+  }
+
+
   private messageSource = new BehaviorSubject<object>({"id":"test" });
   currentMessage = this.messageSource.asObservable();
 
-
-
+  
   changeData(message: object) {
     this.messageSource.next(message)
   }
+
+ 
 }
