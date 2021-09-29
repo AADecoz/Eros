@@ -30,6 +30,9 @@ export class PreferencesComponent implements OnInit {
   hide = true;
   hideLogin = true;
 
+  refresh() {
+    window.location.reload();
+  }
   constructor(private UserService: UserService, private router: Router) {}
 
   ngOnInit(): void {
@@ -45,22 +48,22 @@ export class PreferencesComponent implements OnInit {
     }
   if(this.intro=="null"){
     this.intro="";
-  } 
-  
+  }
+
   this.minage=this.transformDate(this.min);
   this.maxage=this.transformDate(this.max);
 
-  
-    
+
+
   }
   transformDate(birthday: Date): number {
     birthday=new Date(birthday);
-   var month_diff = Date.now() - birthday.getTime();  
-   var age_dt = new Date(month_diff);       
-   var year = age_dt.getUTCFullYear();  
-   var age = Math.abs(year - 1970);  
+   var month_diff = Date.now() - birthday.getTime();
+   var age_dt = new Date(month_diff);
+   var year = age_dt.getUTCFullYear();
+   var age = Math.abs(year - 1970);
 
-   return age; 
+   return age;
  }
 
   update(form: NgForm) {
@@ -89,12 +92,12 @@ export class PreferencesComponent implements OnInit {
       default:
         this.preference = 'no entry';
     }
-    
+
     if (form.status == 'VALID' && this.preference != 'no entry' && isNaN(this.minage)==false && isNaN(this.maxage)==false) {
       this.uploaded=true;
-      
 
-      
+
+
       let year =new Date().getFullYear();
       let minAgeYear:any = year-this.minage;
       let minAgeString=minAgeYear+"-01-01";
@@ -120,7 +123,7 @@ export class PreferencesComponent implements OnInit {
       localStorage.setItem('minAge',minAgeString);
       localStorage.setItem('maxAge',maxAgeString);
       localStorage.setItem('intro',this.intro);
-      
+
 
     }
 
@@ -129,7 +132,7 @@ export class PreferencesComponent implements OnInit {
 
  defaultimg(){
   this.source="assets/default.png"
-  
+
  }
 
  deleteProfile(){
