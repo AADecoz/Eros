@@ -54,15 +54,21 @@ body{
 
 .button--white, .button--red{
     background: var(--bg);
-    line-height: 40px;
     height: 40px;
+    border: 0;
     border-radius: 40px;
     &:hover{
         background: var(--pri);
     }
+
+    &.last{
+        margin: 0 0 0 20px;
+    }
     
     & a{
-        padding: 8px 35px;
+        font-size: 1.6em;
+        line-height: 40px;
+        padding: 12px 35px;
         color: var(--pri);
         &:hover{
             color: var(--bg);
@@ -118,10 +124,6 @@ body{
     body{
         background:url("assets/backgroundDesktop.jpg") no-repeat fixed;
         background-size:cover;
-    }
-    .button--white, .button--red{
-        margin: 0 0 0 20px;
-    }
-  
+    }  
 }
 
