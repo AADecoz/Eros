@@ -37,10 +37,9 @@
     <label>Intro</label>
     <input type="text" class="form-control" required [(ngModel)]="intro" name="intro">
 
-    <p>Profile pic</p>
-    <img [src]=source (error)="defaultimg()">
-    <app-upload></app-upload>
-    <input type="submit" href="javascript:void(0);" (click)="refresh();" value="upDate Me Baby!">
+    
+    <input class="button--white" type="submit" href="javascript:void(0);" (click)="refresh();" value="upDate Me Baby!">
+    <input class="button--red" type="submit" href="javascript:void(0);" (click)="deleteProfile();" value="upDate Me Baby!">
 
   </form>
 </section>

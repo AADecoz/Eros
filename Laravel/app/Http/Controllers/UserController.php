@@ -85,8 +85,8 @@ class UserController extends Controller{
 
     function upload(Request $data){
        $file = $data->myFile;
-       $localpath="C:/wamp64/www/Eros/";
-        $file->move($localpath.'eros/datingsite/src/assets/userprofiles/', $file->getClientOriginalName());
+       $localpath="C:/wamp64/www/MM/";
+        $file->move($localpath.'datingsite/datingsite/src/assets/userprofiles/', $file->getClientOriginalName());
     }
 
     function deleteProfile(Request $data){
