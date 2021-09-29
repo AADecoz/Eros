@@ -14,7 +14,8 @@ class UserController extends Controller{
 
     public function register(request $data){
         $randkey=rand(1000000000,100000000000);
-        
+        $minAge=date('Y-m-d',strtotime($data->birthday.' + 20 year'));
+        $maxAge=date('Y-m-d',strtotime($data->birthday.' - 20 year'));
        $test= User::create([
             'name' => $data->name,
             'email' => $data->email,
@@ -25,8 +26,8 @@ class UserController extends Controller{
             'preference' => $data->preference,
             'area' => $data->area,
             'intro' => $data->intro,
-            'minAge' => $data->minAge,
-            'maxAge' => $data->maxAge,
+            'minAge' => $minAge,
+            'maxAge' => $maxAge,
             
         ]);
 
