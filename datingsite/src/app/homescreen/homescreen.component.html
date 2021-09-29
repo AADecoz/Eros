@@ -1,16 +1,32 @@
 <div  class="container-fluid">
   <div class="row">
     <app-navbar class="col-12"></app-navbar>
-    <section class="col-12 col-lg-8">
+    <section class="col-12 col-lg-9">
       <div class="main">
-        <h2>potential matches</h2>
+        <h2>Potential matches</h2>
         <div *ngIf="matches && loading">
           <div class="row">
-            <div class="col-4">
+            <div class="col-6">
               <img [src]="sourceMatch" (error)="defaultimg()" class="img-fluid" />
             </div>
-            <div class="col-8">
-              
+            <div class="col-6 flex-column justify-content-between d-flex">
+              <div class="gallery row">
+                <div class="col-4"><img [src]="sourceMatch" (error)="defaultimg()" class="img-fluid" /></div>
+                <div class="col-4">
+              <img [src]="sourceMatch" (error)="defaultimg()" class="img-fluid" /></div>
+                <div class="col-4">
+              <img [src]="sourceMatch" (error)="defaultimg()" class="img-fluid" /></div>
+                <div class="col-4">
+              <img [src]="sourceMatch" (error)="defaultimg()" class="img-fluid" /></div>
+                <div class="col-4">
+              <img [src]="sourceMatch" (error)="defaultimg()" class="img-fluid" /></div>
+                <div class="col-4">
+              <img [src]="sourceMatch" (error)="defaultimg()" class="img-fluid" /></div>
+              </div>
+              <div class="intro row">
+                <h5>About</h5>
+                <p>{{ feedArray[0].intro }}</p>
+              </div>
             </div>
           </div>
           <div class="row">
@@ -34,8 +50,8 @@
         </div>
       </div>
     </section>
-    <section class="prime col-12 col-lg-8">
-
+    <section class="prime col-12 col-lg-3">
+    <app-preferences></app-preferences>
     </section>
   </div>
 </div>

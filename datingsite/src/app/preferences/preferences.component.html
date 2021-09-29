@@ -1,4 +1,4 @@
-<app-navbar></app-navbar>
+
 <form class="form-group" (submit)="update(myForm)" #myForm="ngForm">
 
   <label>Username</label>
@@ -36,10 +36,6 @@
   <label>Intro</label>
   <input type="text" class="form-control" required [(ngModel)]="intro" name="intro">
 
-
-  <p>Profile pic</p>
-  <img [src]=source (error)="defaultimg()">
-  <app-upload></app-upload>
   <input type="submit" value="upDate Me Baby!">
   <button (click)="deleteProfile()"> Delete profile</button>
 </form>
