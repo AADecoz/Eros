@@ -3,9 +3,16 @@
     --pri: #e5446d;
     --sec: #64abc1;
     --bg: #fff;
-    --body: #595959;
+    --head: #595959;
+    --body: #8a8a8a;
 }
 
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
 
 
 /* base */@at-root
@@ -34,11 +41,12 @@ body{
      max-width: 1170px;
  }
  
- h1, h2{
-     font-size: 2.2em;
+ h1, h2,h3,h4,h5,h6{
+     color: var(--head);
+     font-size: 3em;
  }
- .col-4 h5{
-     font-size: 1.6rem;
+ h5{
+     font-size: 1.6em;
  }
  p{
     font-size: 1.4em;
@@ -46,15 +54,21 @@ body{
 
 .button--white, .button--red{
     background: var(--bg);
-    line-height: 40px;
     height: 40px;
+    border: 0;
     border-radius: 40px;
     &:hover{
         background: var(--pri);
     }
+
+    &.last{
+        margin: 0 0 0 20px;
+    }
     
     & a{
-        padding: 8px 35px;
+        font-size: 1.6em;
+        line-height: 40px;
+        padding: 12px 35px;
         color: var(--pri);
         &:hover{
             color: var(--bg);
@@ -110,15 +124,6 @@ body{
     body{
         background:url("assets/backgroundDesktop.jpg") no-repeat fixed;
         background-size:cover;
-    }
-    .button--white, .button--red{
-        margin: 0 0 0 20px;
-    }
-  
+    }  
 }
 
-/* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';
-
-/* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';
