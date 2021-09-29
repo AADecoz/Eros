@@ -22,6 +22,7 @@ import {ChatComponent} from "./chat/chat.component";
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +38,8 @@ import {ChatComponent} from "./chat/chat.component";
     UploadComponent,
     ProfileComponent,
     ChatComponent,
-    UploadComponent
+    UploadComponent,
+
 
   ],
   imports: [
