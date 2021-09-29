@@ -98,8 +98,6 @@ export class PreferencesComponent implements OnInit {
       let minAgeString=minAgeYear+"-01-01";
       let maxAgeYear:any = year-this.maxage;
       let maxAgeString=maxAgeYear+"-01-01";
-
-    console.log(this.age);
       this.UserService.updatef({
         userid: this.userid,
         username: this.username,

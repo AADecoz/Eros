@@ -20,6 +20,9 @@ export class RegisterComponent implements OnInit {
   checkboxFlag2 = false;
   checkboxFlag3 = false;
   hide = true;
+  minAge:any;
+  maxAge:any;
+  hideEmail:boolean=true;
 
   hideLogin = true;
   constructor(private UserService: UserService, private router: Router) {}
@@ -29,7 +32,7 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
 
-    document.body.className = "backgroundHome";
+
   }
 
 
@@ -60,33 +63,41 @@ export class RegisterComponent implements OnInit {
         this.preference = 'no entry';
     }
 
-    if (form.status == 'VALID' && this.preference != 'no entry') {
-      this.UserService.signinf({
-        email: this.email,
-        password: this.password,
-      }).subscribe((data) => {
-        console.log(data)
-        if (data.status_message == 'user not found') {
-          this.UserService.registerf({
-            email: this.email,
-            name: this.username,
-            password: this.password,
-            preference: this.preference,
-            sex: this.sex,
-            birthday: this.birthday,
-            area: this.area,
-            intro: 'hello world',
-            minAge: this.birthday,
-            maxAge: this.birthday,
-          }).subscribe();
-          this.router.navigate(['Login']);
-        } else {
-          this.hideLogin = false;
-        }
-      });
-    } else {
-      this.hide = false;
+    function validateEmail(email:string) {
+      const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(email);
     }
+    if(validateEmail(this.email)){
+      if (form.status == 'VALID' && this.preference != 'no entry') {
+        this.UserService.signinf({
+          email: this.email,
+          password: this.password,
+        }).subscribe((data) => {
+          console.log(data)
+          if (data.status_message == 'user not found') {
+            this.UserService.registerf({
+              email: this.email,
+              name: this.username,
+              password: this.password,
+              preference: this.preference,
+              sex: this.sex,
+              birthday: this.birthday,
+              area: this.area,
+              intro: 'hello world',
+              minAge: this.birthday,
+              maxAge: this.birthday,
+            }).subscribe();
+            this.router.navigate(['Login']);
+          } else {
+            this.hideLogin = false;
+          }
+        });
+      } else {
+        this.hide = false;
+      }
+  }else{
+    this.hideEmail= false;
   }
+}
 
 }

@@ -33,7 +33,8 @@ export class MatchesComponent implements OnInit {
       }
       this.loaded=true;
      
-    })
+    });
+
     this.subscription = this.UserService.currentMessage.subscribe(message => this.message = message)
     
   }
