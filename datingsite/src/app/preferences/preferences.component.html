@@ -2,28 +2,29 @@
   <section class="main container-fluid">
 
 
+    <div class="d-flex row-12">
+      <label class="col-5">My name is</label>
+      <input type="text" class="form-control border-0 container-fluid" required [(ngModel)]="username" name="username">
+    </div>
 
-    <label>Username</label>
-    <input type="text" class="form-control" required [(ngModel)]="username" name="username">
-
-    <label>sex</label>
+    <label>I am a</label>
     <select name="sex" id="sex" class="form-control" [(ngModel)]="sex">
       <option value="m">Male</option>
       <option value="f">female</option>
       <option value="o">Other</option>
     </select>
   <div class="d-inline-block">
-    <label for="pref1">Male</label><br>
+    <label for="pref1">Men</label><br>
     <input type="checkbox" class="form-control" id="pref1" name="pref1" value="Male" [(ngModel)]="checkboxFlag1">
-    <label for="pref2">Female</label><br>
+    <label for="pref2">Women</label><br>
     <input type="checkbox" class="form-control" id="pref2" name="pref2" value="Female" [(ngModel)]="checkboxFlag2">
     <label for="pref3">Other</label><br><br>
     <input type="checkbox" id="pref3" class="form-control" name="pref3" value="Other" [(ngModel)]="checkboxFlag3">
   </div>
-    <label>Date of Birth</label>
+    <label>I was born on</label>
     <input type="date" name="date" class="form-control" [(ngModel)]="age">
 
-    <label>Area</label>
+    <label>I am living in</label>
     <select name="area" class="form-control" id="area" [(ngModel)]="area">
       <option value="Limburg">Limburg</option>
       <option value="Vlaams-Brabant">Vlaams-Brabant</option>
