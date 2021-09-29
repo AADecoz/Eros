@@ -1,6 +1,7 @@
+<form class="form-group container-fluid" (submit)="update(myForm)" #myForm="ngForm">
+  <section class="main container-fluid">
 
-<section class="main container-fluid">
-  <form class="form-group container-fluid" (submit)="update(myForm)" #myForm="ngForm">
+
 
     <label>Username</label>
     <input type="text" class="form-control" required [(ngModel)]="username" name="username">
@@ -11,14 +12,14 @@
       <option value="f">female</option>
       <option value="o">Other</option>
     </select>
-
+  <div class="d-inline-block">
     <label for="pref1">Male</label><br>
     <input type="checkbox" class="form-control" id="pref1" name="pref1" value="Male" [(ngModel)]="checkboxFlag1">
     <label for="pref2">Female</label><br>
     <input type="checkbox" class="form-control" id="pref2" name="pref2" value="Female" [(ngModel)]="checkboxFlag2">
     <label for="pref3">Other</label><br><br>
     <input type="checkbox" id="pref3" class="form-control" name="pref3" value="Other" [(ngModel)]="checkboxFlag3">
-
+  </div>
     <label>Date of Birth</label>
     <input type="date" name="date" class="form-control" [(ngModel)]="age">
 
@@ -36,12 +37,17 @@
 
     <label>Intro</label>
     <input type="text" class="form-control" required [(ngModel)]="intro" name="intro">
+  </section>
 
-    <p>Profile pic</p>
 <!--    <img [src]=source (error)="defaultimg()">-->
-
-    <input type="submit" href="javascript:void(0);" (click)="refresh();" value="upDate Me Baby!">
-
+    <div class="col-12 justify-content-center p-3">
+      <div class="p-1">
+        <input class="button--red col-12" type="submit" href="javascript:void(0);" (click)="refresh();" value="upDate Me Baby!">
+      </div>
+      <div class="p-1">
+        <input class="button--white col-12" type="submit" href="javascript:void(0);" (click)="deleteProfile();" value="Delete me Baby!">
+      </div>
+    </div>
   </form>
-</section>
+
 
