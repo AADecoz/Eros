@@ -27,7 +27,7 @@ class feedController extends Controller
         ->where('birthday','<=',$data->minAge)
         ->where('birthday','>=',$data->maxAge)
         ->whereIn('sex', str_split($data->preference))
-        ->get(['UserId','name','sex','area','birthday','preference']);
+        ->get(['UserId','name','sex','area','birthday','preference','intro']);
 
         if(count($feed)==0){
             return response()->json(['user' => Null, 'status_message'=>'user not found'], 200);
