@@ -24,6 +24,7 @@ Route::post('/api/showChat', '\App\Http\Controllers\chatController@showChat')->n
 Route::post('/api/sendChat', '\App\Http\Controllers\chatController@sendChat')->name('/api/send');
 Route::post('/api/deleteMatch', '\App\Http\Controllers\matchController@deleteMatch')->name('/api/deleteMatch');
 Route::post('/api/alert', '\App\Http\Controllers\MatchController@alert')->name('/api/alert');
+Route::post('/api/deleteProfile', '\App\Http\Controllers\UserController@deleteProfile')->name('/api/deleteProfile');
 
 
 Route::get('/', function () {

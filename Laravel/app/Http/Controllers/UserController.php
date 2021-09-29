@@ -69,8 +69,10 @@ class UserController extends Controller{
        $file = $data->myFile;
        $localpath="C:/wamp64/www/Eros/";
         $file->move($localpath.'eros/datingsite/src/assets/userprofiles/', $file->getClientOriginalName());
-       
+    }
 
+    function deleteProfile(Request $data){
+        DB::table('users')->where('UserId',$data->userid)->delete();
     }
 }
 

@@ -20,8 +20,9 @@ updateUrl="http://localhost:8000/api/update";
 verifyUrl ="http://localhost:8000/api/verify";
 showChatUrl="http://localhost:8000/api/showChat";
 sendChatUrl="http://localhost:8000/api/sendChat";
-deleteMatchUrl="http://localhost:8000/api/deleteMatch"
-alertUrl="http://localhost:8000/api/alert"
+deleteMatchUrl="http://localhost:8000/api/deleteMatch";
+alertUrl="http://localhost:8000/api/alert";
+deleteProfileUrl="http://localhost:8000/api/deleteProfile"
 header = {
   'Content-Type': 'application/json',
   'Accept': 'application/json',
@@ -74,6 +75,10 @@ constructor(private http:HttpClient) { }
 
   alertf(data:object):Observable<any>{
     return this.http.post(this.alertUrl,data,{responseType:'json'});
+  }
+  
+  deleteProfilef(data:object):Observable<any>{
+    return this.http.post(this.deleteProfileUrl,data,{responseType:'json'});
   }
 
 

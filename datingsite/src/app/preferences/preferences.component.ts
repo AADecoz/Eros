@@ -32,8 +32,7 @@ export class PreferencesComponent implements OnInit {
   constructor(private UserService: UserService, private router: Router) {}
 
   ngOnInit(): void {
-    console.log(localStorage.getItem('userid'));
-    console.log(localStorage.getItem('minAge'));
+
     if (this.preference?.includes('m') == true) {
       this.checkboxFlag1 = true;
     }
@@ -129,5 +128,11 @@ export class PreferencesComponent implements OnInit {
  defaultimg(){
   this.source="assets/default.png"
   
+ }
+
+ deleteProfile(){
+  this.UserService.deleteProfilef({"userid":localStorage.getItem('userid')}).subscribe();
+  localStorage.clear();
+  this.router.navigate(['Login']);
  }
 }
