@@ -17,6 +17,7 @@ import { DateAgePipe } from './date-age.pipe';
 import { GendernamePipe } from './gendername.pipe';
 import { PreferencesComponent } from './preferences/preferences.component';
 import { UploadComponent } from './upload/upload.component';
+import { ProfileComponent } from './profile/profile.component';
 import { ChatComponent } from './chat/chat.component';
 import { VerifyComponent } from './verify/verify.component';
 
@@ -35,6 +36,9 @@ import { VerifyComponent } from './verify/verify.component';
     GendernamePipe,
     PreferencesComponent,
     UploadComponent,
+    ProfileComponent,
+    ChatComponent,
+    UploadComponent
     ChatComponent,
     VerifyComponent
 
@@ -46,7 +50,7 @@ import { VerifyComponent } from './verify/verify.component';
     HttpClientModule,
     RouterModule,
     NgbModule
-   
+
   ],
   providers: [],
   bootstrap: [AppComponent]
