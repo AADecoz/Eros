@@ -16,7 +16,7 @@ const routes: Routes = [
   {path:"Register", component: RegisterComponent},
   {path:"Matches",component: MatchesComponent, canActivate:[UserGuard]},
   {path:"profile",component: ProfileComponent, canActivate:[UserGuard]},
-  {path:"preferences",component: PreferencesComponent,canActivate:[UserGuard]}
+  {path:"preferences",component: PreferencesComponent,canActivate:[UserGuard]},
   {path:"verify/:id",component: VerifyComponent},
   {path: "**",redirectTo:'',pathMatch: 'full',canActivate:[UserGuard]},
 ];

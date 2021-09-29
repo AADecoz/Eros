@@ -38,7 +38,7 @@ import { VerifyComponent } from './verify/verify.component';
     UploadComponent,
     ProfileComponent,
     ChatComponent,
-    UploadComponent
+    UploadComponent,
     ChatComponent,
     VerifyComponent
 
