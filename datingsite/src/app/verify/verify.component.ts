@@ -11,7 +11,7 @@ import { UserService } from '../user.service';
 export class VerifyComponent implements OnInit {
 
    routeSub!:Subscription;
-
+  show:boolean=false;
    key:any;
   constructor(private route: ActivatedRoute, private UserService:UserService) { }
 
@@ -19,7 +19,7 @@ export class VerifyComponent implements OnInit {
     this.routeSub = this.route.params.subscribe(params => {
       this.key=params["id"];
       this.UserService.verifyEmailf({"key":this.key}).subscribe(event => {
-       
+       this.show=true;
       });
 
     });

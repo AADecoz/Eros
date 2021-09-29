@@ -14,6 +14,7 @@ class UserController extends Controller{
 
     public function register(request $data){
         $randkey=rand(1000000000,100000000000);
+        
        $test= User::create([
             'name' => $data->name,
             'email' => $data->email,
