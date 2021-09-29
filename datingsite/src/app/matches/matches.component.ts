@@ -25,7 +25,6 @@ export class MatchesComponent implements OnInit {
     this.UserService.matchesf({"userid":localStorage.getItem('userid')}).subscribe((data)=>{ 
       this.matchesArray=data.user;
       
-      console.log("matcharray=" + this.matchesArray)
       if(this.matchesArray==null){
         this.noMatch=true;
       }else{
@@ -49,6 +48,9 @@ export class MatchesComponent implements OnInit {
     });
     
   }
+
+
+  
 
  
 }
