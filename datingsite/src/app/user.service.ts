@@ -87,7 +87,7 @@ constructor(private http:HttpClient) { }
   }
 
 
-  private messageSource = new BehaviorSubject<object>({"id":"test" });
+  private messageSource = new BehaviorSubject<object>({"id":"test","name":"placeholder" });
   currentMessage = this.messageSource.asObservable();
 
   

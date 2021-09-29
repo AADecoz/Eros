@@ -7,7 +7,7 @@
           <div *ngIf="loaded" class="">
           <div class="row">
           <div class="col-4">
-            <div *ngFor="let item of matchesArray" (click)="newData(item['UserId'])">
+            <div *ngFor="let item of matchesArray" (click)="newData(item['UserId'],item['name'])">
               <div class="row user-info">
                 <div class="col-3 pr-0">
                   <img src='/assets/userprofiles/{{item["UserId"]}}.jpg' onerror="this.src='/assets/default.png';" class="img-fluid" />

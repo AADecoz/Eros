@@ -31,7 +31,7 @@ export class MatchesComponent implements OnInit {
         this.noMatch=true;
       }else{
         this.noMatch=false;
-        this.UserService.changeData({"id":this.matchesArray[0].id})
+        this.UserService.changeData({"id":this.matchesArray[0].id,"name":this.matchesArray[0].name})
       }
       this.loaded=true;
      
@@ -41,8 +41,8 @@ export class MatchesComponent implements OnInit {
     
   }
     
-     newData(id:any) {
-     this.UserService.changeData({"id":id})
+     newData(id:any,name:any) {
+     this.UserService.changeData({"id":id,"name":name})
   }
 
   deleteMatch(id:string){

@@ -1,4 +1,4 @@
-<p>{{ message.data }}</p>
+<p>{{ nameChat }}</p>
 
 <div class="container-fluid" *ngFor="let item of messages " [ngClass]="(item.from==name)?'text-right':'text-left'">
    <p>{{ item.body }}</p>
