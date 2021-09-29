@@ -14,6 +14,8 @@ export class ChatComponent implements OnInit {
  name = localStorage.getItem('username')
  id=localStorage.getItem('userid')
   subscription!: Subscription;
+
+  nameChat:string="";
   constructor(private data:UserService) { }
  
 
@@ -28,14 +30,12 @@ export class ChatComponent implements OnInit {
   }
 
   newMessage() {
-   
+   this.nameChat=this.message.name;
     this.data.showChatf({"userid":localStorage.getItem('userid'),"matchid":this.message.id}).subscribe((dataApi)=>
     {this.messages=dataApi.messages
     });
     
   }
-
-
 
   sendChat(){
     this.data.sendChatf({"userid":localStorage.getItem('userid'),"matchid":this.message.id,"body":this.inputChat}).subscribe((dataApi)=>

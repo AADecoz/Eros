@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
 
   hide=true;
   hide2=true;
+  notVerified=true;
   constructor(private UserService:UserService,private Router:Router) {
 
   }
@@ -30,12 +31,12 @@ export class LoginComponent implements OnInit {
     this.hide=true;
     this.hide2=true;
     this.UserService.verifyf({"email":this.userSign,"password":this.passSign}).subscribe((data)=> {
-      console.log(data.status_message)
+      console.log(data)
      if(data.status_message=="Wrong password"){
           this.hide2=false;
        }else if(data.status_message=="Email not found"){
          this.hide=false;
-       } else{
+       } else if (data.user.email_verified_at!=null){
         localStorage.setItem('userid',data.user.UserId);
         localStorage.setItem('username',data.user.name);
         localStorage.setItem('preference',data.user.preference);
@@ -46,6 +47,8 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('maxAge',data.user.maxAge);
         localStorage.setItem('intro',data.user.intro);
         this.Router.navigate([""]);
+      }else{
+        this.notVerified=false;
       }
 })
   }

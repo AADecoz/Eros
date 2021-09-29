@@ -1,123 +1,80 @@
-<!--<app-navbar></app-navbar>-->
-<!--<form class="form-group" (submit)="register(myForm)" #myForm="ngForm">-->
-<!--  <h1>register</h1>-->
-
-<!--  <label>Email</label>-->
-<!--  <input type="text" class="form-control" required [(ngModel)]="email" name="email">-->
-<!--  <div [hidden]=hideLogin>Email already used</div>-->
-
-<!--  <label>Username</label>-->
-<!--  <input type="text" class="form-control" required [(ngModel)]="username" name="username" #trackUser="ngModel">-->
-<!--  <label>Password</label>-->
-<!--  <input type="password" class="form-control" required [(ngModel)]="password" name="password">-->
-
-<!--  <label for="sex">sex</label>-->
-<!--  <select name="sex" id="sex" class="form-control" [(ngModel)]="sex" required>-->
-<!--    <option value="m">Male</option>-->
-<!--    <option value="f">female</option>-->
-<!--    <option value="o">Other</option>-->
-<!--  </select>-->
-
-<!--  <label for="pref1">Male</label><br>-->
-<!--  <input type="checkbox" class="form-control" id="pref1" name="pref1" value="Male" [(ngModel)]="checkboxFlag1">-->
-<!--  <label for="pref2">Female</label><br>-->
-<!--  <input type="checkbox" class="form-control" id="pref2" name="pref2" value="Female" [(ngModel)]="checkboxFlag2">-->
-<!--  <label for="pref3">Other</label><br><br>-->
-<!--  <input type="checkbox" id="pref3" class="form-control" name="pref3" value="Other" [(ngModel)]="checkboxFlag3">-->
-
-
-
-
-
-<!--  <label>Date of Birth</label>-->
-<!--  <input type="date" name="date" class="form-control" [(ngModel)]="birthday" required>-->
-
-<!--  <label>Area</label>-->
-<!--  <select name="area" name="area" class="form-control" id="area" [(ngModel)]="area" required>-->
-<!--    <option value="limburg">limburg</option>-->
-<!--    <option value="Vlaams-brabant">vlaams brabant</option>-->
-
-<!--  </select>-->
-
-
-<!--  <input type="submit" value="Date Me Baby!">-->
-<!--  <p [hidden]=hide>Form is not valid</p>-->
-<!--  &lt;!&ndash; [disabled]="trackUser.invalid" &ndash;&gt;-->
-<!--</form>-->
-<!--<app-footer></app-footer>-->
-
-<app-navbar></app-navbar>
-<div class="dropdown-divider"> </div>
-<div class="form-group">
-  <form class="container-fluid" (submit)="register(myForm)" #myForm="ngForm">
-    <div class="col-sm-9">
-      <h1>Register me!</h1>
+<div class="container-fluid">
+  <div class="row">
+    <app-navbar class="col-12"></app-navbar>
+    <div class="col-6">
+    <h1>Register me!</h1>
     </div>
-    <div class="col-sm-12 col-md-8">
-      <!--  <label class="form-control-lg col-sm-4"></label>-->
-      <input type="text" class="col-sm-12 col-md-6 " required [(ngModel)]="email" name="email" placeholder="Email">
-      <div [hidden]=hideLogin>Email already used</div>
-    </div>
-
-    <div>
-      <div class="col-sm-12 col-md-8 ">
-        <!--  <label class="form-control-lg col-sm-4"></label>-->
-        <input type="text" class="col-sm-12 col-md-6 " required [(ngModel)]="username" name="username" placeholder="Username" #trackUser="ngModel">
-      </div>
-      <div class="col-sm-12 col-md-8 ">
-        <!--  <label class="form-control-lg col-sm-4"></label>-->
-        <input type="password" class="col-sm-12 col-md-6 " required [(ngModel)]="password" name="password" placeholder="Password">
-      </div>
-    </div>
-
-    <div class="d-flex col-sm-12 col-md-6 ">
-
-      <label class="form-control col-sm-4 col-md-2 " for="sex">Sex:</label>
-      <div class="col-sm-3 col-md-1"></div>
-      <select name="sex" id="sex" class="form-control col-md-5" [(ngModel)]="sex" required>
-        <option value="m">Male</option>
-        <option value="f">female</option>
-        <option value="o">Other</option>
-      </select>
-    </div>
-    <div class="col-sm-12 col-md-6 ">
-      <label class="form-control col-sm-4">Preferences</label>
-      <div class="d-flex">
-
-        <label class="form-control col-sm-4 " for="pref1">Male</label>
-        <input class="form-control col-sm-8" type="checkbox"  id="pref1" name="pref1" value="Male" [(ngModel)]="checkboxFlag1">
-      </div>
-      <div class="d-flex">
-        <label class="form-control col-sm-4" for="pref2">Female</label>
-        <input class="form-control col-sm-8" type="checkbox"  id="pref2" name="pref2" value="Female" [(ngModel)]="checkboxFlag2">
-      </div>
-      <div class="d-flex">
-        <label class="form-control col-sm-4" for="pref3">Other</label>
-        <input class="form-control col-sm-8" type="checkbox" id="pref3" name="pref3" value="Other" [(ngModel)]="checkboxFlag3">
+    <div class="col-6">
+      <div class="form-group">
+        <form class="container-fluid" (submit)="register(myForm)" #myForm="ngForm"> 
+          <div class="col-sm-12 col-md-8">
+            <!--  <label class="form-control-lg col-sm-4"></label>-->
+            <input type="text" class="col-sm-12" required [(ngModel)]="email" name="email" placeholder="Email">
+            <div [hidden]=hideLogin>Email already used</div>
+          </div>
+      
+          <div>
+            <div class="col-sm-12 col-md-8 ">
+              <!--  <label class="form-control-lg col-sm-4"></label>-->
+              <input type="text" class="col-sm-12" required [(ngModel)]="username" name="username" placeholder="Username" #trackUser="ngModel">
+            </div>
+            <div class="col-sm-12 col-md-8 ">
+              <!--  <label class="form-control-lg col-sm-4"></label>-->
+              <input type="password" class="col-sm-12" required [(ngModel)]="password" name="password" placeholder="Password">
+            </div>
+          </div>
+      
+          <div class="d-flex col-sm-12  ">
+      
+            <label class="form-control col-sm-4 col-md-2" for="sex">Sex:</label>
+            <div class="col-sm-3 col-md-1"></div>
+            <select name="sex" id="sex" class="form-control col-md-5" [(ngModel)]="sex" required>
+              <option value="m">Male</option>
+              <option value="f">female</option>
+              <option value="o">Other</option>
+            </select>
+          </div>
+          <div class="col-sm-12  ">
+            <label class="form-control col-sm-4">Preferences</label>
+            <div class="d-flex">
+      
+              <label class="form-control col-sm-4" for="pref1">Male</label>
+              <input class="form-control col-sm-8" type="checkbox"  id="pref1" name="pref1" value="Male" [(ngModel)]="checkboxFlag1">
+            </div>
+            <div class="d-flex">
+              <label class="form-control col-sm-4" for="pref2">Female</label>
+              <input class="form-control col-sm-8" type="checkbox"  id="pref2" name="pref2" value="Female" [(ngModel)]="checkboxFlag2">
+            </div>
+            <div class="d-flex">
+              <label class="form-control col-sm-4" for="pref3">Other</label>
+              <input class="form-control col-sm-8" type="checkbox" id="pref3" name="pref3" value="Other" [(ngModel)]="checkboxFlag3">
+            </div>
+          </div>
+      
+      
+          <div class="col-sm-12 col-md-8 ">
+            <label class="form-control col-sm-4">Date of Birth</label>
+            <input id="bd" type="date" max="{{currentDate|date:'yyyy-MM-dd'}}" name="date" class="col-sm-8 " [(ngModel)]="birthday" required>
+          </div>
+      
+      
+          <div class="col-sm-12  ">
+            <label class="form-control col-sm-4">Area</label>
+            <select name="area" name="area" class="form-control col-sm-8" id="area" [(ngModel)]="area" required>
+              <option value="Limburg">Limburg</option>
+              <option value="Vlaams-brabant">Vlaams brabant</option>
+              <option value="Olympus">Olympus</option>
+            </select>
+      
+          </div>
+          <div class="col-sm-12 ">
+            <input type="submit" id="submitme" value="Date Me Baby!">
+            <p [hidden]=hide>Form is not valid</p>
+            <!-- [disabled]="trackUser.invalid" -->
+          </div>
+      
+        </form>
       </div>
     </div>
-
-
-    <div class="col-sm-12 col-md-8 ">
-      <label class="form-control col-sm-4">Date of Birth</label>
-      <input id="bd" type="date" max="{{currentDate|date:'yyyy-MM-dd'}}" name="date" class="col-sm-8 col-md-6" [(ngModel)]="birthday" required>
-    </div>
-
-
-    <div class="col-sm-12 col-md-6 ">
-      <label class="form-control col-sm-4">Area</label>
-      <select name="area" name="area" class="form-control col-sm-8" id="area" [(ngModel)]="area" required>
-        <option value="Limburg">Limburg</option>
-        <option value="Vlaams-brabant">Vlaams brabant</option>
-        <option value="Olympus"> Olympus</option>
-      </select>
-
-    </div>
-    <div class="col-sm-12 col-md-6">
-      <input class="col-sm-8" type="submit" id="submitme" value="Date Me Baby!">
-      <p [hidden]=hide>Form is not valid</p>
-      <!-- [disabled]="trackUser.invalid" -->
-    </div>
-
-  </form>
+  </div>
 </div>

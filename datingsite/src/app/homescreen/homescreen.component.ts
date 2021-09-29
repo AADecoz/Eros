@@ -54,10 +54,10 @@ laadFeedLocal(){
 }
 
 like(likedOrNot:number){
+  
  let matchID=this.feedArray[0].UserId;
  let userID=localStorage.getItem('userid');
     this.UserService.likef({"userid":userID,"matchid":matchID,"matched":likedOrNot}).subscribe((data)=> {
-      console.log(data);
       this.laadFeedLocal();
     })
 }

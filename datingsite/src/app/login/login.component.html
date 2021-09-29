@@ -1,6 +1,6 @@
-<app-navbar></app-navbar>
 <div class="container-fluid">
   <div class="row">
+<app-navbar class="col-12"></app-navbar>
     <div class="col-12 col-md-6 offset-md-6">
       <form
         class="form-group"
@@ -27,7 +27,8 @@
           name="passSign"
         />
         <p class="" [hidden]="hide2">Wrong password</p>
-        <input class="" type="submit" id="submitButton" value="submit" />
+        <input class="" type="submit" class="button--red w-100" value="submit" />
+        <h2 [hidden]= "notVerified" >Email is not verified</h2>
       </form>
     </div>
   </div>

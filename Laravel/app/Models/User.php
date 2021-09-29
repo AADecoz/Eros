@@ -9,6 +9,7 @@ namespace App\Models;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
 
 /**
  * Class User
@@ -35,6 +36,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class User extends Model
 {
+	use Notifiable;
 	protected $table = 'users';
 	protected $primaryKey = 'UserId';
 
@@ -42,7 +44,8 @@ class User extends Model
 		'email_verified_at',
 		'birthday',
 		'minAge',
-		'maxAge'
+		'maxAge',
+		
 	];
 
 	protected $hidden = [
@@ -62,7 +65,8 @@ class User extends Model
 		'intro',
 		'minAge',
 		'maxAge',
-		'remember_token'
+		'remember_token',
+		'verifyKey'
 	];
 
 	public function matchings()
