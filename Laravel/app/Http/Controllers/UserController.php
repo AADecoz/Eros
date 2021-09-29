@@ -49,6 +49,8 @@ class UserController extends Controller{
         }
     }
 
+
+
     public function passwordVerification(request $data){
         $login = DB::table('users')
             ->where('email',"=",$data->email)
@@ -57,7 +59,11 @@ class UserController extends Controller{
             if(!Hash::check($data->password,$login->password) ){
                 return response()->json([ 'status_message'=>'Wrong password'], 200);
             } else {
-                return response()->json(['user'=>$login,'status_message'=>'Password correct'], 200);
+                $loginNoPass = DB::table('users')->select(['UserId','name','preference','sex','birthday','area','minAge','maxAge','intro'])
+                ->where('email',"=",$data->email)
+                ->first();
+                
+                return response()->json(['email_verify'=>$login->email_verified_at,'status_message'=>'Password correct','user'=>$loginNoPass], 200);
             }
         } else {
             return response()->json([ 'status_message'=>'Email not found'], 200);

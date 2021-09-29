@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
           this.hide2=false;
        }else if(data.status_message=="Email not found"){
          this.hide=false;
-       } else if (data.user.email_verified_at!=null){
+       } else if (data.email_verify!=null){
         localStorage.setItem('userid',data.user.UserId);
         localStorage.setItem('username',data.user.name);
         localStorage.setItem('preference',data.user.preference);
