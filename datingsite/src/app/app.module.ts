@@ -19,6 +19,7 @@ import { PreferencesComponent } from './preferences/preferences.component';
 import { UploadComponent } from './upload/upload.component';
 import { ProfileComponent } from './profile/profile.component';
 import {ChatComponent} from "./chat/chat.component";
+import { VerifyComponent } from './verify/verify.component';
 // import { ServiceWorkerModule } from '@angular/service-worker';
 // import { environment } from '../environments/environment';
 
@@ -41,6 +42,7 @@ import {ChatComponent} from "./chat/chat.component";
     ProfileComponent,
     ChatComponent,
     UploadComponent,
+    VerifyComponent
 
 
   ],
