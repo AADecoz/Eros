@@ -1,10 +1,13 @@
+<div class="image-upload-new">
+  <img [src]=source [hidden]=hidePreview class="image-upload-new">
+</div>
 <form #f="ngForm" enctype="multipart/form-data" class="image-upload" >
   <p [hidden]=extensionCheck>{{errortekst}}</p>
-  <label for="file-upload" class="custom-file-upload"></label>
-<input id="file-upload" type="file" (change)="onFileChanged($event)"/>
+  <label for="file-upload" class="image-upload--upload"></label>
+  <input id="file-upload" type="file" (change)="onFileChanged($event)" required/>
   
-  <button (click)="upload()"></button>
-  <label for="file-reset" class="custom-file-reset"></label>
-  <input type="reset">
+  <label (click)="upload()" for="file-submit" class="image-upload--submit"></label>
+  <input type="submit" name="file-submit">
+  <!-- <label for="file-reset" class="image-upload--reset"></label>
+  <input type="reset" name="file-reset"> -->
 </form>
-<app-footer></app-footer>

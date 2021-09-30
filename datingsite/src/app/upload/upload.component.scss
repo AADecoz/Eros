@@ -1,9 +1,35 @@
 .image-upload{
+    position: absolute;
+    bottom: 10px;
+    left: 30px;
 
-    & input[type="file"], input[type="reset"] {
-        display: none;
+    &-new{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 0 15px;
+        
+        & img{
+            border-radius: 15px;
+            width: 100%;
+            aspect-ratio: .85;
+            object-fit: cover;
+            object-position: top center;
+            margin: 0;
+            background:var(--bg);
+        }
     }
-    & .custom-file-upload, .custom-file-reset, button {
+
+    & input{
+        display: none;
+
+        &:invalid ~ label, :invalid ~ input{
+            display: none;
+        }
+    }
+
+    & .image-upload--upload, .image-upload--reset, .image-upload--submit{
         margin: 0 5px 0 0;
         padding: 0;
         display: inline-block;
@@ -16,7 +42,7 @@
             background: url(../../assets/img/button-refresh--hover.png);
         }
     }
-        & button{
+        & .image-upload--submit{
                 border: none;
                 background: url(../../assets/img/button-upload.png);
         
@@ -25,7 +51,7 @@
                 }
             } 
 
-    & .custom-file-reset{
+    & .image-upload--reset{
         background: url(../../assets/img/button-cancel.png);
 
         &:hover{

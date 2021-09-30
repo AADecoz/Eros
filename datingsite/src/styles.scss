@@ -1,3 +1,29 @@
+/* Myriad Pro include */
+
+@font-face {
+    font-family: 'Myriad Pro';
+    src: url('./assets/fonts/MyriadPro-Semibold.woff2') format('woff2'),
+        url('./assets/fonts/MyriadPro-Semibold.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Myriad Pro';
+    src: url('./assets/fonts/MyriadPro-Regular.woff2') format('woff2'),
+        url('./assets/fonts/MyriadPro-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
 /* You can add global styles to this file, and also import other style files */
 :root{
     --pri: #e5446d;
@@ -6,14 +32,6 @@
     --head: #595959;
     --body: #8a8a8a;
 }
-
-
-/* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';
-
-/* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';
-
 
 /* base */@at-root
 
@@ -35,13 +53,15 @@ body{
      max-width: 1170px;
  }
  
- h1, h2,h3,h4,h5,h6{
+ h1, h2, h3, h4, h5, h6{
      color: var(--head);
      font-size: 3em;
  }
+
  h5{
      font-size: 1.6em;
  }
+ 
  p{
     font-size: 1.4em;
  }
@@ -86,8 +106,6 @@ body{
     } 
 }
 
-
-
 /* PROFILE */
 
 .profile-image{
@@ -114,7 +132,7 @@ body{
 }
 .button-dislike{
     background: url(/assets/img/button_dislike.png);
-    margin: 0 0 0 10px;
+    
 
     &--small{
         background-size: 100%;
@@ -138,6 +156,7 @@ body{
     body{
         background:url("assets/backgroundDesktop.jpg") no-repeat fixed;
         background-size:cover;
+
         & .main{
             background: #fff;
             border-radius: 30px;
