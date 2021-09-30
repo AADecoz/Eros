@@ -4,8 +4,10 @@ input{
   border-radius: 20px;
   margin-top: 5px;
   line-height: 38px;
-  &:focus ring{
-    color: #e5446d;
+  &:focus{
+    outline-width: 3px;
+    outline-style: solid;
+    outline-color: var(--pri);
   }
 }
 
@@ -20,4 +22,28 @@ input{
 select{
   border-radius: 20px;
   margin-bottom: 10px;
+}
+
+.main input, select, option{
+  color: var(--pri);
+}
+
+.custom-control-input{
+  background: var(--pri);
+}
+
+.custom-control-label:before{
+  background: white;
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before{
+  background-color:white;
+  border: white;
+
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::after{
+  background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='rgb(229,68,109)' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E");
+  background-color:white;
+  border: white;
 }

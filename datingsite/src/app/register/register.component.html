@@ -38,24 +38,30 @@
           <option value="o">Other</option>
         </select>
       </div>
-      <div class="col-12">
-        <label class="form-control-lg p-0 ml-0 mt-5">Preferences</label>
 
-        <div class="row">
-          <label class="form-control-lg col-4" for="pref1">Men</label>
-          <input class="" type="checkbox" id="pref1" name="pref1" value="Male"
+      <div class="row p-4">
+      <label class="form-control-lg">Preferences</label>
+
+      <div class="col-8 p-3">
+
+        <div class="custom-control custom-checkbox mb-3">
+          <input type="checkbox" class="custom-control-input" id="pref1" name="pref1" value="Male"
                  [(ngModel)]="checkboxFlag1">
+          <label class="custom-control-label form-control-lg" for="pref1">Men</label>
         </div>
-        <div class="row">
-          <label class="form-control-lg col-4" for="pref2">Women</label>
-          <input class=" " type="checkbox" id="pref2" name="pref2" value="Female"
+        <div class="custom-control custom-checkbox mb-3">
+
+          <input type="checkbox" class="custom-control-input mt-2" id="pref2" name="pref2" value="Female"
                  [(ngModel)]="checkboxFlag2">
+          <label class="custom-control-label form-control-lg" for="pref2">Women</label>
         </div>
-        <div class="row">
-          <label class="form-control-lg col-4" for="pref3">Other</label>
-          <input class=" " type="checkbox" id="pref3" name="pref3" value="Other"
+        <div class="custom-control custom-checkbox mb-3">
+
+          <input type="checkbox" class="custom-control-input mt-2" id="pref3" name="pref3" value="Other"
                  [(ngModel)]="checkboxFlag3">
+          <label class="custom-control-label form-control-lg" for="pref3">Other</label>
         </div>
+      </div>
       </div>
 
 
@@ -67,8 +73,8 @@
 
 
       <div class="row">
-        <label class="form-control-lg col-4">Area</label>
-        <select name="area" name="area" class="form-control-lg col-6" id="area" [(ngModel)]="area" required>
+        <label class="form-control-lg col-sm-4">Area</label>
+        <select name="area" name="area" class="col-6 p-3" id="area" [(ngModel)]="area" required>
           <option value="Limburg">Limburg</option>
           <option value="Vlaams-Brabant">Vlaams-Brabant</option>
           <option value="Henegouwen">Henegouwen</option>
