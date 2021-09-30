@@ -9,9 +9,9 @@
   <div class="d-flex row-8">
     <label class="col-5 p-2">I am a</label>
     <select name="sex" id="sex" class="form-control border-0 container-fluid" [(ngModel)]="sex">
-      <option value="m">Male</option>
+      <option value="m">male</option>
       <option value="f">female</option>
-      <option value="o">Other</option>
+      <option value="o">other</option>
     </select>
   </div>
     <label class="p-2">in search of</label>
@@ -21,24 +21,37 @@
     <label for="pref3"><input type="checkbox" class="m-1" id="pref3"  name="pref3" value="Other" [(ngModel)]="checkboxFlag3">Other</label>
   </div>
 
-    <label>between the ages of</label>
+    <label class="p-2">between the ages of</label>
   <div class="d-flex row-12">
     <input type="input" class="form-control border-0 w-25" required [(ngModel)]="minage" name="minage">
     <label class="col-1 p-2">and</label>
     <input type="input" class="form-control border-0 w-25" required [(ngModel)]="maxage" name="maxage">
   </div>
 
-    <label>I was born on</label>
-    <input type="date" name="date" class="form-control" [(ngModel)]="age">
+  <div class="d-flex row-12">
+    <label class="col-5 p-2">I was born on</label>
+    <input type="date" name="date" class="form-control border-0 container-fluid w-50" [(ngModel)]="age">
+  </div>
 
-    <label>Living in</label>
-    <select name="area" class="form-control" id="area" [(ngModel)]="area">
+  <div class="d-flex row-12">
+    <label class="col-5 p-2">Living in</label>
+    <select name="area" class="form-control border-0 container-fluid col-6" id="area" [(ngModel)]="area">
       <option value="Limburg">Limburg</option>
       <option value="Vlaams-Brabant">Vlaams-Brabant</option>
+      <option value="Henegouwen">Henegouwen</option>
+      <option value="Limburg">Limburg</option>
+      <option value="Luik">Luik</option>
+      <option value="Luxemburg">Luxemburg</option>
+      <option value="Namen">Namen</option>
+      <option value="Oost-Vlaanderen">Oost-Vlaanderen</option>
+      <option value="Namen">Namen</option>
     </select>
+  </div>
 
+  <div>
     <label>Introduction</label>
     <input type="text" class="form-control" required [(ngModel)]="intro" name="intro">
+  </div>
   </section>
 
 <!--    <img [src]=source (error)="defaultimg()">-->
