@@ -93,10 +93,10 @@ export class PreferencesComponent implements OnInit {
         this.preference = 'no entry';
     }
 
-    if (form.status == 'VALID' && this.preference != 'no entry' && isNaN(this.minage)==false && isNaN(this.maxage)==false) {
+    if ( this.preference != 'no entry' && isNaN(this.minage)==false && isNaN(this.maxage)==false) {
       this.uploaded=true;
 
-
+console.log("??")
 
       let year =new Date().getFullYear();
       let minAgeYear:any = year-this.minage;
