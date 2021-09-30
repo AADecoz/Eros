@@ -37,7 +37,6 @@ export class HomescreenComponent implements OnInit {
       this.matches=false;
     }else{
       this.feedArray=data.user;
-      console.log(data.user)
       this.sourceMatch="assets/userprofiles/"+this.feedArray[0].UserId+".jpg";
     }
     this.loading=true;

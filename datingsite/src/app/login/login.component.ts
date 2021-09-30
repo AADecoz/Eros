@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
     this.hide=true;
     this.hide2=true;
     this.UserService.verifyf({"email":this.userSign,"password":this.passSign}).subscribe((data)=> {
-      console.log(data)
+      
      if(data.status_message=="Wrong password"){
           this.hide2=false;
        }else if(data.status_message=="Email not found"){
