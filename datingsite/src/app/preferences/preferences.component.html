@@ -2,41 +2,45 @@
   <section class="main container-fluid">
 
 
-    <div class="d-flex row-12">
-      <label class="col-5">My name is</label>
-      <input type="text" class="form-control border-0 container-fluid" required [(ngModel)]="username" name="username">
+    <div class="d-flex row-8">
+      <label class="col-5 p-2">My name is</label>
+      <input type="text" class="form-control border-0 container-fluid " required [(ngModel)]="username" name="username">
     </div>
-
-    <label>I am a</label>
-    <select name="sex" id="sex" class="form-control" [(ngModel)]="sex">
+  <div class="d-flex row-8">
+    <label class="col-5 p-2">I am a</label>
+    <select name="sex" id="sex" class="form-control border-0 container-fluid" [(ngModel)]="sex">
       <option value="m">Male</option>
       <option value="f">female</option>
       <option value="o">Other</option>
     </select>
-  <div class="d-inline-block">
-    <label for="pref1">Men</label><br>
-    <input type="checkbox" class="form-control" id="pref1" name="pref1" value="Male" [(ngModel)]="checkboxFlag1">
-    <label for="pref2">Women</label><br>
-    <input type="checkbox" class="form-control" id="pref2" name="pref2" value="Female" [(ngModel)]="checkboxFlag2">
-    <label for="pref3">Other</label><br><br>
-    <input type="checkbox" id="pref3" class="form-control" name="pref3" value="Other" [(ngModel)]="checkboxFlag3">
   </div>
+    <label class="col-5 p-2">in search of</label>
+  <div class="d-flex row justify-content-around ">
+    <label for="pref1">Men</label><br>
+    <input type="checkbox"  class="" id="pref1" name="pref1" value="Male" [(ngModel)]="checkboxFlag1">
+    <label for="pref2">Women</label><br>
+    <input type="checkbox"  class="" id="pref2" name="pref2" value="Female" [(ngModel)]="checkboxFlag2">
+    <label for="pref3">Other</label><br><br>
+    <input type="checkbox" class="" id="pref3"  name="pref3" value="Other" [(ngModel)]="checkboxFlag3">
+  </div>
+
+    <label>between the ages of</label>
+  <div class="d-flex row-12">
+    <input type="input" class="form-control" required [(ngModel)]="minage" name="minage">
+    <label>and</label>
+    <input type="input" class="form-control" required [(ngModel)]="maxage" name="maxage">
+  </div>
+
     <label>I was born on</label>
     <input type="date" name="date" class="form-control" [(ngModel)]="age">
 
-    <label>I am living in</label>
+    <label>Living in</label>
     <select name="area" class="form-control" id="area" [(ngModel)]="area">
       <option value="Limburg">Limburg</option>
       <option value="Vlaams-Brabant">Vlaams-Brabant</option>
     </select>
 
-    <label>Min age</label>
-    <input type="input" class="form-control" required [(ngModel)]="minage" name="minage">
-
-    <label>Max age</label>
-    <input type="input" class="form-control" required [(ngModel)]="maxage" name="maxage">
-
-    <label>Intro</label>
+    <label>Introduction</label>
     <input type="text" class="form-control" required [(ngModel)]="intro" name="intro">
   </section>
 
