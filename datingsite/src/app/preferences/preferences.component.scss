@@ -1,11 +1,10 @@
-:root{
-  --pri: #e5446d;
-  --sec: #64abc1;
-  --bg: #fff;
-  --head: #595959;
-  --body: #8a8a8a;
+input, select, textarea{
+  &:focus{
+    outline-width: 2px;
+    outline-style: outset;
+    outline-color: hotpink;
+  }
 }
-
 
 .main input, select, option{
   color: var(--pri);
@@ -30,54 +29,16 @@
 .custom-checkbox .custom-control-input:checked~.custom-control-label::before{
   background-color:white;
   border: white;
-
 }
 
 .custom-checkbox .custom-control-input:checked~.custom-control-label::after{
   background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='rgb(229,68,109)' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E");
   background-color:white;
   border: white;
+
 }
 
-.button--white, .button--red{
-  background: var(--bg);
-  height: 40px;
-  border: 0;
-  border-radius: 40px;
-  &:hover{
-    background: var(--pri);
-  }
 
-  &.last{
-    margin: 0 0 0 20px;
-  }
-
-  & a{
-    font-size: 1.6em;
-    line-height: 40px;
-    padding: 12px 35px;
-    color: var(--pri);
-    &:hover{
-      color: var(--bg);
-      text-decoration: none;
-    }
-  }
-}
-
-.button--red{
-  background: var(--pri);
-  &:hover{
-    background: var(--bg);
-  }
-
-  & a{
-    color: var(--bg);
-    &:hover{
-      color: var(--pri);
-      text-decoration: none;
-    }
-  }
-}
 
 .age{
   text-align: center;
