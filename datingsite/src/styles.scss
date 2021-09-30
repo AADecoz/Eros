@@ -140,9 +140,10 @@ body{
 }
 .button-dislike{
     background: url(/assets/img/button_dislike.png);
-    
+    margin: 0 0 0 10px;
 
     &--small{
+    background: url(/assets/img/button_dislike.png);
         background-size: 100%;
         width: 15px;
         height: 15px;
