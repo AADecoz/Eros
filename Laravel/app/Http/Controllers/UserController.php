@@ -28,12 +28,12 @@ class UserController extends Controller{
             'intro' => $data->intro,
             'minAge' => $minAge,
             'maxAge' => $maxAge,
-            
+
         ]);
 
-        
 
-        $test->notify(new verifyNotification($randkey));        
+
+        $test->notify(new verifyNotification($randkey));
         return response()->json(['message' => 'user created'], 201);
     }
 
@@ -44,7 +44,7 @@ class UserController extends Controller{
         if(empty($login)){
             return response()->json(['user' => Null, 'status_message'=>'user not found'], 200);
         } else{
-            
+
             return response()->json(['user' => $login, 'status_message'=>'user found'], 200);
         }
     }
@@ -79,8 +79,8 @@ class UserController extends Controller{
 
     function upload(Request $data){
        $file = $data->myFile;
-       $localpath="C:/wamp64/www/Eros/";
-        $file->move($localpath.'eros/datingsite/src/assets/userprofiles/', $file->getClientOriginalName());
+       $localpath="C:\Users\Alexander Decoz\PhpstormProjects";
+        $file->move($localpath.'Eros/datingsite/src/assets/userprofiles/', $file->getClientOriginalName());
     }
 
     function deleteProfile(Request $data){
