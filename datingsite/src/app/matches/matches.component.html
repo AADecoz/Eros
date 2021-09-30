@@ -13,7 +13,7 @@
                 </div>
                 <div class="col-9">
                   <h5>{{ item["name"]}}, {{ item["birthday"] | dateAge }}</h5>
-                  <p class="area"><span class="icon-area"></span>{{ item["area"] }}</p>
+                  <p class="icon-area">{{ item["area"] }}</p>
                   <button class="dislike--small" (click)="deleteMatch(item['UserId'])"></button>
                 </div>
               </div>
