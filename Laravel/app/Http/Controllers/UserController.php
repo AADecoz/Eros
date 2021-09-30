@@ -28,12 +28,12 @@ class UserController extends Controller{
             'intro' => $data->intro,
             'minAge' => $minAge,
             'maxAge' => $maxAge,
-            
+
         ]);
 
-        
 
-        $test->notify(new verifyNotification($randkey));        
+
+        $test->notify(new verifyNotification($randkey));
         return response()->json(['message' => 'user created'], 201);
     }
 
@@ -44,12 +44,10 @@ class UserController extends Controller{
         if(empty($login)){
             return response()->json(['user' => Null, 'status_message'=>'user not found'], 200);
         } else{
-            
+
             return response()->json(['user' => $login, 'status_message'=>'user found'], 200);
         }
     }
-
-
 
     public function passwordVerification(request $data){
         $login = DB::table('users')
@@ -62,7 +60,7 @@ class UserController extends Controller{
                 $loginNoPass = DB::table('users')->select(['UserId','name','preference','sex','birthday','area','minAge','maxAge','intro'])
                 ->where('email',"=",$data->email)
                 ->first();
-                
+
                 return response()->json(['email_verify'=>$login->email_verified_at,'status_message'=>'Password correct','user'=>$loginNoPass], 200);
             }
         } else {
@@ -85,8 +83,8 @@ class UserController extends Controller{
 
     function upload(Request $data){
        $file = $data->myFile;
-       $localpath="C:/wamp64/www/MM/";
-        $file->move($localpath.'datingsite/datingsite/src/assets/userprofiles/', $file->getClientOriginalName());
+       $localpath="C:/wamp64/www/Eros/";
+        $file->move($localpath.'eros/datingsite/src/assets/userprofiles/', $file->getClientOriginalName());
     }
 
     function deleteProfile(Request $data){
