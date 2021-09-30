@@ -41,7 +41,7 @@
         flex-column flex-md-row
       "
     >
-      <div class="menu">
+      <div class="menu d-md-flex">
         <li class="navbar-collapse-list-menu-item">
           <a
             class="navbar-collapse-list-menu-item-link"
@@ -56,9 +56,6 @@
             *ngIf="loggedIn"
             >Matches<span class=" rounded bg-danger small px-1 ml-1" *ngIf="matchCount > 0">{{ matchCount }}</span> </a
           >
-
-
-
         </li>
         <li class="navbar-collapse-list-menu-item w-100 none">
           <a
@@ -90,7 +87,6 @@
             >Log in</a
           >
         </li>
-
         <li
           class="navbar-collapse-list-actions-item button--red last"
           *ngIf="loggedOut"

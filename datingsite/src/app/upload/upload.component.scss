@@ -1,6 +1,6 @@
 .image-upload{
     position: absolute;
-    bottom: 15px;
+    bottom: 10px;
     left: 30px;
 
     &-new{
@@ -17,13 +17,19 @@
             object-fit: cover;
             object-position: top center;
             margin: 0;
+            background:var(--bg);
         }
     }
 
-    & input[type="file"], input[type="reset"] {
+    & input{
         display: none;
+
+        &:invalid ~ label, :invalid ~ input{
+            display: none;
+        }
     }
-    & .custom-file-upload, .custom-file-reset, button {
+
+    & .image-upload--upload, .image-upload--reset, .image-upload--submit{
         margin: 0 5px 0 0;
         padding: 0;
         display: inline-block;
@@ -36,7 +42,7 @@
             background: url(../../assets/img/button-refresh--hover.png);
         }
     }
-        & button{
+        & .image-upload--submit{
                 border: none;
                 background: url(../../assets/img/button-upload.png);
         
@@ -45,7 +51,7 @@
                 }
             } 
 
-    & .custom-file-reset{
+    & .image-upload--reset{
         background: url(../../assets/img/button-cancel.png);
 
         &:hover{

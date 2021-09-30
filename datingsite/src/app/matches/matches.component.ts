@@ -31,14 +31,12 @@ export class MatchesComponent implements OnInit {
         this.UserService.changeData({"id":this.matchesArray[0].id,"name":this.matchesArray[0].name})
       }
       this.loaded=true;
-     
     });
 
     this.subscription = this.UserService.currentMessage.subscribe(message => this.message = message)
-    
   }
     
-     newData(id:any,name:any) {
+  newData(id:any,name:any) {
      this.UserService.changeData({"id":id,"name":name})
   }
 
@@ -48,9 +46,4 @@ export class MatchesComponent implements OnInit {
     });
     
   }
-
-
-  
-
- 
 }
