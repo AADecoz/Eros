@@ -66,13 +66,19 @@ body{
     font-size: 1.4em;
  }
 
+
 .button--white, .button--red{
     background: var(--bg);
     height: 40px;
     border: 0;
     border-radius: 40px;
+    font-size: 1.6em;
+    line-height: 40px;
+    font-weight: 500;
+    color: var(--pri);
     &:hover{
         background: var(--pri);
+        color: var(--bg);
     }
 
     &.last{
@@ -80,7 +86,7 @@ body{
     }
     
     & a{
-        font-size: 1.6em;
+        font-size: 1em;
         line-height: 40px;
         padding: 12px 35px;
         color: var(--pri);
@@ -93,7 +99,9 @@ body{
 
 .button--red{
     background: var(--pri);
+    color: var(--bg);
         &:hover{
+            color: var(--pri);
             background: var(--bg);
         }
 
