@@ -20,6 +20,7 @@ export class VerifyComponent implements OnInit {
       this.key=params["id"];
       this.UserService.verifyEmailf({"key":this.key}).subscribe(event => {
        this.show=true;
+       console.log("??");
       });
 
     });
