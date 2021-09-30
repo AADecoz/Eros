@@ -31,9 +31,10 @@ class UserController extends Controller{
             
         ]);
 
+        $key=DB::get('users')->select()->where('email',$data->email)->first();
         
 
-        $test->notify(new verifyNotification($randkey));        
+        $test->notify(new verifyNotification($key->verifyKey));        
         return response()->json(['message' => 'user created'], 201);
     }
 
