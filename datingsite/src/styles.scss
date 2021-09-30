@@ -142,24 +142,13 @@ body{
     }
 }
 
-.dislike{
-    background: url(/assets/img/button_dislike.png);
-margin: 0 0 0 10px;
-    &--small{
-        background: url(/assets/img/button_dislike.png);
-        background-size: 100%;
-        width: 15px;
-        height: 15px;
-        border: 0;
-    }
-}
-
-.icon-area{
+.icon-area:before {
     background: url(/assets/img/button_area.png) no-repeat;
     display: inline-block;
     width: 10px;
     height: 15px;
-    margin: 0 5px 0 0;
+    padding: 0 0 0 15px;
+    content: '';
 }
 
 @media only screen and (min-width: 768px) {
