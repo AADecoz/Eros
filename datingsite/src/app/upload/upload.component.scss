@@ -1,0 +1,38 @@
+.image-upload{
+    & button{
+    }
+
+    & input[type="file"], input[type="reset"] {
+        display: none;
+    }
+
+    & button, label{
+        margin: 0 5px 0 0;
+        display: inline-block;
+        cursor: pointer;
+        width: 32px;
+        height: 32px;
+        background: url(../../assets/img/button-refresh.png);
+
+        &:hover{
+            background: url(../../assets/img/button-refresh--hover.png);
+        }
+    }
+
+    & button{
+        border: none;
+        background: url(../../assets/img/button-upload.png);
+
+        &:hover{
+            background: url(../../assets/img/button-upload--hover.png);
+        }
+    }
+
+    & .custom-file-reset{
+        background: url(../../assets/img/button-cancel.png);
+
+        &:hover{
+            background: url(../../assets/img/button-cancel--hover.png);
+        }
+    }
+}

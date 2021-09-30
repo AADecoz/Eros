@@ -21,20 +21,14 @@
     font-family: 'Myriad', 'Myriad Pro', sans-serif;
     color: var(--body);
     font-size: 10px;
-    line-height: 15px;
+    line-height: 1.5em;
 }
 
 body{
-    background:url("assets/backgroundMobile.jpg") no-repeat fixed;
     background-size:cover;
      height:100vh;
      margin:0px;
      padding:0px;
-     & .main{
-         background: #fff;
-         border-radius: 30px;
-         padding: 30px;
-     }
  }
  
  .container-fluid{
@@ -92,31 +86,50 @@ body{
     } 
 }
 
-.like, .dislike{
+
+
+/* PROFILE */
+
+.profile-image{
+    margin: 0 0 15px;
+
+    & > img{
+        width:100%;
+        aspect-ratio: .85;
+        object-fit: cover;
+        object-position: top center;
+        border-radius: 15px;
+    }
+}
+.profile-info{
+    margin: 0 0 15px;
+}
+
+.button-like, .button-dislike{
     border: 0;
     padding:0;
     background:url(/assets/img/button_like.png);
     width: 36px;
     height: 36px;
 }
-.dislike{
+.button-dislike{
     background: url(/assets/img/button_dislike.png);
+    margin: 0 0 0 10px;
 
     &--small{
-        background: url(/assets/img/button_dislike.png);
         background-size: 100%;
         width: 15px;
         height: 15px;
         border: 0;
     }
 }
+
 .icon-area{
     background: url(/assets/img/button_area.png) no-repeat;
     display: inline-block;
     width: 10px;
     height: 15px;
     margin: 0 5px 0 0;
-
 }
 
 @media only screen and (min-width: 768px) {
@@ -124,6 +137,15 @@ body{
     body{
         background:url("assets/backgroundDesktop.jpg") no-repeat fixed;
         background-size:cover;
-    }  
+        & .main{
+            background: #fff;
+            border-radius: 30px;
+            padding: 30px;
+        }
+    }
+    
+    .profile-info{
+        margin: 0;
+    }
 }
 

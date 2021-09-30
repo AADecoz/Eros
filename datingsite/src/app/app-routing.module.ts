@@ -12,11 +12,11 @@ import { VerifyComponent } from './verify/verify.component';
 
 const routes: Routes = [
   {path: "", component: HomescreenComponent,canActivate:[UserGuard] },
-  {path: "Login", component: LoginComponent},
+  {path:"Login", component: LoginComponent},
   {path:"Register", component: RegisterComponent},
   {path:"Matches",component: MatchesComponent, canActivate:[UserGuard]},
   {path:"profile",component: ProfileComponent, canActivate:[UserGuard]},
-  {path:"preferences",component: PreferencesComponent,canActivate:[UserGuard]},
+  {path:"preferences",component: PreferencesComponent, canActivate:[UserGuard]},
   {path:"verify/:id",component: VerifyComponent},
   {path: "**",redirectTo:'',pathMatch: 'full',canActivate:[UserGuard]},
 ];
