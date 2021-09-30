@@ -1,48 +1,59 @@
-<app-navbar></app-navbar>
+<div  class="container-fluid">
+  <div class="row">
+    <app-navbar class="col-12"></app-navbar>
+    <section class="col-12 col-lg-9">
+      <main class="main profile">
+        <div class="row">
+          <div class="col-12 col-md-6 order-1 order-md-1 profile-image">
+            <img class="img-fluid" src="/assets/userprofiles/{{userid}}.jpg" alt="">
+            <app-upload></app-upload>
+          </div>
+          <div class="col-md-6 col-12 profile-about d-flex flex-column justify-content-between order-3 order-md-2">
+            <div class="profile-gallery">
+              <div class="row">
+                <div class="col-4 profile-image">
+              <img class="img-fluid" src="/assets/userprofiles/{{userid}}.jpg" alt="">
 
-<main class="row">
-<section class="main container-fluid">
-  <div class="row d-lg-inline-flex flex-nowrap w-100">
-    <div class="col-12 col-md-6">
-      <img class="w-100" src="/assets/userprofiles/{{userid}}.jpg" alt="">
-      <app-upload></app-upload>
-    </div>
-    <div class="col-md-6 col-12 row flex-wrap justify-content-around m-1">
-      <div class="row gallery">
-        <div class="col-4">
-          <img class="img-fluid" src="/assets/userprofiles/{{userid}}.jpg" alt="">
-        </div>
-        <div class="col-4">
-          <img class="img-fluid" src="/assets/userprofiles/{{userid}}.jpg" alt="">
-        </div>
-        <div class="col-4">
-          <img class="img-fluid" src="/assets/userprofiles/{{userid}}.jpg" alt="">
-        </div>
-        <div class="col-4">
-          <img class="img-fluid" src="/assets/userprofiles/{{userid}}.jpg" alt="">
-        </div>
-        <div class="col-4">
-          <img class="img-fluid" src="/assets/userprofiles/{{userid}}.jpg" alt="">
-        </div>
-        <div class="col-4">
-          <img class="img-fluid" src="/assets/userprofiles/{{userid}}.jpg" alt="">
-        </div>
+                </div>
+                <div class="col-4 profile-image">
+              <img class="img-fluid" src="/assets/userprofiles/{{userid}}.jpg" alt="">
 
-      </div>
-      <div class="col-12">
-        <h5 class="font-weight-bold align-content-start">About</h5>
-        <p>
-          {{intro}}
-        </p>
-      </div>
-    </div>
+                </div>
+                <div class="col-4 profile-image">
+              <img class="img-fluid" src="/assets/userprofiles/{{userid}}.jpg" alt="">
+
+                </div>
+                <div class="col-4 profile-image">
+              <img class="img-fluid" src="/assets/userprofiles/{{userid}}.jpg" alt="">
+
+                </div>
+                <div class="col-4 profile-image">
+              <img class="img-fluid" src="/assets/userprofiles/{{userid}}.jpg" alt="">
+
+                </div>
+                <div class="col-4 profile-image">
+              <img class="img-fluid" src="/assets/userprofiles/{{userid}}.jpg" alt="">
+
+                </div>
+              </div>
+            </div>
+            <div class="profile-intro">
+              <h5 class="title--small">About</h5>
+              <p class="text">{{intro}}</p>
+            </div>
+          </div>
+          <div class="col-12 order-2 order-md-3 profile-info">
+            <div class="d-flex justify-content-between">
+              <div class="profile-details"><h5 class="profile-name profile-age title--small">{{username}}, {{age|dateAge}}</h5>
+                <p class="profile-area">{{area}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </section>
+    <section class="prime col-12 col-lg-3 d-none d-md-block">
+      <app-preferences></app-preferences>
+    </section>
   </div>
-  <div class="col-4">
-    <h5 class="font-weight-bolder align-content-start p-2">{{username}}, {{age}}</h5>
-    <h6>{{area}}</h6>
-  </div>
-
-</section>
-
-<app-preferences></app-preferences>
-</main>
+</div>

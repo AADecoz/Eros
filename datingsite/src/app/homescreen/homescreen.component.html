@@ -2,32 +2,29 @@
   <div class="row">
     <app-navbar class="col-12"></app-navbar>
     <section class="col-12 col-lg-9">
-      <div class="main">
-        <h2>Potential matches</h2>
+      <main class="main profile">
         <div *ngIf="matches && loading">
           <div class="row">
-            <div class="col-6">
+            <div class="col-12 col-md-6 order-1 order-md-1 profile-image">
               <img [src]="sourceMatch" (error)="defaultimg()" class="img-fluid" />
             </div>
-            <div class="col-6 flex-column justify-content-between d-flex">
-              <div class="gallery">
+            <div class="col-12 col-md-6 profile-about d-flex flex-column justify-content-between order-3 order-md-2">
+              <div class="profile-gallery">
               </div>
-              <div class="intro">
-                <h5>About</h5>
-                <p>{{ feedArray[0].intro }}</p>
+              <div class="profile-intro">
+                <h5 class="title--small">About</h5>
+                <p class="text">{{ feedArray[0].intro }}</p>
               </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-12">
+            <div class="col-12 order-2 order-md-3 profile-info">
               <div class="d-flex justify-content-between">
-                <div class="info">
-                  <h5>{{ feedArray[0].name }}, {{ feedArray[0].birthday | dateAge }}</h5>
-                  <p>{{ feedArray[0].area }}</p>
+                <div class="profile-details">
+                  <h5 class="profile-name profile-age title--small">{{ feedArray[0].name }}, {{ feedArray[0].birthday | dateAge }}</h5>
+                  <p class="profile-area">{{ feedArray[0].area }}</p>
                 </div>
-                <div class="likeicons">
-                  <button class="like" (click)="like(1)"></button>
-                  <button class="dislike" (click)="like(0)"></button>
+                <div class="likebuttons">
+                  <button class="button-like" (click)="like(1)"></button>
+                  <button class="button-dislike" (click)="like(0)"></button>
                 </div>
               </div>
             </div>
@@ -37,10 +34,10 @@
         <div [hidden]="matches">
           <p>No potential matches found</p>
         </div>
-      </div>
+      </main>
     </section>
-    <section class="prime col-12 col-lg-3">
-    <app-preferences></app-preferences>
+    <section class="prime col-12 col-lg-3 d-none d-md-block">
+      <app-preferences></app-preferences>
     </section>
   </div>
 </div>

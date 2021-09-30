@@ -15,9 +15,7 @@ export class UserGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       if(localStorage.getItem('username')!=undefined){
         return true;
-      }else  {
-      
-        
+      } else {
         return this.router.parseUrl('/Login')
       }
   }
