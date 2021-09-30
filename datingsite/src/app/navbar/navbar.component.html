@@ -42,14 +42,14 @@
       "
     >
       <div class="menu d-md-flex">
-        <li class="navbar-collapse-list-menu-item">
+        <li class="navbar-collapse-list-menu-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }">
           <a
             class="navbar-collapse-list-menu-item-link"
-            routerLink=""
+            routerLink="/"
             >Home</a
           >
         </li>
-        <li class="navbar-collapse-list-menu-item none ">
+        <li class="navbar-collapse-list-menu-item none " [routerLinkActive]="['active']">
           <a
             class="navbar-collapse-list-menu-item-link"
             routerLink="/Matches"
@@ -57,7 +57,7 @@
             >Matches<span class=" rounded bg-danger small px-1 ml-1" *ngIf="matchCount > 0">{{ matchCount }}</span> </a
           >
         </li>
-        <li class="navbar-collapse-list-menu-item w-100 none">
+        <li class="navbar-collapse-list-menu-item w-100 none" [routerLinkActive]="['active']">
           <a
             class="navbar-collapse-list-menu-item-link"
             routerLink="/profile"
@@ -65,7 +65,7 @@
             >Profile</a
           >
         </li>
-        <li class="navbar-collapse-list-menu-item w-100 none">
+        <li class="navbar-collapse-list-menu-item w-100 none" [routerLinkActive]="['active']">
           <a
             class="navbar-collapse-list-menu-item-link"
             routerLink="/preferences"
@@ -91,7 +91,7 @@
           class="navbar-collapse-list-actions-item button--red last"
           *ngIf="loggedOut"
         >
-          <a class="navbar-collapse-list-menu-item-link" routerLink="/Register"
+          <a class="navbar-collapse-list-menu-item-link" routerLink="/Register" 
             >Register</a
           >
         </li>
