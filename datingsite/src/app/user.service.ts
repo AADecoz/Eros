@@ -10,20 +10,20 @@ export class UserService {
 dataChat:object={'data':'geen input'};
 user = "";
 path="";
-postUrl="http://localhost:8000/api/register";
-loginUrl="http://localhost:8000/api/login";
-feedUrl="http://localhost:8000/api/feed";
-matchUrl="http://localhost:8000/api/match";
-likeUrl="http://localhost:8000/api/like";
-saveUrl="http://localhost:8000/api/upload";
-updateUrl="http://localhost:8000/api/update";
-verifyUrl ="http://localhost:8000/api/verify";
-showChatUrl="http://localhost:8000/api/showChat";
-sendChatUrl="http://localhost:8000/api/sendChat";
-deleteMatchUrl="http://localhost:8000/api/deleteMatch";
-alertUrl="http://localhost:8000/api/alert";
-deleteProfileUrl="http://localhost:8000/api/deleteProfile";
-verifyEmailUrl="http://localhost:8000/api/verifyEmail"
+postUrl="https://oedipusapi.tk/api/register";
+loginUrl="https://oedipusapi.tk/api/login";
+feedUrl="https://oedipusapi.tk/api/feed";
+matchUrl="https://oedipusapi.tk/api/match";
+likeUrl="https://oedipusapi.tk/api/like";
+saveUrl="https://oedipusapi.tk/api/upload";
+updateUrl="https://oedipusapi.tk/api/update";
+verifyUrl ="https://oedipusapi.tk/api/verify";
+showChatUrl="https://oedipusapi.tk/api/showChat";
+sendChatUrl="https://oedipusapi.tk/api/sendChat";
+deleteMatchUrl="https://oedipusapi.tk/api/deleteMatch";
+alertUrl="https://oedipusapi.tk/api/alert";
+deleteProfileUrl="https://oedipusapi.tk/api/deleteProfile";
+verifyEmailUrl="https://oedipusapi.tk/api/verifyEmail"
 header = {
   'Content-Type': 'application/json',
   'Accept': 'application/json',
@@ -42,13 +42,13 @@ constructor(private http:HttpClient) { }
   }
 
   signinf(data:object):Observable<any>{
-    return this.http.post(this.loginUrl,data,{responseType:'json'});
+    return this.http.post(this.loginUrl,data,{headers: new HttpHeaders(this.header) ,responseType: 'json'});
   }
   feedf(data:object):Observable<any>{
-      return this.http.post(this.feedUrl,data,{responseType:'json'});
+      return this.http.post(this.feedUrl,data,{headers: new HttpHeaders(this.header) ,responseType: 'json'});
   }
   matchesf(data:object):Observable<any>{
-    return this.http.post(this.matchUrl,data,{responseType:'json'});
+    return this.http.post(this.matchUrl,data,{headers: new HttpHeaders(this.header) ,responseType: 'json'});
   }
   likef(data:object):Observable<any>{
     return this.http.post(this.likeUrl,data,{headers: new HttpHeaders(this.header) ,responseType: 'json'});
@@ -60,30 +60,30 @@ constructor(private http:HttpClient) { }
   
   // {headers:{ 'Content-Type':'file'},responseType:'json'});
   updatef(data:object):Observable<any>{
-    return this.http.post(this.updateUrl,data,{responseType: 'json',});
+    return this.http.post(this.updateUrl,data,{headers: new HttpHeaders(this.header) ,responseType: 'json'});
   }
   showChatf(data:object):Observable<any>{
-    return this.http.post(this.showChatUrl,data,{responseType:'json'});
+    return this.http.post(this.showChatUrl,data,{headers: new HttpHeaders(this.header) ,responseType: 'json'});
   }
 
   sendChatf(data:object):Observable<any>{
-    return this.http.post(this.sendChatUrl,data,{responseType:'json'});
+    return this.http.post(this.sendChatUrl,data,{headers: new HttpHeaders(this.header) ,responseType: 'json'});
   }
 
   deleteMatchf(data:object):Observable<any>{
-    return this.http.post(this.deleteMatchUrl,data,{responseType:'json'});
+    return this.http.post(this.deleteMatchUrl,data,{headers: new HttpHeaders(this.header) ,responseType: 'json'});
   }
 
   alertf(data:object):Observable<any>{
-    return this.http.post(this.alertUrl,data,{responseType:'json'});
+    return this.http.post(this.alertUrl,data,{headers: new HttpHeaders(this.header) ,responseType: 'json'});
   }
   
   deleteProfilef(data:object):Observable<any>{
-    return this.http.post(this.deleteProfileUrl,data,{responseType:'json'});
+    return this.http.post(this.deleteProfileUrl,data,{headers: new HttpHeaders(this.header) ,responseType: 'json'});
   }
 
   verifyEmailf(data:object):Observable<any>{
-    return this.http.post(this.verifyEmailUrl,data,{responseType:'json'});
+    return this.http.post(this.verifyEmailUrl,data,{headers: new HttpHeaders(this.header) ,responseType: 'json'});
   }
 
 
