@@ -14,21 +14,18 @@
       <option value="o">Other</option>
     </select>
   </div>
-    <label class="col-5 p-2">in search of</label>
-  <div class="d-flex row justify-content-around ">
-    <label for="pref1">Men</label><br>
-    <input type="checkbox"  class="" id="pref1" name="pref1" value="Male" [(ngModel)]="checkboxFlag1">
-    <label for="pref2">Women</label><br>
-    <input type="checkbox"  class="" id="pref2" name="pref2" value="Female" [(ngModel)]="checkboxFlag2">
-    <label for="pref3">Other</label><br><br>
-    <input type="checkbox" class="" id="pref3"  name="pref3" value="Other" [(ngModel)]="checkboxFlag3">
+    <label class="p-2">in search of</label>
+  <div class="d-flex row justify-content-around container-fluid">
+    <label for="pref1"><input type="checkbox"  class="m-1" id="pref1" name="pref1" value="Male" [(ngModel)]="checkboxFlag1">Men</label>
+    <label for="pref2"><input type="checkbox"  class="m-1" id="pref2" name="pref2" value="Female" [(ngModel)]="checkboxFlag2">Women</label>
+    <label for="pref3"><input type="checkbox" class="m-1" id="pref3"  name="pref3" value="Other" [(ngModel)]="checkboxFlag3">Other</label>
   </div>
 
     <label>between the ages of</label>
   <div class="d-flex row-12">
-    <input type="input" class="form-control" required [(ngModel)]="minage" name="minage">
-    <label>and</label>
-    <input type="input" class="form-control" required [(ngModel)]="maxage" name="maxage">
+    <input type="input" class="form-control border-0 w-25" required [(ngModel)]="minage" name="minage">
+    <label class="col-1 p-2">and</label>
+    <input type="input" class="form-control border-0 w-25" required [(ngModel)]="maxage" name="maxage">
   </div>
 
     <label>I was born on</label>
