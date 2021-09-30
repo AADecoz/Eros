@@ -35,7 +35,7 @@
     }
     
     & a{
-      color: var(--bg);
+      color: var(--head);
       width: 100%;
       display: inline-block;
       text-align: center;
@@ -63,8 +63,24 @@
       
       & a{
         width: auto;
+        
+      }
+    }
+
+    & .menu li{
+      width: 100%;
+      &.active a{
+        opacity: 1;
+      }
+      
+      & a{
+        color: var(--bg);
+        
+        
       }
     }
   } 
+
+  
 }
 

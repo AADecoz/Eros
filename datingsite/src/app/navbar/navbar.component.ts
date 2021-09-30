@@ -60,7 +60,7 @@ export class NavbarComponent implements OnInit {
       this.sourceLogo="assets/logoDark.png"
    }else{
      this.color="transparent"
-     this.sourceLogo="assets/logo.png"
+     this.sourceLogo="assets/logoDark.png"
    }
   }
 
