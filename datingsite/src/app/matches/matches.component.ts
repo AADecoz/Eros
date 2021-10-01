@@ -12,9 +12,7 @@ export class MatchesComponent implements OnInit {
   userid:any = localStorage.getItem('userid');
   matchesArray:Array<any>=['test'];
   username:string|null = localStorage.getItem('username');
-  matchAge:any;
-  matchGender:any;
-  noMatch:any;
+  noMatch:boolean=true;
   loaded:boolean=false;
 
   message!:object;
@@ -36,11 +34,11 @@ export class MatchesComponent implements OnInit {
     this.subscription = this.UserService.currentMessage.subscribe(message => this.message = message)
   }
     
-  newData(id:any,name:any) {
+  newData(id:number,name:string) {
      this.UserService.changeData({"id":id,"name":name})
   }
 
-  deleteMatch(id:string){
+  deleteMatch(id:number){
     this.UserService.deleteMatchf({"userid":localStorage.getItem('userid'),"matchid":id}).subscribe(()=>{ 
       this.ngOnInit();
     });

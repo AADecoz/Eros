@@ -7,33 +7,35 @@ import { UserService} from "../user.service";
   styleUrls: ['./homescreen.component.scss']
 })
 export class HomescreenComponent implements OnInit {
-  username = localStorage.getItem('username');
-  userid = localStorage.getItem('userid');
-  sex =localStorage.getItem('sex');
-  preference=localStorage.getItem('preference');
-  minAge=localStorage.getItem('minAge');
-  maxAge=localStorage.getItem('maxAge');
+  username:string|null = localStorage.getItem('username');
+  userid:string|null = localStorage.getItem('userid');
+  sex:string|null =localStorage.getItem('sex');
+  preference:string|null=localStorage.getItem('preference');
+  minAge:string|null=localStorage.getItem('minAge');
+  maxAge:string|null=localStorage.getItem('maxAge');
   age:any;
-  feedArray:any=[{}];
-  test="test";
+  feedArray:any[]=[{}];
   matches=true;
   ageMatch:any;
-  sourceMatch:any;
+  sourceMatch:string="";
   loading:boolean=false;
 
-  constructor(private UserService:UserService) { }
+  constructor(private UserService:UserService) {
+    
+   }
 
   ngOnInit(): void {
+    
    this.laadFeed();
 
-   document.body.className = "test";
+   
 
   }
 
 
  laadFeed(){
   this.UserService.feedf({"userid":this.userid,"sex":this.sex,"preference":this.preference,"minAge":this.minAge,"maxAge":this.maxAge}).subscribe((data)=> {
-    if(data.status_message=="user not found"){
+    if(data.status_message=="matches not found"){
       this.matches=false;
     }else{
       this.feedArray=data.user;

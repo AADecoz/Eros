@@ -77,9 +77,9 @@ class MatchController extends Controller
         }
 
         if(count($matches)==0){
-            return response()->json(['user' => null, 'status_message' =>"No matches"], 200);
+            return response()->json(['status_message' =>"No matches"], 200);
         }   else{
-              return response()->json(['unchecked' => $count, 'status_message' =>"Users found"], 200);
+              return response()->json(['count' => $count, 'status_message' =>"Matches found"], 200);
         } 
     }
 }

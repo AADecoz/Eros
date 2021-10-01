@@ -40,8 +40,8 @@ export class NavbarComponent implements OnInit {
     
     setInterval(() => {
       this.UserService.alertf({"userid":localStorage.getItem('userid')}).subscribe((data)=>{ 
-        if(data.status_message=="Users found"){
-          this.matchCount=data.unchecked
+        if(data.status_message=="Matches found"){
+          this.matchCount=data.count
        }
         }
     );

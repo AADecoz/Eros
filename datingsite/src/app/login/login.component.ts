@@ -10,12 +10,12 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  userSign="";
-  passSign="";
-
-  hide=true;
-  hide2=true;
-  notVerified=true;
+  userSign:string="";
+  passSign:string="";
+  hide:boolean=true;
+  hide2:boolean=true;
+  notVerified:boolean=true;
+  
   constructor(private UserService:UserService,private Router:Router) {
 
   }

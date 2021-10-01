@@ -9,10 +9,10 @@ import { Subscription } from 'rxjs';
 })
 export class ChatComponent implements OnInit {
   message: any;
-  messages: any = [];
+  messages: any[] = [];
   inputChat: string = '';
-  name = localStorage.getItem('username');
-  id = localStorage.getItem('userid');
+  name:string|null = localStorage.getItem('username');
+  id:string|null = localStorage.getItem('userid');
   subscription!: Subscription;
 
   nameChat: string = '';
@@ -48,7 +48,7 @@ export class ChatComponent implements OnInit {
         matchid: this.message.id,
         body: this.inputChat,
       })
-      .subscribe((dataApi) => {
+      .subscribe(() => {
         this.newMessage();
       });
 

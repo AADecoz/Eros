@@ -17,7 +17,7 @@ class feedController extends Controller
 
         $notinarr=[];
         foreach($notin as $item){
-         array_push($notinarr,$item->name);
+            array_push($notinarr,$item->name);
         }
 
         $feed = DB::table('users')
@@ -30,10 +30,10 @@ class feedController extends Controller
         ->get(['UserId','name','sex','area','birthday','preference','intro']);
 
         if(count($feed)==0){
-            return response()->json(['user' => Null, 'status_message'=>'user not found'], 200);
+            return response()->json(['user' => Null, 'status_message'=>'matches not found'], 200);
 
         } else{
-            return response()->json(['user' => $feed, 'status_message'=>'user found'], 200);
+            return response()->json(['user' => $feed, 'status_message'=>'matches found'], 200);
 
         }
     }
